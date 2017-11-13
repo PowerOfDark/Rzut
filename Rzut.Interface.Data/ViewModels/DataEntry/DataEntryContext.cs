@@ -35,6 +35,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string RadiusDisplay => Strings.EntityViewModel_Radius;
         public string TabDisplay => Strings.Tab_Ball;
         public string MassDisplay => Strings.EntityViewModel_Mass;
+        public string HeightDisplay => Strings.EntityViewModel_Height;
 
         public UIElement Form { get; set; }
 

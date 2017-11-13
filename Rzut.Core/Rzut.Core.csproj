@@ -97,11 +97,11 @@
       <Project>{e53869bf-ae3d-46d3-a1dc-05025c0241eb}</Project>
       <Name>Rzut.Interface.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\lo01\fizyka\Aether.Physics2D-master\Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.PORTABLE45.csproj">
+    <ProjectReference Include="..\Aether.Physics2D-master\Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.PORTABLE45.csproj">
       <Project>{045c4c6a-92ef-47ab-b38e-a2ddecb356c1}</Project>
       <Name>Aether.Physics2D.Diagnostics.PORTABLE45</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\lo01\fizyka\Aether.Physics2D-master\Physics2D\Aether.Physics2D.PORTABLE45.csproj">
+    <ProjectReference Include="..\Aether.Physics2D-master\Physics2D\Aether.Physics2D.PORTABLE45.csproj">
       <Project>{d7449c73-0922-4cb8-b83a-f5ce2904be14}</Project>
       <Name>Aether.Physics2D.PORTABLE45</Name>
     </ProjectReference>

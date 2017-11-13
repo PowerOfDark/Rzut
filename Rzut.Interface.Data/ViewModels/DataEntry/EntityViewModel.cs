@@ -50,6 +50,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _mass;
         public float Mass { get => _mass; set => SetProperty(ref _mass, value); }
 
+        private int _height;
+        public int Height { get => _height; set => SetProperty(ref _height, value); }
+
         public EntityViewModel(IViewModelCollection context) : base(context)
         {
             TabClickDown = new RelayCommand(t => TabClicked?.Invoke(this));
@@ -66,6 +69,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                     break;
                 case nameof(Mass):
                     Validation.ValidateRange(this, t => t.Mass, 0.01f, int.MaxValue, errors, "float");
+                    break;
+                case nameof(Height):
+                    Validation.ValidateRange(this, t => t.Height, 0, 10000, errors, "int");
                     break;
                 default:
                     break;

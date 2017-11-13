@@ -57,11 +57,19 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBox Mass;
         
-        private Grid e_14;
+        private Border e_14;
         
-        private Button e_15;
+        private StackPanel e_15;
         
         private TextBlock e_16;
+        
+        private TextBox Height;
+        
+        private Grid e_17;
+        
+        private Button e_18;
+        
+        private TextBlock e_19;
         
         public DataEntryForm() : 
                 base() {
@@ -147,9 +155,14 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_8 = new Border();
             this.e_7.Children.Add(this.e_8);
             this.e_8.Name = "e_8";
-            this.e_8.Margin = new Thickness(3F, 3F, 3F, 3F);
-            this.e_8.BorderBrush = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            this.e_8.BorderThickness = new Thickness(3F, 3F, 3F, 3F);
+            Style e_8_s = new Style(typeof(Border));
+            Setter e_8_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_8_s.Setters.Add(e_8_s_S_0);
+            Setter e_8_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_8_s.Setters.Add(e_8_s_S_1);
+            Setter e_8_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_8_s.Setters.Add(e_8_s_S_2);
+            this.e_8.Style = e_8_s;
             // e_9 element
             this.e_9 = new StackPanel();
             this.e_8.Child = this.e_9;
@@ -176,9 +189,14 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_11 = new Border();
             this.e_7.Children.Add(this.e_11);
             this.e_11.Name = "e_11";
-            this.e_11.Margin = new Thickness(3F, 3F, 3F, 3F);
-            this.e_11.BorderBrush = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            this.e_11.BorderThickness = new Thickness(3F, 3F, 3F, 3F);
+            Style e_11_s = new Style(typeof(Border));
+            Setter e_11_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_11_s.Setters.Add(e_11_s_S_0);
+            Setter e_11_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_11_s.Setters.Add(e_11_s_S_1);
+            Setter e_11_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_11_s.Setters.Add(e_11_s_S_2);
+            this.e_11.Style = e_11_s;
             // e_12 element
             this.e_12 = new StackPanel();
             this.e_11.Child = this.e_12;
@@ -202,22 +220,56 @@ namespace EmptyKeys.UserInterface.Generated {
             binding_Mass_Text.StringFormat = "{0:0.00}";
             this.Mass.SetBinding(TextBox.TextProperty, binding_Mass_Text);
             // e_14 element
-            this.e_14 = new Grid();
-            this.e_0.Children.Add(this.e_14);
+            this.e_14 = new Border();
+            this.e_7.Children.Add(this.e_14);
             this.e_14.Name = "e_14";
-            Grid.SetRow(this.e_14, 3);
+            Style e_14_s = new Style(typeof(Border));
+            Setter e_14_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_14_s.Setters.Add(e_14_s_S_0);
+            Setter e_14_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_14_s.Setters.Add(e_14_s_S_1);
+            Setter e_14_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_14_s.Setters.Add(e_14_s_S_2);
+            this.e_14.Style = e_14_s;
             // e_15 element
-            this.e_15 = new Button();
-            this.e_14.Children.Add(this.e_15);
+            this.e_15 = new StackPanel();
+            this.e_14.Child = this.e_15;
             this.e_15.Name = "e_15";
-            this.e_15.CommandParameter = null;
-            Binding binding_e_15_Command = new Binding("StartSimulation");
-            this.e_15.SetBinding(Button.CommandProperty, binding_e_15_Command);
+            this.e_15.Orientation = Orientation.Horizontal;
             // e_16 element
             this.e_16 = new TextBlock();
-            this.e_15.Content = this.e_16;
+            this.e_15.Children.Add(this.e_16);
             this.e_16.Name = "e_16";
-            this.e_16.Text = "start this shit";
+            this.e_16.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_16.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_16_Text = new Binding("HeightDisplay");
+            this.e_16.SetBinding(TextBlock.TextProperty, binding_e_16_Text);
+            // Height element
+            this.Height = new TextBox();
+            this.e_15.Children.Add(this.Height);
+            this.Height.Name = "Height";
+            this.Height.Tag = "int";
+            Binding binding_Height_Text = new Binding("ActiveEntity.Height");
+            binding_Height_Text.Mode = BindingMode.TwoWay;
+            binding_Height_Text.StringFormat = "{0:N0}";
+            this.Height.SetBinding(TextBox.TextProperty, binding_Height_Text);
+            // e_17 element
+            this.e_17 = new Grid();
+            this.e_0.Children.Add(this.e_17);
+            this.e_17.Name = "e_17";
+            Grid.SetRow(this.e_17, 3);
+            // e_18 element
+            this.e_18 = new Button();
+            this.e_17.Children.Add(this.e_18);
+            this.e_18.Name = "e_18";
+            this.e_18.CommandParameter = null;
+            Binding binding_e_18_Command = new Binding("StartSimulation");
+            this.e_18.SetBinding(Button.CommandProperty, binding_e_18_Command);
+            // e_19 element
+            this.e_19 = new TextBlock();
+            this.e_18.Content = this.e_19;
+            this.e_19.Name = "e_19";
+            this.e_19.Text = "start this shit";
         }
         
         private static void InitializeElementResources(UIElement elem) {

@@ -71,7 +71,7 @@ namespace Rzut.Core
                 {
                     Camera.TrackingBody = ball.Body;
                 }
-                ball.Body.Position = new Vector2(i, -(++i * 100 + 20));
+                //ball.Body.Position = new Vector2(i, -(++i * 100 + 20));
             }
          
             Camera.Position = Camera.ConvertWorldToScreen(Camera.TrackingBody.Position);

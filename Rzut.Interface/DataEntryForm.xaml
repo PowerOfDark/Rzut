@@ -61,6 +61,12 @@
                     </StackPanel>
                 </Border>
 
+                <Border Style="{StaticResource InputBorder}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=HeightDisplay}"/>
+                        <TextBox Tag="int" x:Name="Height" Text="{Binding ActiveEntity.Height, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:N0}}"/>
+                    </StackPanel>
+                </Border>
             </WrapPanel>
         </ScrollViewer>
         <Grid Grid.Row="3">

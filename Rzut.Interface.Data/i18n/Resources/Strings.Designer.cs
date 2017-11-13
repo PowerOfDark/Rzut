@@ -71,6 +71,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Height [m].
+        /// </summary>
+        public static string EntityViewModel_Height {
+            get {
+                return ResourceManager.GetString("EntityViewModel_Height", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mass [kg].
         /// </summary>
         public static string EntityViewModel_Mass {
@@ -121,6 +130,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         public static string Validation_Range_float {
             get {
                 return ResourceManager.GetString("Validation_Range_float", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} must be between {1:N0} and  {2:N0}.
+        /// </summary>
+        public static string Validation_Range_int {
+            get {
+                return ResourceManager.GetString("Validation_Range_int", resourceCulture);
             }
         }
     }

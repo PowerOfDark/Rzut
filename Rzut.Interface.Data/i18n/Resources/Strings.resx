@@ -120,6 +120,9 @@
   <data name="Button_Apply" xml:space="preserve">
     <value>Apply</value>
   </data>
+  <data name="EntityViewModel_Height" xml:space="preserve">
+    <value>Height [m]</value>
+  </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
     <value>Mass [kg]</value>
   </data>
@@ -137,5 +140,8 @@
   </data>
   <data name="Validation_Range_float" xml:space="preserve">
     <value>{0} must be between {1:0.00} and {2:0.00}</value>
+  </data>
+  <data name="Validation_Range_int" xml:space="preserve">
+    <value>{0} must be between {1:N0} and  {2:N0}</value>
   </data>
 </root>

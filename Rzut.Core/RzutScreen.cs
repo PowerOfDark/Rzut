@@ -14,11 +14,8 @@ namespace Rzut.Core
 {
     internal class RzutScreen : PhysicsGameScreen, IDemoScreen
     {
-        private Border _border;
         private List<Body> _ramps;
-        //private Body[] _rectangle = new Body[5];
         public List<Ball> Balls { get; set; }
-        private Sprite _circleSprite;
         private Sprite _rectangleSprite;
         public DataEntryContext DataEntryContext { get; set; }
         public static SpriteFont DetailsFont { get; set; }
@@ -59,8 +56,6 @@ namespace Rzut.Core
             
             World.Gravity = new Vector2(0f, 10f);
             DetailsFont = ScreenManager.Content.Load<SpriteFont>("UI/Segoe_UI_30_Regular");
-            //_border = new Border(World, ScreenManager, Camera);
-
             _ramps = new List<Body>();
             Balls = new List<Ball>();
 
@@ -107,11 +102,6 @@ namespace Rzut.Core
             }
             ScreenManager.LineBatch.End();
 
-            //base.DebugView.DrawString(Camera.ConvertWorldToScreen(_rectangle[4].Position), 
-            //    $"Vx: {_rectangle[4].LinearVelocity.X}\nVy:{_rectangle[4].LinearVelocity.Y}\nX,Y: {ConvertUnits.ToDisplayUnits(_rectangle[4].Position)}");
-
-
-            _border?.Draw();
             base.Draw(gameTime);
         }
 

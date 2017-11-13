@@ -4,7 +4,12 @@
                     xmlns:ek="clr-namespace:EmptyKeys.UserInterface.Designer;assembly=EmptyKeys.UserInterface.Designer"
                     xmlns:r="clr-namespace:Rzut.Interface.Data.i18n.Resources;assembly=Rzut.Interface.Data"
                     xmlns:int="clr-namespace:Rzut.Interface.Data.UI;assembly=Rzut.Interface.Data">
-
+    <Style x:Key="InputBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="Margin" Value="3"/>
+    </Style>
+    
 
     <Style x:Key="MyButtonStyle" TargetType="Button">
 
@@ -16,9 +21,6 @@
                 <ControlTemplate TargetType="Button">
                     <Grid Background="{TemplateBinding Background}">
                         <Border  BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
-                        
-                        
-
                         </Border>
                     </Grid>
                 </ControlTemplate>

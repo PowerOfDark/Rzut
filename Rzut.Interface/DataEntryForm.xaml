@@ -46,14 +46,15 @@
         </Border>
         <ScrollViewer Grid.Row="2" Name="entityEditor">
             <WrapPanel Orientation="Horizontal">
-                <Border BorderBrush="Black" BorderThickness="3" Margin="3">
+                
+                <Border Style="{StaticResource InputBorder}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=RadiusDisplay}"/>
                         <TextBox Tag="float" x:Name="Radius" Text="{Binding ActiveEntity.Radius, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
                     </StackPanel>
                 </Border>
 
-                <Border BorderBrush="Black" BorderThickness="3" Margin="3">
+                <Border Style="{StaticResource InputBorder}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=MassDisplay}"/>
                         <TextBox Tag="float" x:Name="Mass" Text="{Binding ActiveEntity.Mass, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>

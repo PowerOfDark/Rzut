@@ -33,7 +33,7 @@ namespace Rzut.Core.Prefab
             var b = world.CreateCircle(model.Radius, 1f);
             b.Mass = model.Mass;
             b.BodyType = BodyType.Dynamic;
-            b.Position = new Microsoft.Xna.Framework.Vector2(0, 1500);
+            b.Position = new Vector2(0, 1500);
             b.LinearVelocity = new Vector2(5, -10);
             b.LinearDamping = 0.1f;
             b.AngularDamping = 0.1f;

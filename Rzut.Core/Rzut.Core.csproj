@@ -62,6 +62,7 @@
     <Compile Include="ScreenSystem\VirtualStick.cs" />
     <Compile Include="UI\DataEntry\DataEntryScreen.cs" />
     <Compile Include="UI\Generated\DataEntryForm.xaml.cs" />
+    <Compile Include="UI\Generated\RzutOverlay.xaml.cs" />
     <Compile Include="UI\LanguageSelection\LanguageSelectionScreen.cs" />
     <Compile Include="UI\Generated\Dictionary.xaml.cs" />
     <Compile Include="UI\Generated\LanguageSelection.xaml.cs" />

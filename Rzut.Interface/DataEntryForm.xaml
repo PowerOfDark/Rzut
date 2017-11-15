@@ -6,7 +6,6 @@
              xmlns:c="clr-namespace:EmptyKeys.UserInterface.Designer.Charts;assembly=EmptyKeys.UserInterface.Designer"
              xmlns:data="clr-namespace:Rzut.Interface.Data.ViewModels.DataEntry;assembly=Rzut.Interface.Data"
              xmlns:ex="clr-namespace:Rzut.Interface.Data.UI;assembly=Rzut.Interface.Data"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="LightGray" d:DataContext="{d:DesignInstance data:DataEntryContext, IsDesignTimeCreatable=True}">
     <ek:UIRoot.Resources>

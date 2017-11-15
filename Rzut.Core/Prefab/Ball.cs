@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Rzut.Interface.Data.ViewModels.DataEntry;
+using Rzut.Interface.Data.ViewModels.RzutOverlay;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,10 @@ using tainicom.Aether.Physics2D.Samples.DrawingSystem;
 
 namespace Rzut.Core.Prefab
 {
-    public class Ball
+    public class Ball : BallBase
     {
-        public EntityViewModel Data { get; set; }
-        public Body Body { get; set; }
+        public override EntityViewModel Data { get; set; }
+        public override Body Body { get; set; }
         public Sprite Sprite { get; set; }
         public Trail Trail { get; set; }
 
@@ -34,6 +35,8 @@ namespace Rzut.Core.Prefab
             b.Mass = model.Mass;
             b.BodyType = BodyType.Dynamic;
             b.Position = new Vector2(0,-model.Height-model.Radius);
+            b.SetCollidesWith(Category.All& ~Category.Cat2);
+            b.SetCollisionCategories(Category.Cat2);
             b.LinearVelocity = new Vector2(5, -10);
             b.LinearDamping = 0.1f;
             b.AngularDamping = 0.1f;
@@ -41,9 +44,15 @@ namespace Rzut.Core.Prefab
             return b;
         }
 
-        public void Update(GameTime time)
+        public override void PreUpdate(GameTime time)
+        {
+            base.PreUpdate(time);
+        }
+
+        public override void PostUpdate(GameTime time)
         {
             Trail.Update(time, Body);
+            base.PostUpdate(time);
         }
 
         public void Draw(GameTime time, SpriteBatch batch)

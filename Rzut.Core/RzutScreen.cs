@@ -9,16 +9,23 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.DrawingSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Rzut.Interface.Data.ViewModels.DataEntry;
+using EmptyKeys.UserInterface.Generated;
+using System.Collections.ObjectModel;
+using Rzut.Interface.Data.ViewModels.RzutOverlay;
+using EmptyKeys.UserInterface;
 
 namespace Rzut.Core
 {
-    internal class RzutScreen : PhysicsGameScreen, IDemoScreen
+    internal class RzutScreen : PhysicsGameScreen, IDemoScreen, IOverlayContext<Ball>
     {
         private List<Body> _ramps;
-        public List<Ball> Balls { get; set; }
+        public ObservableCollection<Ball> Balls { get; set; }
         private Sprite _rectangleSprite;
         public DataEntryContext DataEntryContext { get; set; }
         public static SpriteFont DetailsFont { get; set; }
+        
+        public RzutOverlay Overlay { get; set; }
+
 
         #region IDemoScreen Members
 
@@ -51,13 +58,11 @@ namespace Rzut.Core
 
         public override void LoadContent()
         {
-           
             base.LoadContent();
-            
             World.Gravity = new Vector2(0f, 10f);
             DetailsFont = ScreenManager.Content.Load<SpriteFont>("UI/Segoe_UI_30_Regular");
             _ramps = new List<Body>();
-            Balls = new List<Ball>();
+            Balls = new ObservableCollection<Ball>();
 
             _ramps.Add(World.CreateEdge(new Vector2(-100000, 0f), new Vector2(1000000, 0f)));
             _ramps[0].SetCollidesWith(Category.All);
@@ -81,6 +86,10 @@ namespace Rzut.Core
             Camera.MaxPosition = new Vector2(float.MaxValue, -(ScreenManager.GraphicsDevice.Viewport.Height/2f -20f));
             // Create sprite based on body
 
+            Overlay = new RzutOverlay() { DataContext = this };
+            FontManager.Instance.LoadFonts(ScreenManager.Content, "UI/");
+            ImageManager.Instance.LoadImages(ScreenManager.Content, "UI/");
+
             _rectangleSprite = new Sprite(ScreenManager.Content.Load<Texture2D>("Materials/kamil"));
         }
 
@@ -102,15 +111,19 @@ namespace Rzut.Core
             }
             ScreenManager.LineBatch.End();
 
+            Overlay.Draw(gameTime.ElapsedGameTime.TotalMilliseconds);
+
             base.Draw(gameTime);
         }
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
-            foreach(var ball in Balls)
+            foreach (var ball in Balls)
             {
-                ball.Update(gameTime);
+                ball.PostUpdate(gameTime);
             }
+            Overlay.UpdateInput(gameTime.ElapsedGameTime.TotalMilliseconds);
+            Overlay.UpdateLayout(gameTime.ElapsedGameTime.TotalMilliseconds);
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
 

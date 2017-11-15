@@ -59,6 +59,9 @@
     <Compile Include="ViewModels\DataEntry\DataEntryContext.cs" />
     <Compile Include="ViewModels\DataEntry\EntityViewModel.cs" />
     <Compile Include="ViewModels\LanguageSelection\LanguageSelectionContext.cs" />
+    <Compile Include="ViewModels\RzutOverlay\BallBase.cs" />
+    <Compile Include="ViewModels\RzutOverlay\BallStatistics.cs" />
+    <Compile Include="ViewModels\RzutOverlay\OverlayContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EmptyKeys.UserInterface, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -105,6 +108,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aether.Physics2D-master\Physics2D\Aether.Physics2D.PORTABLE45.csproj">
+      <Project>{D7449C73-0922-4CB8-B83A-F5CE2904BE14}</Project>
+      <Name>Aether.Physics2D.PORTABLE45</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

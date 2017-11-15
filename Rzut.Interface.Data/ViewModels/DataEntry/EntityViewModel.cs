@@ -50,8 +50,23 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _mass;
         public float Mass { get => _mass; set => SetProperty(ref _mass, value); }
 
-        private float _height;
-        public float Height { get => _height; set => SetProperty(ref _height, value); }
+        private float _startY;
+        public float StartY { get => _startY; set => SetProperty(ref _startY, value); }
+
+        private float _startX;
+        public float StartX { get => _startX; set => SetProperty(ref _startX, value); }
+
+        private float _startAngle;
+        public float StartAngle { get => _startAngle; set => SetProperty(ref _startAngle, value); }
+
+        private float _velocity;
+        public float Velocity { get => _velocity; set => SetProperty(ref _velocity, value); }
+
+        private float _friction;//UNUSED!1!!!!111 TODO make actual friction
+        public float Friction { get => _friction; set => SetProperty(ref _friction, value); }
+
+        private float _airResistance;//Unused
+        public float AirResistance { get => _airResistance; set => SetProperty(ref _airResistance, value); }
 
         public EntityViewModel(IViewModelCollection context) : base(context)
         {
@@ -70,8 +85,23 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 case nameof(Mass):
                     Validation.ValidateRange(this, t => t.Mass, 0.01f, int.MaxValue, errors, "float");
                     break;
-                case nameof(Height):
-                    Validation.ValidateRange(this, t => t.Height, 0.01f, 10000.0f, errors, "float");
+                case nameof(StartY):
+                    Validation.ValidateRange(this, t => t.StartY, 0.01f, 10000.0f, errors, "float");
+                    break;
+                case nameof(StartX):
+                    Validation.ValidateRange(this, t => t.StartX, int.MinValue, int.MaxValue, errors, "float");
+                    break;
+                case nameof(StartAngle):
+                    Validation.ValidateRange(this, t => t.StartAngle, 0, 360, errors, "float");
+                    break;
+                case nameof(Velocity):
+                    Validation.ValidateRange(this, t => t.Velocity, 0, int.MaxValue, errors, "float");
+                    break;
+                case nameof(Friction):
+                    Validation.ValidateRange(this, t => t.Friction, 0, int.MaxValue, errors, "float");
+                    break;
+                case nameof(AirResistance):
+                    Validation.ValidateRange(this, t => t.AirResistance, 0, int.MaxValue, errors, "float");
                     break;
                 default:
                     break;

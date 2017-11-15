@@ -120,14 +120,29 @@
   <data name="Button_Apply" xml:space="preserve">
     <value>Apply</value>
   </data>
-  <data name="EntityViewModel_Height" xml:space="preserve">
-    <value>Height [m]</value>
+  <data name="EntityViewModel_AirResistance" xml:space="preserve">
+    <value>air resistance coefficient</value>
+  </data>
+  <data name="EntityViewModel_Friction" xml:space="preserve">
+    <value>coefficient of friction</value>
   </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
     <value>Mass [kg]</value>
   </data>
   <data name="EntityViewModel_Radius" xml:space="preserve">
     <value>Radius [m]</value>
+  </data>
+  <data name="EntityViewModel_StartAngle" xml:space="preserve">
+    <value>clockwise angle [degrees]</value>
+  </data>
+  <data name="EntityViewModel_StartX" xml:space="preserve">
+    <value>X-coordinate [m]</value>
+  </data>
+  <data name="EntityViewModel_StartY" xml:space="preserve">
+    <value>Y-coordinate [m]</value>
+  </data>
+  <data name="EntityViewModel_Velocity" xml:space="preserve">
+    <value>velocity [m/s]</value>
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Choose language</value>

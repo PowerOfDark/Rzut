@@ -6,7 +6,7 @@
              xmlns:c="clr-namespace:EmptyKeys.UserInterface.Designer.Charts;assembly=EmptyKeys.UserInterface.Designer"
              xmlns:data="clr-namespace:Rzut.Interface.Data.ViewModels.DataEntry;assembly=Rzut.Interface.Data"
              xmlns:ex="clr-namespace:Rzut.Interface.Data.UI;assembly=Rzut.Interface.Data"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="LightGray" d:DataContext="{d:DesignInstance data:DataEntryContext, IsDesignTimeCreatable=True}">
     <ek:UIRoot.Resources>
@@ -102,6 +102,14 @@
                         <TextBox Tag="float" x:Name="AirResistance" Text="{Binding ActiveEntity.AirResistance, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
                     </StackPanel>
                 </Border>
+
+                <Border Style="{StaticResource InputBorder}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=AngularDragDisplay}"/>
+                        <TextBox Tag="float" x:Name="AngularDrag" Text="{Binding ActiveEntity.AngularDrag, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                    </StackPanel>
+                </Border>
+
             </WrapPanel>
         </ScrollViewer>
         <Grid Grid.Row="3">

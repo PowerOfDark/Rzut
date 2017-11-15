@@ -105,11 +105,19 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBox AirResistance;
         
-        private Grid e_32;
+        private Border e_32;
         
-        private Button e_33;
+        private StackPanel e_33;
         
         private TextBlock e_34;
+        
+        private TextBox AngularDrag;
+        
+        private Grid e_35;
+        
+        private Button e_36;
+        
+        private TextBlock e_37;
         
         public DataEntryForm() : 
                 base() {
@@ -464,22 +472,56 @@ namespace EmptyKeys.UserInterface.Generated {
             binding_AirResistance_Text.StringFormat = "{0:0.00}";
             this.AirResistance.SetBinding(TextBox.TextProperty, binding_AirResistance_Text);
             // e_32 element
-            this.e_32 = new Grid();
-            this.e_0.Children.Add(this.e_32);
+            this.e_32 = new Border();
+            this.e_7.Children.Add(this.e_32);
             this.e_32.Name = "e_32";
-            Grid.SetRow(this.e_32, 3);
+            Style e_32_s = new Style(typeof(Border));
+            Setter e_32_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_32_s.Setters.Add(e_32_s_S_0);
+            Setter e_32_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_32_s.Setters.Add(e_32_s_S_1);
+            Setter e_32_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_32_s.Setters.Add(e_32_s_S_2);
+            this.e_32.Style = e_32_s;
             // e_33 element
-            this.e_33 = new Button();
-            this.e_32.Children.Add(this.e_33);
+            this.e_33 = new StackPanel();
+            this.e_32.Child = this.e_33;
             this.e_33.Name = "e_33";
-            this.e_33.CommandParameter = null;
-            Binding binding_e_33_Command = new Binding("StartSimulation");
-            this.e_33.SetBinding(Button.CommandProperty, binding_e_33_Command);
+            this.e_33.Orientation = Orientation.Horizontal;
             // e_34 element
             this.e_34 = new TextBlock();
-            this.e_33.Content = this.e_34;
+            this.e_33.Children.Add(this.e_34);
             this.e_34.Name = "e_34";
-            this.e_34.Text = "start this shit";
+            this.e_34.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_34.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_34_Text = new Binding("AngularDragDisplay");
+            this.e_34.SetBinding(TextBlock.TextProperty, binding_e_34_Text);
+            // AngularDrag element
+            this.AngularDrag = new TextBox();
+            this.e_33.Children.Add(this.AngularDrag);
+            this.AngularDrag.Name = "AngularDrag";
+            this.AngularDrag.Tag = "float";
+            Binding binding_AngularDrag_Text = new Binding("ActiveEntity.AngularDrag");
+            binding_AngularDrag_Text.Mode = BindingMode.TwoWay;
+            binding_AngularDrag_Text.StringFormat = "{0:0.00}";
+            this.AngularDrag.SetBinding(TextBox.TextProperty, binding_AngularDrag_Text);
+            // e_35 element
+            this.e_35 = new Grid();
+            this.e_0.Children.Add(this.e_35);
+            this.e_35.Name = "e_35";
+            Grid.SetRow(this.e_35, 3);
+            // e_36 element
+            this.e_36 = new Button();
+            this.e_35.Children.Add(this.e_36);
+            this.e_36.Name = "e_36";
+            this.e_36.CommandParameter = null;
+            Binding binding_e_36_Command = new Binding("StartSimulation");
+            this.e_36.SetBinding(Button.CommandProperty, binding_e_36_Command);
+            // e_37 element
+            this.e_37 = new TextBlock();
+            this.e_36.Content = this.e_37;
+            this.e_37.Name = "e_37";
+            this.e_37.Text = "start this shit";
         }
         
         private static void InitializeElementResources(UIElement elem) {

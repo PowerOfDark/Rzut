@@ -121,10 +121,13 @@
     <value>Apply</value>
   </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
-    <value>air resistance coefficient</value>
+    <value>Air resistance coefficient</value>
+  </data>
+  <data name="EntityViewModel_AngularDrag" xml:space="preserve">
+    <value>Angular drag coefficient</value>
   </data>
   <data name="EntityViewModel_Friction" xml:space="preserve">
-    <value>coefficient of friction</value>
+    <value>Friction</value>
   </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
     <value>Mass [kg]</value>
@@ -133,7 +136,7 @@
     <value>Radius [m]</value>
   </data>
   <data name="EntityViewModel_StartAngle" xml:space="preserve">
-    <value>clockwise angle [degrees]</value>
+    <value>Clockwise angle [degrees]</value>
   </data>
   <data name="EntityViewModel_StartX" xml:space="preserve">
     <value>X-coordinate [m]</value>

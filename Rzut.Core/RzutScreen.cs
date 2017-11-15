@@ -59,13 +59,15 @@ namespace Rzut.Core
         public override void LoadContent()
         {
             base.LoadContent();
-            World.Gravity = new Vector2(0f, 10f);
+
             DetailsFont = ScreenManager.Content.Load<SpriteFont>("UI/Segoe_UI_30_Regular");
             _ramps = new List<Body>();
             Balls = new ObservableCollection<Ball>();
 
             _ramps.Add(World.CreateEdge(new Vector2(-100000, 0f), new Vector2(1000000, 0f)));
             _ramps[0].SetCollidesWith(Category.All);
+            _ramps[0].SetFriction(50);
+
 
             int i = 0;
             foreach(var entity in DataEntryContext.Entities)

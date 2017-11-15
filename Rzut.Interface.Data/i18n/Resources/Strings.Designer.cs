@@ -71,7 +71,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to air resistance coefficient.
+        ///   Looks up a localized string similar to Air resistance coefficient.
         /// </summary>
         public static string EntityViewModel_AirResistance {
             get {
@@ -80,7 +80,16 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to coefficient of friction.
+        ///   Looks up a localized string similar to Angular drag coefficient.
+        /// </summary>
+        public static string EntityViewModel_AngularDrag {
+            get {
+                return ResourceManager.GetString("EntityViewModel_AngularDrag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Friction.
         /// </summary>
         public static string EntityViewModel_Friction {
             get {
@@ -107,7 +116,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to clockwise angle [degrees].
+        ///   Looks up a localized string similar to Clockwise angle [degrees].
         /// </summary>
         public static string EntityViewModel_StartAngle {
             get {

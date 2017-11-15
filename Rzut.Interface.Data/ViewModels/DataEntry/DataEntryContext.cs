@@ -41,12 +41,13 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string VelocityDisplay => Strings.EntityViewModel_Velocity;
         public string FrictionDisplay => Strings.EntityViewModel_Friction;
         public string AirResistanceDisplay => Strings.EntityViewModel_AirResistance;
+        public string AngularDragDisplay => Strings.EntityViewModel_AngularDrag;
 
         public UIElement Form { get; set; }
 
         public void SetActive(EntityViewModel entity)
         {
-            if(ActiveEntity != null)
+            if (ActiveEntity != null)
                 ActiveEntity.IsActive = false;
             ActiveEntity = entity;
             ActiveEntity.IsActive = true;
@@ -65,7 +66,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         {
             Form = form;
             Entities = new ObservableCollection<EntityViewModel>();
-            AddTab(new EntityViewModel(this) {
+            AddTab(new EntityViewModel(this)
+            {
                 Color = Color.Red,
                 Radius = 1.5f,
                 Mass = 2f,
@@ -74,19 +76,23 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 Velocity = 100f,
                 StartAngle = 270f,
                 Friction = 50f,
-                AirResistance = 10f
+                AirResistance = 0.10f,
+                AngularDrag = 0.10f
             });
-            AddTab(new EntityViewModel(this) {
+
+            AddTab(new EntityViewModel(this)
+            {
                 Color = Color.Green,
                 Radius = 2f,
-                Mass = 3f ,
+                Mass = 3f,
                 StartY = 60f,
                 StartX = 0f,
                 Velocity = 100f,
                 StartAngle = 90f,
                 Friction = 50f,
-                AirResistance = 10f
-        });
+                AirResistance = 0.10f,
+                AngularDrag = 0.10f
+            });
 
             SetActive(Entities.First());
 
@@ -108,7 +114,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public override bool Validate(string property, out ICollection<string> errors)
         {
             errors = new List<string>();
-            switch(property)
+            switch (property)
             {
 
                 default:

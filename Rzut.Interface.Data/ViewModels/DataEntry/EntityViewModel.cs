@@ -68,10 +68,13 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _airResistance;//Unused
         public float AirResistance { get => _airResistance; set => SetProperty(ref _airResistance, value); }
 
+        private float _angularDrag;
+        public float AngularDrag { get => _angularDrag; set => SetProperty(ref _angularDrag, value); }
+
+
         public EntityViewModel(IViewModelCollection context) : base(context)
         {
             TabClickDown = new RelayCommand(t => TabClicked?.Invoke(this));
-            
         }
 
         public override bool Validate(string property, out ICollection<string> errors)
@@ -101,7 +104,10 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                     Validation.ValidateRange(this, t => t.Friction, 0, int.MaxValue, errors, "float");
                     break;
                 case nameof(AirResistance):
-                    Validation.ValidateRange(this, t => t.AirResistance, 0, int.MaxValue, errors, "float");
+                    Validation.ValidateRange(this, t => t.AirResistance, 0, 1, errors, "float");
+                    break;
+                case nameof(AngularDrag):
+                    Validation.ValidateRange(this, t => t.AirResistance, 0, 1, errors, "float");
                     break;
                 default:
                     break;

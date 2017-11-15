@@ -107,7 +107,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                     Validation.ValidateRange(this, t => t.AirResistance, 0, 1, errors, "float");
                     break;
                 case nameof(AngularDrag):
-                    Validation.ValidateRange(this, t => t.AirResistance, 0, 1, errors, "float");
+                    Validation.ValidateRange(this, t => t.AngularDrag, 0, 1, errors, "float");
                     break;
                 default:
                     break;

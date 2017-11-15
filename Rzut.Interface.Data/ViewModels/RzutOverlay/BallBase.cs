@@ -17,16 +17,12 @@ namespace Rzut.Interface.Data.ViewModels.RzutOverlay
         protected Vector2 _startPosition;
         public virtual Vector2 StartPosition { get => _startPosition; set { if (_startPosition != value) SetProperty(ref _startPosition, value); } }
 
-        public string LinearVelocity => Body.LinearVelocity.ToString();
+        public string LinearVelocity => $"Vx: {Body.LinearVelocity.X}\nVy: {Body.LinearVelocity.Y}";
         public string AngularVelocity => Body.AngularVelocity.ToString("0.00");
         public string Distance => (Body.Position - StartPosition).ToString();
 
-        public virtual void PreUpdate(GameTime time)
-        {
 
-        }
-
-        public virtual void PostUpdate(GameTime time)
+        public virtual void Update(GameTime time)
         {
             RaisePropertyChanged(nameof(LinearVelocity));
             RaisePropertyChanged(nameof(AngularVelocity));

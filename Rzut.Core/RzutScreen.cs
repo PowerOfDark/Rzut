@@ -120,7 +120,7 @@ namespace Rzut.Core
         {
             foreach (var ball in Balls)
             {
-                ball.PostUpdate(gameTime);
+                ball.Update(gameTime);
             }
             Overlay.UpdateInput(gameTime.ElapsedGameTime.TotalMilliseconds);
             Overlay.UpdateLayout(gameTime.ElapsedGameTime.TotalMilliseconds);

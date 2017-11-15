@@ -60,8 +60,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         {
             Form = form;
             Entities = new ObservableCollection<EntityViewModel>();
-            AddTab(new EntityViewModel(this) { Color = Color.Red, Radius = 1.5f, Mass=2f });
-            AddTab(new EntityViewModel(this) { Color = Color.Green, Radius = 4f, Mass= 3f });
+            AddTab(new EntityViewModel(this) { Color = Color.Red, Radius = 1.5f, Mass= 2f,  Height = 50f });
+            AddTab(new EntityViewModel(this) { Color = Color.Green, Radius = 4f, Mass= 3f , Height = 3f});
+
             SetActive(Entities.First());
 
             StartSimulation = new RelayCommand(t => SimulationStarted?.Invoke(this));

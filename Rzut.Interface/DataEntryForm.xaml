@@ -64,7 +64,7 @@
                 <Border Style="{StaticResource InputBorder}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=HeightDisplay}"/>
-                        <TextBox Tag="int" x:Name="Height" Text="{Binding ActiveEntity.Height, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:N0}}"/>
+                        <TextBox Tag="float" x:Name="Height" Text="{Binding ActiveEntity.Height, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
                     </StackPanel>
                 </Border>
             </WrapPanel>

@@ -248,10 +248,10 @@ namespace EmptyKeys.UserInterface.Generated {
             this.Height = new TextBox();
             this.e_15.Children.Add(this.Height);
             this.Height.Name = "Height";
-            this.Height.Tag = "int";
+            this.Height.Tag = "float";
             Binding binding_Height_Text = new Binding("ActiveEntity.Height");
             binding_Height_Text.Mode = BindingMode.TwoWay;
-            binding_Height_Text.StringFormat = "{0:N0}";
+            binding_Height_Text.StringFormat = "{0:0.00}";
             this.Height.SetBinding(TextBox.TextProperty, binding_Height_Text);
             // e_17 element
             this.e_17 = new Grid();

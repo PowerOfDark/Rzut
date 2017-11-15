@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Rzut.Interface.Data.ViewModels.DataEntry;
-using Rzut.Interface.Data.ViewModels.RzutOverlay;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +12,10 @@ using tainicom.Aether.Physics2D.Samples.DrawingSystem;
 
 namespace Rzut.Core.Prefab
 {
-    public class Ball : BallBase
+    public class Ball
     {
-        public override EntityViewModel Data { get; set; }
-        public override Body Body { get; set; }
+        public EntityViewModel Data { get; set; }
+        public Body Body { get; set; }
         public Sprite Sprite { get; set; }
         public Trail Trail { get; set; }
 
@@ -32,34 +31,26 @@ namespace Rzut.Core.Prefab
         public static Body CreateBody(World world, EntityViewModel model)
         {
             var b = world.CreateCircle(model.Radius, 1f);
+            float angle = (float)(Math.PI / 180) * (model.StartAngle - 90) % 360 ;
             b.Mass = model.Mass;
             b.BodyType = BodyType.Dynamic;
-            b.Position = new Vector2(0,-model.Height-model.Radius);
-            b.SetCollidesWith(Category.All& ~Category.Cat2);
-            b.SetCollisionCategories(Category.Cat2);
-            b.LinearVelocity = new Vector2(5, -10);
-            b.LinearDamping = 0.1f;
-            b.AngularDamping = 0.1f;
+            b.Position = new Vector2(model.StartX,-model.StartY-model.StartY);
+            b.LinearVelocity = new Vector2((float)Math.Cos( angle ) * model.Velocity, (float)Math.Sin( angle ) * model.Velocity);
+            b.LinearDamping = 0;// 1.1f;
+            b.AngularDamping = 0;// 0.1f;
             b.SetFriction(50);
             return b;
         }
 
-        public override void PreUpdate(GameTime time)
-        {
-            base.PreUpdate(time);
-        }
-
-        public override void PostUpdate(GameTime time)
+        public void Update(GameTime time)
         {
             Trail.Update(time, Body);
-            base.PostUpdate(time);
         }
 
         public void Draw(GameTime time, SpriteBatch batch)
         {
             Trail.Draw(time, batch);
             batch.Draw(Sprite.Texture, ConvertUnits.ToDisplayUnits(Body.Position), null, Color.White, Body.Rotation, Sprite.Origin, 1f, SpriteEffects.None, 0f);
-
         }
     }
 }

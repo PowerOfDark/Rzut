@@ -71,11 +71,20 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Height [m].
+        ///   Looks up a localized string similar to air resistance coefficient.
         /// </summary>
-        public static string EntityViewModel_Height {
+        public static string EntityViewModel_AirResistance {
             get {
-                return ResourceManager.GetString("EntityViewModel_Height", resourceCulture);
+                return ResourceManager.GetString("EntityViewModel_AirResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to coefficient of friction.
+        /// </summary>
+        public static string EntityViewModel_Friction {
+            get {
+                return ResourceManager.GetString("EntityViewModel_Friction", resourceCulture);
             }
         }
         
@@ -94,6 +103,42 @@ namespace Rzut.Interface.Data.i18n.Resources {
         public static string EntityViewModel_Radius {
             get {
                 return ResourceManager.GetString("EntityViewModel_Radius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to clockwise angle [degrees].
+        /// </summary>
+        public static string EntityViewModel_StartAngle {
+            get {
+                return ResourceManager.GetString("EntityViewModel_StartAngle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X-coordinate [m].
+        /// </summary>
+        public static string EntityViewModel_StartX {
+            get {
+                return ResourceManager.GetString("EntityViewModel_StartX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Y-coordinate [m].
+        /// </summary>
+        public static string EntityViewModel_StartY {
+            get {
+                return ResourceManager.GetString("EntityViewModel_StartY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to velocity [m/s].
+        /// </summary>
+        public static string EntityViewModel_Velocity {
+            get {
+                return ResourceManager.GetString("EntityViewModel_Velocity", resourceCulture);
             }
         }
         

@@ -35,7 +35,12 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string RadiusDisplay => Strings.EntityViewModel_Radius;
         public string TabDisplay => Strings.Tab_Ball;
         public string MassDisplay => Strings.EntityViewModel_Mass;
-        public string HeightDisplay => Strings.EntityViewModel_Height;
+        public string StartXDisplay => Strings.EntityViewModel_StartX;
+        public string StartYDisplay => Strings.EntityViewModel_StartY;
+        public string StartAngleDisplay => Strings.EntityViewModel_StartAngle;
+        public string VelocityDisplay => Strings.EntityViewModel_Velocity;
+        public string FrictionDisplay => Strings.EntityViewModel_Friction;
+        public string AirResistanceDisplay => Strings.EntityViewModel_AirResistance;
 
         public UIElement Form { get; set; }
 
@@ -60,8 +65,28 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         {
             Form = form;
             Entities = new ObservableCollection<EntityViewModel>();
-            AddTab(new EntityViewModel(this) { Color = Color.Red, Radius = 1.5f, Mass= 2f,  Height = 50f });
-            AddTab(new EntityViewModel(this) { Color = Color.Green, Radius = 4f, Mass= 3f , Height = 3f});
+            AddTab(new EntityViewModel(this) {
+                Color = Color.Red,
+                Radius = 1.5f,
+                Mass = 2f,
+                StartY = 60f,
+                StartX = 40f,
+                Velocity = 100f,
+                StartAngle = 270f,
+                Friction = 50f,
+                AirResistance = 10f
+            });
+            AddTab(new EntityViewModel(this) {
+                Color = Color.Green,
+                Radius = 2f,
+                Mass = 3f ,
+                StartY = 60f,
+                StartX = 0f,
+                Velocity = 100f,
+                StartAngle = 90f,
+                Friction = 50f,
+                AirResistance = 10f
+        });
 
             SetActive(Entities.First());
 

@@ -120,14 +120,17 @@
   <data name="Button_Apply" xml:space="preserve">
     <value>Zastosuj</value>
   </data>
-  <data name="EntityViewModel_Height" xml:space="preserve">
-    <value>Wysokość [m]</value>
-  </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
     <value>Masa [kg]</value>
   </data>
   <data name="EntityViewModel_Radius" xml:space="preserve">
     <value>Promień [m]</value>
+  </data>
+  <data name="EntityViewModel_StartX" xml:space="preserve">
+    <value>Współrzędna X [m]</value>
+  </data>
+  <data name="EntityViewModel_StartY" xml:space="preserve">
+    <value>Współrzędna Y [m]</value>
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Wybierz język</value>

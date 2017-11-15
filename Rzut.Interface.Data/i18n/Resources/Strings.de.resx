@@ -120,8 +120,11 @@
   <data name="Button_Apply" xml:space="preserve">
     <value>Bewerben</value>
   </data>
-  <data name="EntityViewModel_Height" xml:space="preserve">
-    <value>Höhe [m]</value>
+  <data name="EntityViewModel_StartX" xml:space="preserve">
+    <value>X-Koordinate [m]</value>
+  </data>
+  <data name="EntityViewModel_StartY" xml:space="preserve">
+    <value>Y-Koordinate [m]</value>
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Wähle eine Sprache</value>

@@ -63,13 +63,53 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBlock e_16;
         
-        private TextBox Height;
+        private TextBox StartY;
         
-        private Grid e_17;
+        private Border e_17;
         
-        private Button e_18;
+        private StackPanel e_18;
         
         private TextBlock e_19;
+        
+        private TextBox StartX;
+        
+        private Border e_20;
+        
+        private StackPanel e_21;
+        
+        private TextBlock e_22;
+        
+        private TextBox StartAngle;
+        
+        private Border e_23;
+        
+        private StackPanel e_24;
+        
+        private TextBlock e_25;
+        
+        private TextBox Velocity;
+        
+        private Border e_26;
+        
+        private StackPanel e_27;
+        
+        private TextBlock e_28;
+        
+        private TextBox Friction;
+        
+        private Border e_29;
+        
+        private StackPanel e_30;
+        
+        private TextBlock e_31;
+        
+        private TextBox AirResistance;
+        
+        private Grid e_32;
+        
+        private Button e_33;
+        
+        private TextBlock e_34;
         
         public DataEntryForm() : 
                 base() {
@@ -242,34 +282,204 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_16.Name = "e_16";
             this.e_16.Margin = new Thickness(10F, 10F, 10F, 10F);
             this.e_16.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            Binding binding_e_16_Text = new Binding("HeightDisplay");
+            Binding binding_e_16_Text = new Binding("StartYDisplay");
             this.e_16.SetBinding(TextBlock.TextProperty, binding_e_16_Text);
-            // Height element
-            this.Height = new TextBox();
-            this.e_15.Children.Add(this.Height);
-            this.Height.Name = "Height";
-            this.Height.Tag = "float";
-            Binding binding_Height_Text = new Binding("ActiveEntity.Height");
-            binding_Height_Text.Mode = BindingMode.TwoWay;
-            binding_Height_Text.StringFormat = "{0:0.00}";
-            this.Height.SetBinding(TextBox.TextProperty, binding_Height_Text);
+            // StartY element
+            this.StartY = new TextBox();
+            this.e_15.Children.Add(this.StartY);
+            this.StartY.Name = "StartY";
+            this.StartY.Tag = "float";
+            Binding binding_StartY_Text = new Binding("ActiveEntity.StartY");
+            binding_StartY_Text.Mode = BindingMode.TwoWay;
+            binding_StartY_Text.StringFormat = "{0:0.00}";
+            this.StartY.SetBinding(TextBox.TextProperty, binding_StartY_Text);
             // e_17 element
-            this.e_17 = new Grid();
-            this.e_0.Children.Add(this.e_17);
+            this.e_17 = new Border();
+            this.e_7.Children.Add(this.e_17);
             this.e_17.Name = "e_17";
-            Grid.SetRow(this.e_17, 3);
+            Style e_17_s = new Style(typeof(Border));
+            Setter e_17_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_17_s.Setters.Add(e_17_s_S_0);
+            Setter e_17_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_17_s.Setters.Add(e_17_s_S_1);
+            Setter e_17_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_17_s.Setters.Add(e_17_s_S_2);
+            this.e_17.Style = e_17_s;
             // e_18 element
-            this.e_18 = new Button();
-            this.e_17.Children.Add(this.e_18);
+            this.e_18 = new StackPanel();
+            this.e_17.Child = this.e_18;
             this.e_18.Name = "e_18";
-            this.e_18.CommandParameter = null;
-            Binding binding_e_18_Command = new Binding("StartSimulation");
-            this.e_18.SetBinding(Button.CommandProperty, binding_e_18_Command);
+            this.e_18.Orientation = Orientation.Horizontal;
             // e_19 element
             this.e_19 = new TextBlock();
-            this.e_18.Content = this.e_19;
+            this.e_18.Children.Add(this.e_19);
             this.e_19.Name = "e_19";
-            this.e_19.Text = "start this shit";
+            this.e_19.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_19.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_19_Text = new Binding("StartXDisplay");
+            this.e_19.SetBinding(TextBlock.TextProperty, binding_e_19_Text);
+            // StartX element
+            this.StartX = new TextBox();
+            this.e_18.Children.Add(this.StartX);
+            this.StartX.Name = "StartX";
+            this.StartX.Tag = "float";
+            Binding binding_StartX_Text = new Binding("ActiveEntity.StartX");
+            binding_StartX_Text.Mode = BindingMode.TwoWay;
+            binding_StartX_Text.StringFormat = "{0:0.00}";
+            this.StartX.SetBinding(TextBox.TextProperty, binding_StartX_Text);
+            // e_20 element
+            this.e_20 = new Border();
+            this.e_7.Children.Add(this.e_20);
+            this.e_20.Name = "e_20";
+            Style e_20_s = new Style(typeof(Border));
+            Setter e_20_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_20_s.Setters.Add(e_20_s_S_0);
+            Setter e_20_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_20_s.Setters.Add(e_20_s_S_1);
+            Setter e_20_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_20_s.Setters.Add(e_20_s_S_2);
+            this.e_20.Style = e_20_s;
+            // e_21 element
+            this.e_21 = new StackPanel();
+            this.e_20.Child = this.e_21;
+            this.e_21.Name = "e_21";
+            this.e_21.Orientation = Orientation.Horizontal;
+            // e_22 element
+            this.e_22 = new TextBlock();
+            this.e_21.Children.Add(this.e_22);
+            this.e_22.Name = "e_22";
+            this.e_22.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_22.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_22_Text = new Binding("StartAngleDisplay");
+            this.e_22.SetBinding(TextBlock.TextProperty, binding_e_22_Text);
+            // StartAngle element
+            this.StartAngle = new TextBox();
+            this.e_21.Children.Add(this.StartAngle);
+            this.StartAngle.Name = "StartAngle";
+            this.StartAngle.Tag = "float";
+            Binding binding_StartAngle_Text = new Binding("ActiveEntity.StartAngle");
+            binding_StartAngle_Text.Mode = BindingMode.TwoWay;
+            binding_StartAngle_Text.StringFormat = "{0:0}";
+            this.StartAngle.SetBinding(TextBox.TextProperty, binding_StartAngle_Text);
+            // e_23 element
+            this.e_23 = new Border();
+            this.e_7.Children.Add(this.e_23);
+            this.e_23.Name = "e_23";
+            Style e_23_s = new Style(typeof(Border));
+            Setter e_23_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_23_s.Setters.Add(e_23_s_S_0);
+            Setter e_23_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_23_s.Setters.Add(e_23_s_S_1);
+            Setter e_23_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_23_s.Setters.Add(e_23_s_S_2);
+            this.e_23.Style = e_23_s;
+            // e_24 element
+            this.e_24 = new StackPanel();
+            this.e_23.Child = this.e_24;
+            this.e_24.Name = "e_24";
+            this.e_24.Orientation = Orientation.Horizontal;
+            // e_25 element
+            this.e_25 = new TextBlock();
+            this.e_24.Children.Add(this.e_25);
+            this.e_25.Name = "e_25";
+            this.e_25.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_25.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_25_Text = new Binding("VelocityDisplay");
+            this.e_25.SetBinding(TextBlock.TextProperty, binding_e_25_Text);
+            // Velocity element
+            this.Velocity = new TextBox();
+            this.e_24.Children.Add(this.Velocity);
+            this.Velocity.Name = "Velocity";
+            this.Velocity.Tag = "float";
+            Binding binding_Velocity_Text = new Binding("ActiveEntity.Velocity");
+            binding_Velocity_Text.Mode = BindingMode.TwoWay;
+            binding_Velocity_Text.StringFormat = "{0:0.00}";
+            this.Velocity.SetBinding(TextBox.TextProperty, binding_Velocity_Text);
+            // e_26 element
+            this.e_26 = new Border();
+            this.e_7.Children.Add(this.e_26);
+            this.e_26.Name = "e_26";
+            Style e_26_s = new Style(typeof(Border));
+            Setter e_26_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_26_s.Setters.Add(e_26_s_S_0);
+            Setter e_26_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_26_s.Setters.Add(e_26_s_S_1);
+            Setter e_26_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_26_s.Setters.Add(e_26_s_S_2);
+            this.e_26.Style = e_26_s;
+            // e_27 element
+            this.e_27 = new StackPanel();
+            this.e_26.Child = this.e_27;
+            this.e_27.Name = "e_27";
+            this.e_27.Orientation = Orientation.Horizontal;
+            // e_28 element
+            this.e_28 = new TextBlock();
+            this.e_27.Children.Add(this.e_28);
+            this.e_28.Name = "e_28";
+            this.e_28.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_28.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_28_Text = new Binding("FrictionDisplay");
+            this.e_28.SetBinding(TextBlock.TextProperty, binding_e_28_Text);
+            // Friction element
+            this.Friction = new TextBox();
+            this.e_27.Children.Add(this.Friction);
+            this.Friction.Name = "Friction";
+            this.Friction.Tag = "float";
+            Binding binding_Friction_Text = new Binding("ActiveEntity.Friction");
+            binding_Friction_Text.Mode = BindingMode.TwoWay;
+            binding_Friction_Text.StringFormat = "{0:0.00}";
+            this.Friction.SetBinding(TextBox.TextProperty, binding_Friction_Text);
+            // e_29 element
+            this.e_29 = new Border();
+            this.e_7.Children.Add(this.e_29);
+            this.e_29.Name = "e_29";
+            Style e_29_s = new Style(typeof(Border));
+            Setter e_29_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_29_s.Setters.Add(e_29_s_S_0);
+            Setter e_29_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_29_s.Setters.Add(e_29_s_S_1);
+            Setter e_29_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_29_s.Setters.Add(e_29_s_S_2);
+            this.e_29.Style = e_29_s;
+            // e_30 element
+            this.e_30 = new StackPanel();
+            this.e_29.Child = this.e_30;
+            this.e_30.Name = "e_30";
+            this.e_30.Orientation = Orientation.Horizontal;
+            // e_31 element
+            this.e_31 = new TextBlock();
+            this.e_30.Children.Add(this.e_31);
+            this.e_31.Name = "e_31";
+            this.e_31.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_31.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_31_Text = new Binding("AirResistanceDisplay");
+            this.e_31.SetBinding(TextBlock.TextProperty, binding_e_31_Text);
+            // AirResistance element
+            this.AirResistance = new TextBox();
+            this.e_30.Children.Add(this.AirResistance);
+            this.AirResistance.Name = "AirResistance";
+            this.AirResistance.Tag = "float";
+            Binding binding_AirResistance_Text = new Binding("ActiveEntity.AirResistance");
+            binding_AirResistance_Text.Mode = BindingMode.TwoWay;
+            binding_AirResistance_Text.StringFormat = "{0:0.00}";
+            this.AirResistance.SetBinding(TextBox.TextProperty, binding_AirResistance_Text);
+            // e_32 element
+            this.e_32 = new Grid();
+            this.e_0.Children.Add(this.e_32);
+            this.e_32.Name = "e_32";
+            Grid.SetRow(this.e_32, 3);
+            // e_33 element
+            this.e_33 = new Button();
+            this.e_32.Children.Add(this.e_33);
+            this.e_33.Name = "e_33";
+            this.e_33.CommandParameter = null;
+            Binding binding_e_33_Command = new Binding("StartSimulation");
+            this.e_33.SetBinding(Button.CommandProperty, binding_e_33_Command);
+            // e_34 element
+            this.e_34 = new TextBlock();
+            this.e_33.Content = this.e_34;
+            this.e_34.Name = "e_34";
+            this.e_34.Text = "start this shit";
         }
         
         private static void InitializeElementResources(UIElement elem) {

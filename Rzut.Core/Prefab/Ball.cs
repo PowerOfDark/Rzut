@@ -31,17 +31,14 @@ namespace Rzut.Core.Prefab
 
         public static Body CreateBody(World world, EntityViewModel model)
         {
-            var b = world.CreateCircle(model.Radius, 1f);
+            var b = world.CreateCircle(model.Radius, 1f, default(Vector2), BodyType.Dynamic);
             float angle = (float)(Math.PI / 180) * (model.StartAngle - 90) % 360 ;
             b.SetCollidesWith(Category.All & ~Category.Cat2);
             b.SetCollisionCategories(Category.Cat2);
             b.Mass = model.Mass;
-            b.BodyType = BodyType.Dynamic;
             b.Position = new Vector2(model.StartX,-model.StartY-model.StartY);
             b.LinearVelocity = new Vector2((float)Math.Cos( angle ) * model.Velocity, (float)Math.Sin( angle ) * model.Velocity);
-            b.LinearDamping = 0;// 1.1f;
-            b.AngularDamping = 0;// 0.1f;
-            b.SetFriction(50);
+
             return b;
         }
 

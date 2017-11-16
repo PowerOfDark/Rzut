@@ -21,7 +21,8 @@ namespace Rzut.Interface.Data.ViewModels.RzutOverlay
         public virtual Vector2 StartPosition { get => _startPosition; set { if (_startPosition != value) SetProperty(ref _startPosition, value); } }
 
         public string LinearVelocityDisplay => Strings.Body_LinearVelocity;
-        public string LinearVelocity => string.Format(Strings.Overlay_LinearVelocity, Body.LinearVelocity.X, Body.LinearVelocity.Y);
+        public string LinearVelocity => string.Format(Strings.Overlay_LinearVelocity, Body.LinearVelocity.Length());
+        public string LinearVelocityDetails => string.Format(Strings.Overlay_LinearVelocityDetails, Body.LinearVelocity.X, Body.LinearVelocity.Y);
         public string AngularVelocity => Body.AngularVelocity.ToString("0.00");
         public string Distance => (Body.Position - StartPosition).ToString();
 
@@ -31,6 +32,7 @@ namespace Rzut.Interface.Data.ViewModels.RzutOverlay
         public virtual void Update(GameTime time)
         {
             RaisePropertyChanged(nameof(LinearVelocity));
+            RaisePropertyChanged(nameof(LinearVelocityDetails));
         }
     }
 }

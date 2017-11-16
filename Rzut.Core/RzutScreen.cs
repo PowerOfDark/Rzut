@@ -101,9 +101,10 @@ namespace Rzut.Core
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var body = (e.AddedItems[0] as Ball).Body;
-            Camera.Position = Camera.ConvertWorldToScreen(body.Position);
+            Camera.Position = body.Position;
             Camera.TrackingBody = body;
             Camera.Jump2Target();
+            
 
         }
 

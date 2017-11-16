@@ -181,15 +181,6 @@ namespace Rzut.Interface.Data.i18n.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        public static string Overlay_AngularVelocity {
-            get {
-                return ResourceManager.GetString("Overlay_AngularVelocity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
         public static string Overlay_Distance {
             get {
                 return ResourceManager.GetString("Overlay_Distance", resourceCulture);
@@ -197,11 +188,20 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X: {0:0.00} m/s | Y: {1:0.00} m/s.
+        ///   Looks up a localized string similar to {0:00} m/s.
         /// </summary>
         public static string Overlay_LinearVelocity {
             get {
                 return ResourceManager.GetString("Overlay_LinearVelocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X: {0:0.00} m/s | Y: {1:0.00} m/s.
+        /// </summary>
+        public static string Overlay_LinearVelocityDetails {
+            get {
+                return ResourceManager.GetString("Overlay_LinearVelocityDetails", resourceCulture);
             }
         }
         

@@ -331,8 +331,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 rotDelta /= Math.Abs(rotDelta);
             }
 
-            _currentPosition += 100f * delta * inertia * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            _currentRotation += 80f * rotDelta * rotInertia * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            _currentPosition += 1000f * delta * inertia * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            _currentRotation += 800f * rotDelta * rotInertia * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             SetView();
         }

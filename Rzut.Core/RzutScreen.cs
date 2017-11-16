@@ -13,6 +13,8 @@ using EmptyKeys.UserInterface.Generated;
 using System.Collections.ObjectModel;
 using Rzut.Interface.Data.ViewModels.RzutOverlay;
 using EmptyKeys.UserInterface;
+using EmptyKeys.UserInterface.Controls;
+using EmptyKeys.UserInterface.Media;
 
 namespace Rzut.Core
 {
@@ -23,8 +25,8 @@ namespace Rzut.Core
         private Sprite _rectangleSprite;
         public DataEntryContext DataEntryContext { get; set; }
         public static SpriteFont DetailsFont { get; set; }
-        
         public RzutOverlay Overlay { get; set; }
+        public ListBox List { get; set; }
 
 
         #region IDemoScreen Members
@@ -91,7 +93,18 @@ namespace Rzut.Core
             Overlay = new RzutOverlay() { DataContext = this };
             FontManager.Instance.LoadFonts(ScreenManager.Content, "UI/");
             ImageManager.Instance.LoadImages(ScreenManager.Content, "UI/");
+            List = VisualTreeHelper.Instance.FindElementByName(Overlay, "list") as ListBox;
+            List.SelectionChanged += List_SelectionChanged;
             _rectangleSprite = new Sprite(ScreenManager.Content.Load<Texture2D>("Materials/kamil"));
+        }
+
+        private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var body = (e.AddedItems[0] as Ball).Body;
+            Camera.Position = Camera.ConvertWorldToScreen(body.Position);
+            Camera.TrackingBody = body;
+            Camera.Jump2Target();
+
         }
 
         public override void Draw(GameTime gameTime)

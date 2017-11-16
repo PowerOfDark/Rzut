@@ -24,7 +24,7 @@
                     <RowDefinition Height="0.9*"/>
                     <RowDefinition Height="0.1*"/>
                 </Grid.RowDefinitions>
-                <ListBox Grid.Row="0" ItemsSource="{Binding Balls}" Name="list">
+                <ListBox Grid.Row="0" ItemsSource="{Binding Balls}" SelectedIndex="0" Name="list">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Border BorderThickness="2" BorderBrush="Black">

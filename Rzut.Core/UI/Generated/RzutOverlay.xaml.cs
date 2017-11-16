@@ -33,7 +33,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private Grid e_2;
         
-        private ListBox details;
+        private ListBox list;
         
         private TextBlock e_7;
         
@@ -86,15 +86,16 @@ namespace EmptyKeys.UserInterface.Generated {
             RowDefinition row_e_2_1 = new RowDefinition();
             row_e_2_1.Height = new GridLength(0.1F, GridUnitType.Star);
             this.e_2.RowDefinitions.Add(row_e_2_1);
-            // details element
-            this.details = new ListBox();
-            this.e_2.Children.Add(this.details);
-            this.details.Name = "details";
-            Func<UIElement, UIElement> details_dtFunc = details_dtMethod;
-            this.details.ItemTemplate = new DataTemplate(details_dtFunc);
-            Grid.SetRow(this.details, 0);
-            Binding binding_details_ItemsSource = new Binding("Balls");
-            this.details.SetBinding(ListBox.ItemsSourceProperty, binding_details_ItemsSource);
+            // list element
+            this.list = new ListBox();
+            this.e_2.Children.Add(this.list);
+            this.list.Name = "list";
+            Func<UIElement, UIElement> list_dtFunc = list_dtMethod;
+            this.list.ItemTemplate = new DataTemplate(list_dtFunc);
+            this.list.SelectedIndex = -1;
+            Grid.SetRow(this.list, 0);
+            Binding binding_list_ItemsSource = new Binding("Balls");
+            this.list.SetBinding(ListBox.ItemsSourceProperty, binding_list_ItemsSource);
             // e_7 element
             this.e_7 = new TextBlock();
             this.e_2.Children.Add(this.e_7);
@@ -105,7 +106,7 @@ namespace EmptyKeys.UserInterface.Generated {
             FontManager.Instance.AddFont("Segoe UI", 13F, FontStyle.Regular, "Segoe_UI_9.75_Regular");
         }
         
-        private static UIElement details_dtMethod(UIElement parent) {
+        private static UIElement list_dtMethod(UIElement parent) {
             // e_3 element
             Border e_3 = new Border();
             e_3.Parent = parent;

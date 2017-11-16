@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Body_LinearVelocity" xml:space="preserve">
+    <value>Prędkość liniowa</value>
+  </data>
+  <data name="Body_Position" xml:space="preserve">
+    <value>Pozycja</value>
+  </data>
   <data name="Button_Apply" xml:space="preserve">
     <value>Zastosuj</value>
+  </data>
+  <data name="EntityViewModel_AirResistance" xml:space="preserve">
+    <value>Współczynnik oporu powietrza</value>
+  </data>
+  <data name="EntityViewModel_AngularDrag" xml:space="preserve">
+    <value>Współczynnik oporu obrotu</value>
+  </data>
+  <data name="EntityViewModel_Friction" xml:space="preserve">
+    <value>Tarcie</value>
+  </data>
+  <data name="EntityViewModel_GravitationalAcceleration" xml:space="preserve">
+    <value>Przyspieszenie [m/s^2]</value>
   </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
     <value>Masa [kg]</value>
@@ -126,17 +144,26 @@
   <data name="EntityViewModel_Radius" xml:space="preserve">
     <value>Promień [m]</value>
   </data>
+  <data name="EntityViewModel_StartAngle" xml:space="preserve">
+    <value>Kąt startowy [stopnie]</value>
+  </data>
   <data name="EntityViewModel_StartX" xml:space="preserve">
     <value>Współrzędna X [m]</value>
   </data>
   <data name="EntityViewModel_StartY" xml:space="preserve">
     <value>Współrzędna Y [m]</value>
   </data>
+  <data name="EntityViewModel_Velocity" xml:space="preserve">
+    <value>Prędkość liniowa [m/s]</value>
+  </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Wybierz język</value>
   </data>
   <data name="Header_Title" xml:space="preserve">
     <value>Symulator rzutu piłką</value>
+  </data>
+  <data name="Tab_Ball" xml:space="preserve">
+    <value>Piłka {0}</value>
   </data>
   <data name="Validation_Range_float" xml:space="preserve">
     <value>{0} musi być pomiędzy {1:0.00} i {2:0.00}</value>

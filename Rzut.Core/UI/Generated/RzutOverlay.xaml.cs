@@ -72,7 +72,7 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_0.Children.Add(this.e_1);
             this.e_1.Name = "e_1";
             this.e_1.BorderBrush = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            this.e_1.BorderThickness = new Thickness(4F, 4F, 4F, 4F);
+            this.e_1.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
             Grid.SetColumn(this.e_1, 1);
             // e_2 element
             this.e_2 = new Grid();

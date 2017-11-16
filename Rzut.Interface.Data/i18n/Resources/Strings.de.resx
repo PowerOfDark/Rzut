@@ -117,8 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Body_LinearVelocity" xml:space="preserve">
+    <value>Lineargeschwindigkeit</value>
+  </data>
+  <data name="Body_Position" xml:space="preserve">
+    <value>Lage</value>
+  </data>
   <data name="Button_Apply" xml:space="preserve">
     <value>Bewerben</value>
+  </data>
+  <data name="EntityViewModel_AirResistance" xml:space="preserve">
+    <value>Luftwiderstand</value>
+  </data>
+  <data name="EntityViewModel_AngularDrag" xml:space="preserve">
+    <value>Winkelwiderstand</value>
+  </data>
+  <data name="EntityViewModel_Friction" xml:space="preserve">
+    <value>Reibung</value>
+  </data>
+  <data name="EntityViewModel_GravitationalAcceleration" xml:space="preserve">
+    <value>Schwerkraftbeschleunigung</value>
+  </data>
+  <data name="EntityViewModel_Mass" xml:space="preserve">
+    <value>Masse</value>
+  </data>
+  <data name="EntityViewModel_Radius" xml:space="preserve">
+    <value>Halbmesser</value>
+  </data>
+  <data name="EntityViewModel_StartAngle" xml:space="preserve">
+    <value>Startwinkel (im Uhrzeigersinn)</value>
   </data>
   <data name="EntityViewModel_StartX" xml:space="preserve">
     <value>X-Koordinate [m]</value>
@@ -126,10 +153,22 @@
   <data name="EntityViewModel_StartY" xml:space="preserve">
     <value>Y-Koordinate [m]</value>
   </data>
+  <data name="EntityViewModel_Velocity" xml:space="preserve">
+    <value>Geschwindigkeit [m/s]</value>
+  </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Wähle eine Sprache</value>
   </data>
   <data name="Header_Title" xml:space="preserve">
     <value>Ballwurfsimulator</value>
+  </data>
+  <data name="Tab_Ball" xml:space="preserve">
+    <value>Ball {0}</value>
+  </data>
+  <data name="Validation_Range_float" xml:space="preserve">
+    <value>{0} muss zwischen {1:0.00} und {2:0.00} liegen</value>
+  </data>
+  <data name="Validation_Range_int" xml:space="preserve">
+    <value>{0} muss zwischen {1:0.N0} und {2:0.N0} liegen</value>
   </data>
 </root>

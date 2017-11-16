@@ -46,9 +46,15 @@ namespace Rzut.Core.Prefab
         {
             var area = (float)(Math.PI * Data.Radius * Data.Radius);
             Body.ApplyForce(new Vector2(0, Body.Mass * 10));
-            Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area);
+            if (Data.AirResistance > float.Epsilon)
+            {
+                Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area);
+            }
 
-            Body.ApplyTorque(-Body.Inertia / Body.Mass * area * Body.AngularVelocity * Data.AngularDrag);
+            if (Data.AngularDrag > float.Epsilon)
+            {
+                Body.ApplyTorque(-Body.Inertia / Body.Mass * area * Body.AngularVelocity * Data.AngularDrag);
+            }
 
             Trail.Update(time, Body);
             base.Update(time);

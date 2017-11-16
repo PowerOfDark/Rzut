@@ -24,24 +24,18 @@
                     <RowDefinition Height="0.9*"/>
                     <RowDefinition Height="0.1*"/>
                 </Grid.RowDefinitions>
-                <ScrollViewer Grid.Row="0">
-                    <ItemsControl ItemsSource="{Binding Balls}" Name="details">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border BorderThickness="2" BorderBrush="{Binding Data.ColorBrush}">
-                                    <StackPanel Orientation="Vertical">
-                                        <TextBlock FontSize="20" Text="{Binding LinearVelocity}"/>
-                                 </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
+                <ListBox Grid.Row="0" ItemsSource="{Binding Balls}" Name="list">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="2" BorderBrush="Black">
+                                <StackPanel Orientation="Vertical" Background="{Binding Data.ColorBrush}">
+                                    <TextBlock FontSize="20" Text="{Binding LinearVelocityDisplay}"/>
+                                    <TextBlock FontSize="13" Text="{Binding LinearVelocity}"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
                 <TextBlock Grid.Row="1">Tutaj będą przyciski xd</TextBlock>
         </Grid>
         </Border>

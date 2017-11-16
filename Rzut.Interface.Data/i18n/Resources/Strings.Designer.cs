@@ -62,6 +62,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Linear velocity.
+        /// </summary>
+        public static string Body_LinearVelocity {
+            get {
+                return ResourceManager.GetString("Body_LinearVelocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Button_Apply {
@@ -166,6 +175,42 @@ namespace Rzut.Interface.Data.i18n.Resources {
         public static string Header_Title {
             get {
                 return ResourceManager.GetString("Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Overlay_AngularVelocity {
+            get {
+                return ResourceManager.GetString("Overlay_AngularVelocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Overlay_Distance {
+            get {
+                return ResourceManager.GetString("Overlay_Distance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X: {0:0.00} m/s | Y: {1:0.00} m/s.
+        /// </summary>
+        public static string Overlay_LinearVelocity {
+            get {
+                return ResourceManager.GetString("Overlay_LinearVelocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Overlay_Position {
+            get {
+                return ResourceManager.GetString("Overlay_Position", resourceCulture);
             }
         }
         

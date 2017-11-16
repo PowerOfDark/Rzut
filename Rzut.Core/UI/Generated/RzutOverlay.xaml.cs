@@ -33,11 +33,9 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private Grid e_2;
         
-        private ScrollViewer e_3;
+        private ListBox details;
         
-        private ItemsControl details;
-        
-        private TextBlock e_8;
+        private TextBlock e_7;
         
         public RzutOverlay() : 
                 base() {
@@ -88,61 +86,54 @@ namespace EmptyKeys.UserInterface.Generated {
             RowDefinition row_e_2_1 = new RowDefinition();
             row_e_2_1.Height = new GridLength(0.1F, GridUnitType.Star);
             this.e_2.RowDefinitions.Add(row_e_2_1);
-            // e_3 element
-            this.e_3 = new ScrollViewer();
-            this.e_2.Children.Add(this.e_3);
-            this.e_3.Name = "e_3";
-            Grid.SetRow(this.e_3, 0);
             // details element
-            this.details = new ItemsControl();
-            this.e_3.Content = this.details;
+            this.details = new ListBox();
+            this.e_2.Children.Add(this.details);
             this.details.Name = "details";
-            Func<UIElement, UIElement> details_iptFunc = details_iptMethod;
-            ControlTemplate details_ipt = new ControlTemplate(details_iptFunc);
-            this.details.ItemsPanel = details_ipt;
             Func<UIElement, UIElement> details_dtFunc = details_dtMethod;
             this.details.ItemTemplate = new DataTemplate(details_dtFunc);
+            Grid.SetRow(this.details, 0);
             Binding binding_details_ItemsSource = new Binding("Balls");
-            this.details.SetBinding(ItemsControl.ItemsSourceProperty, binding_details_ItemsSource);
-            // e_8 element
-            this.e_8 = new TextBlock();
-            this.e_2.Children.Add(this.e_8);
-            this.e_8.Name = "e_8";
-            this.e_8.Text = "Tutaj będą przyciski xd";
-            Grid.SetRow(this.e_8, 1);
+            this.details.SetBinding(ListBox.ItemsSourceProperty, binding_details_ItemsSource);
+            // e_7 element
+            this.e_7 = new TextBlock();
+            this.e_2.Children.Add(this.e_7);
+            this.e_7.Name = "e_7";
+            this.e_7.Text = "Tutaj będą przyciski xd";
+            Grid.SetRow(this.e_7, 1);
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
-        }
-        
-        private static UIElement details_iptMethod(UIElement parent) {
-            // e_4 element
-            StackPanel e_4 = new StackPanel();
-            e_4.Parent = parent;
-            e_4.Name = "e_4";
-            e_4.IsItemsHost = true;
-            return e_4;
+            FontManager.Instance.AddFont("Segoe UI", 13F, FontStyle.Regular, "Segoe_UI_9.75_Regular");
         }
         
         private static UIElement details_dtMethod(UIElement parent) {
+            // e_3 element
+            Border e_3 = new Border();
+            e_3.Parent = parent;
+            e_3.Name = "e_3";
+            e_3.BorderBrush = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            e_3.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
+            // e_4 element
+            StackPanel e_4 = new StackPanel();
+            e_3.Child = e_4;
+            e_4.Name = "e_4";
+            e_4.Orientation = Orientation.Vertical;
+            Binding binding_e_4_Background = new Binding("Data.ColorBrush");
+            e_4.SetBinding(StackPanel.BackgroundProperty, binding_e_4_Background);
             // e_5 element
-            Border e_5 = new Border();
-            e_5.Parent = parent;
+            TextBlock e_5 = new TextBlock();
+            e_4.Children.Add(e_5);
             e_5.Name = "e_5";
-            e_5.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
-            Binding binding_e_5_BorderBrush = new Binding("Data.ColorBrush");
-            e_5.SetBinding(Border.BorderBrushProperty, binding_e_5_BorderBrush);
+            e_5.FontSize = 20F;
+            Binding binding_e_5_Text = new Binding("LinearVelocityDisplay");
+            e_5.SetBinding(TextBlock.TextProperty, binding_e_5_Text);
             // e_6 element
-            StackPanel e_6 = new StackPanel();
-            e_5.Child = e_6;
+            TextBlock e_6 = new TextBlock();
+            e_4.Children.Add(e_6);
             e_6.Name = "e_6";
-            e_6.Orientation = Orientation.Vertical;
-            // e_7 element
-            TextBlock e_7 = new TextBlock();
-            e_6.Children.Add(e_7);
-            e_7.Name = "e_7";
-            e_7.FontSize = 20F;
-            Binding binding_e_7_Text = new Binding("LinearVelocity");
-            e_7.SetBinding(TextBlock.TextProperty, binding_e_7_Text);
-            return e_5;
+            e_6.FontSize = 13F;
+            Binding binding_e_6_Text = new Binding("LinearVelocity");
+            e_6.SetBinding(TextBlock.TextProperty, binding_e_6_Text);
+            return e_3;
         }
     }
 }

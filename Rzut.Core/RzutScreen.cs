@@ -91,7 +91,6 @@ namespace Rzut.Core
             Overlay = new RzutOverlay() { DataContext = this };
             FontManager.Instance.LoadFonts(ScreenManager.Content, "UI/");
             ImageManager.Instance.LoadImages(ScreenManager.Content, "UI/");
-
             _rectangleSprite = new Sprite(ScreenManager.Content.Load<Texture2D>("Materials/kamil"));
         }
 
@@ -101,8 +100,6 @@ namespace Rzut.Core
             foreach(var ball in Balls)
             {
                 ball.Draw(gameTime, ScreenManager.SpriteBatch);
-                base.DebugView.DrawString(Camera.ConvertWorldToScreen(ball.Body.Position), 
-                    $"Vx: {ball.Body.LinearVelocity.X}\nVy:{ball.Body.LinearVelocity.Y}\nX,Y: {ConvertUnits.ToDisplayUnits(ball.Body.Position)}");
             }
             ScreenManager.SpriteBatch.End();
 
@@ -126,6 +123,7 @@ namespace Rzut.Core
             }
             Overlay.UpdateInput(gameTime.ElapsedGameTime.TotalMilliseconds);
             Overlay.UpdateLayout(gameTime.ElapsedGameTime.TotalMilliseconds);
+
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
 

@@ -65,7 +65,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _friction;//UNUSED!1!!!!111 TODO make actual friction
         public float Friction { get => _friction; set => SetProperty(ref _friction, value); }
 
-        private float _airResistance;//Unused
+        private float _airResistance;
         public float AirResistance { get => _airResistance; set => SetProperty(ref _airResistance, value); }
 
         private float _angularDrag;

@@ -45,7 +45,7 @@ namespace Rzut.Core.Prefab
         public override void Update(GameTime time)
         {
             var area = (float)(Math.PI * Data.Radius * Data.Radius);
-            Body.ApplyForce(new Vector2(0, Body.Mass * 10));
+            Body.ApplyForce(new Vector2(0, Body.Mass * Data.GravitationalAcceleration));
             if (Data.AirResistance > float.Epsilon)
             {
                 Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area);

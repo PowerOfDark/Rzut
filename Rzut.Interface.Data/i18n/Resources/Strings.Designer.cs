@@ -107,6 +107,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acceleration [m/s^2].
+        /// </summary>
+        public static string EntityViewModel_GravitationalAcceleration {
+            get {
+                return ResourceManager.GetString("EntityViewModel_GravitationalAcceleration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mass [kg].
         /// </summary>
         public static string EntityViewModel_Mass {
@@ -152,7 +161,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to velocity [m/s].
+        ///   Looks up a localized string similar to Velocity [m/s].
         /// </summary>
         public static string EntityViewModel_Velocity {
             get {

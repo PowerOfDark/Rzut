@@ -71,6 +71,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _angularDrag;
         public float AngularDrag { get => _angularDrag; set => SetProperty(ref _angularDrag, value); }
 
+        private float _gravitationalAcceleration;
+        public float GravitationalAcceleration { get => _gravitationalAcceleration; set => SetProperty(ref _gravitationalAcceleration, value); }
 
         public EntityViewModel(IViewModelCollection context) : base(context)
         {
@@ -108,6 +110,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                     break;
                 case nameof(AngularDrag):
                     Validation.ValidateRange(this, t => t.AngularDrag, 0, 1, errors, "float");
+                    break;
+                case nameof(GravitationalAcceleration):
+                    Validation.ValidateRange(this, t => t.GravitationalAcceleration, 0, 1000, errors, "float");
                     break;
                 default:
                     break;

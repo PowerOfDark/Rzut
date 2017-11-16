@@ -42,6 +42,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string FrictionDisplay => Strings.EntityViewModel_Friction;
         public string AirResistanceDisplay => Strings.EntityViewModel_AirResistance;
         public string AngularDragDisplay => Strings.EntityViewModel_AngularDrag;
+        public string GravitationalAccelerationDisplay => Strings.EntityViewModel_GravitationalAcceleration;
 
         public UIElement Form { get; set; }
 
@@ -77,7 +78,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 StartAngle = 270f,
                 Friction = 50f,
                 AirResistance = 0.10f,
-                AngularDrag = 0.10f
+                AngularDrag = 0.10f,
+                GravitationalAcceleration = 10
             });
 
             AddTab(new EntityViewModel(this)
@@ -91,7 +93,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 StartAngle = 90f,
                 Friction = 50f,
                 AirResistance = 0.10f,
-                AngularDrag = 0.10f
+                AngularDrag = 0.10f,
+                GravitationalAcceleration = 10
             });
 
             SetActive(Entities.First());

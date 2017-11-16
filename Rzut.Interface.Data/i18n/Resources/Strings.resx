@@ -132,6 +132,9 @@
   <data name="EntityViewModel_Friction" xml:space="preserve">
     <value>Friction</value>
   </data>
+  <data name="EntityViewModel_GravitationalAcceleration" xml:space="preserve">
+    <value>Acceleration [m/s^2]</value>
+  </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
     <value>Mass [kg]</value>
   </data>
@@ -148,7 +151,7 @@
     <value>Y-coordinate [m]</value>
   </data>
   <data name="EntityViewModel_Velocity" xml:space="preserve">
-    <value>velocity [m/s]</value>
+    <value>Velocity [m/s]</value>
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Choose language</value>

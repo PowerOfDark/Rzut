@@ -113,11 +113,19 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBox AngularDrag;
         
-        private Grid e_35;
+        private Border e_35;
         
-        private Button e_36;
+        private StackPanel e_36;
         
         private TextBlock e_37;
+        
+        private TextBox GravitationalAcceleration;
+        
+        private Grid e_38;
+        
+        private Button e_39;
+        
+        private TextBlock e_40;
         
         public DataEntryForm() : 
                 base() {
@@ -506,22 +514,56 @@ namespace EmptyKeys.UserInterface.Generated {
             binding_AngularDrag_Text.StringFormat = "{0:0.00}";
             this.AngularDrag.SetBinding(TextBox.TextProperty, binding_AngularDrag_Text);
             // e_35 element
-            this.e_35 = new Grid();
-            this.e_0.Children.Add(this.e_35);
+            this.e_35 = new Border();
+            this.e_7.Children.Add(this.e_35);
             this.e_35.Name = "e_35";
-            Grid.SetRow(this.e_35, 3);
+            Style e_35_s = new Style(typeof(Border));
+            Setter e_35_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_35_s.Setters.Add(e_35_s_S_0);
+            Setter e_35_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_35_s.Setters.Add(e_35_s_S_1);
+            Setter e_35_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_35_s.Setters.Add(e_35_s_S_2);
+            this.e_35.Style = e_35_s;
             // e_36 element
-            this.e_36 = new Button();
-            this.e_35.Children.Add(this.e_36);
+            this.e_36 = new StackPanel();
+            this.e_35.Child = this.e_36;
             this.e_36.Name = "e_36";
-            this.e_36.CommandParameter = null;
-            Binding binding_e_36_Command = new Binding("StartSimulation");
-            this.e_36.SetBinding(Button.CommandProperty, binding_e_36_Command);
+            this.e_36.Orientation = Orientation.Horizontal;
             // e_37 element
             this.e_37 = new TextBlock();
-            this.e_36.Content = this.e_37;
+            this.e_36.Children.Add(this.e_37);
             this.e_37.Name = "e_37";
-            this.e_37.Text = "start this shit";
+            this.e_37.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_37.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_37_Text = new Binding("GravitationalAccelerationDisplay");
+            this.e_37.SetBinding(TextBlock.TextProperty, binding_e_37_Text);
+            // GravitationalAcceleration element
+            this.GravitationalAcceleration = new TextBox();
+            this.e_36.Children.Add(this.GravitationalAcceleration);
+            this.GravitationalAcceleration.Name = "GravitationalAcceleration";
+            this.GravitationalAcceleration.Tag = "float";
+            Binding binding_GravitationalAcceleration_Text = new Binding("ActiveEntity.GravitationalAcceleration");
+            binding_GravitationalAcceleration_Text.Mode = BindingMode.TwoWay;
+            binding_GravitationalAcceleration_Text.StringFormat = "{0:0.00}";
+            this.GravitationalAcceleration.SetBinding(TextBox.TextProperty, binding_GravitationalAcceleration_Text);
+            // e_38 element
+            this.e_38 = new Grid();
+            this.e_0.Children.Add(this.e_38);
+            this.e_38.Name = "e_38";
+            Grid.SetRow(this.e_38, 3);
+            // e_39 element
+            this.e_39 = new Button();
+            this.e_38.Children.Add(this.e_39);
+            this.e_39.Name = "e_39";
+            this.e_39.CommandParameter = null;
+            Binding binding_e_39_Command = new Binding("StartSimulation");
+            this.e_39.SetBinding(Button.CommandProperty, binding_e_39_Command);
+            // e_40 element
+            this.e_40 = new TextBlock();
+            this.e_39.Content = this.e_40;
+            this.e_40.Name = "e_40";
+            this.e_40.Text = "start this shit";
         }
         
         private static void InitializeElementResources(UIElement elem) {

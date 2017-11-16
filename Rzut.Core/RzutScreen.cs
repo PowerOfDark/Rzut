@@ -83,7 +83,7 @@ namespace Rzut.Core
                 //ball.Body.Position = new Vector2(i, -(++i * 100 + 20));
             }
          
-            Camera.Position = Camera.ConvertWorldToScreen(Camera.TrackingBody.Position);
+            Camera.Position = ConvertUnits.ToDisplayUnits(Camera.TrackingBody.Position);
             Camera.Jump2Target();
             Camera.EnablePositionTracking = true;
             Camera.MinPosition = new Vector2(float.MinValue, float.MinValue);
@@ -101,7 +101,7 @@ namespace Rzut.Core
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var body = (e.AddedItems[0] as Ball).Body;
-            Camera.Position = body.Position;
+            Camera.Position = ConvertUnits.ToDisplayUnits(body.Position);
             Camera.TrackingBody = body;
             Camera.Jump2Target();
             

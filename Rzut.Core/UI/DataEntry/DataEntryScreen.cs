@@ -3,10 +3,12 @@ using EmptyKeys.UserInterface.Controls;
 using EmptyKeys.UserInterface.Data;
 using EmptyKeys.UserInterface.Generated;
 using EmptyKeys.UserInterface.Media;
+using EmptyKeys.UserInterface.Media.Imaging;
 using EmptyKeys.UserInterface.Shapes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rzut.Core.Prefab;
 using Rzut.Interface.Data.i18n;
 using Rzut.Interface.Data.UI;
 using Rzut.Interface.Data.ViewModels.DataEntry;
@@ -16,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using tainicom.Aether.Physics2D.Samples.DrawingSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace Rzut.Core.UI.DataEntry
@@ -28,10 +31,24 @@ namespace Rzut.Core.UI.DataEntry
         ListBox Colors;
         Button Add;
         Button Remove;
+        EmptyKeys.UserInterface.Shapes.Rectangle Preview;
+
+        public readonly Dictionary<Color, Sprite> Previews = new Dictionary<Color, Sprite>();
+
 
         public override void Draw(GameTime gameTime)
         {
             Form.Draw(gameTime.ElapsedGameTime.TotalMilliseconds);
+            if(Colors.SelectedIndex != -1 && Colors.Items.Any())
+            {
+                var color = new Color((Colors.SelectedItem as SolidColorBrush).Color.PackedValue);
+                ScreenManager.SpriteBatch.Begin();
+                var txt = Previews[color];
+                var p = Preview.VisualPosition;
+                var s = Preview.Width;
+                ScreenManager.SpriteBatch.Draw(txt.Texture, new Vector2(p.X, p.Y), null, Color.White, 0f, Vector2.Zero, s/txt.Texture.Width, SpriteEffects.None, 0);
+                ScreenManager.SpriteBatch.End();
+            }
             base.Draw(gameTime);
         }
 
@@ -94,6 +111,14 @@ namespace Rzut.Core.UI.DataEntry
             Remove = (Button)VisualTreeHelper.Instance.FindElementByName(Form, "remove");
             Remove.Click += Remove_Click;
 
+            Preview = (EmptyKeys.UserInterface.Shapes.Rectangle)VisualTreeHelper.Instance.FindElementByName(Form, "preview");
+
+            foreach (var color in Context.AvailableColors)
+            {
+                var texture = Ball.CreateTexture(16, color, ScreenManager.Assets);
+                Previews.Add(color, texture);
+            }
+
             Context.SimulationStarted += Context_SimulationStarted;
 
         }
@@ -105,7 +130,7 @@ namespace Rzut.Core.UI.DataEntry
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            if (!Colors.Items.Any()) return;
+            if (!Colors.Items.Any() || Colors.SelectedIndex == -1) return;
             
             var entity = Context.ActiveEntity.Clone();
             entity.Color = new Color((Colors.Items[Colors.SelectedIndex] as SolidColorBrush).Color.PackedValue);

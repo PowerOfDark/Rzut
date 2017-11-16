@@ -26,7 +26,7 @@ namespace Rzut.Core.Prefab
             Data = data;
             Body = CreateBody(world, data);
             Sprite = new Sprite(creator.CircleTexture(data.Radius, material, data.Color, 1f));
-            Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius/2f, material, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
+            Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius/2f, MaterialType.Blank, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
         }
 
         public static Body CreateBody(World world, EntityViewModel model)
@@ -40,6 +40,11 @@ namespace Rzut.Core.Prefab
             b.LinearVelocity = new Vector2((float)Math.Cos( angle ) * model.Velocity, (float)Math.Sin( angle ) * model.Velocity);
 
             return b;
+        }
+
+        public static Sprite CreateTexture(float radius, Color color, AssetCreator creator)
+        {
+            return new Sprite(creator.CircleTexture(radius, MaterialType.Squares, color, 1f));
         }
 
         public override void Update(GameTime time)

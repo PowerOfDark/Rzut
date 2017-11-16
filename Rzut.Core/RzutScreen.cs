@@ -131,13 +131,15 @@ namespace Rzut.Core
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
-            foreach (var ball in Balls)
+            if (!otherScreenHasFocus && !coveredByOtherScreen)
             {
-                ball.Update(gameTime);
+                foreach (var ball in Balls)
+                {
+                    ball.Update(gameTime);
+                }
+                Overlay.UpdateInput(gameTime.ElapsedGameTime.TotalMilliseconds);
+                Overlay.UpdateLayout(gameTime.ElapsedGameTime.TotalMilliseconds);
             }
-            Overlay.UpdateInput(gameTime.ElapsedGameTime.TotalMilliseconds);
-            Overlay.UpdateLayout(gameTime.ElapsedGameTime.TotalMilliseconds);
-
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
 

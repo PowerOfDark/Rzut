@@ -117,8 +117,12 @@
                 <RowDefinition Height="0.7*"/>
                 <RowDefinition Height="0.3*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" HorizontalAlignment="Center">
-                <StackPanel Orientation="Horizontal">
+            <Grid Grid.Row="0" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
                     <ListBox ItemsSource="{Binding AvailableBrushes}" SelectedIndex="0" Name="color">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -142,8 +146,12 @@
                             <TextBlock FontSize="20" Text="{Binding ButtonRemoveDisplay}"/>
                         </Button>
                     </Grid>
+                    <Grid>
+                        <Rectangle Width="128" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="Aqua" Name="preview">
+                        </Rectangle>
+                    </Grid>
                 </StackPanel>
-            </StackPanel>
+            </Grid>
             <Button Grid.Row="1" Command="{Binding StartSimulation}" CommandParameter="{x:Null}" HorizontalAlignment="Right">
                 <TextBlock Text="start this shit"/>
             </Button>

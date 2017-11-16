@@ -115,7 +115,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private Grid e_35;
         
-        private StackPanel e_36;
+        private Grid e_36;
         
         private StackPanel e_37;
         
@@ -129,9 +129,13 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBlock e_44;
         
-        private Button e_45;
+        private Grid e_45;
         
-        private TextBlock e_46;
+        private Rectangle preview;
+        
+        private Button e_46;
+        
+        private TextBlock e_47;
         
         public DataEntryForm() : 
                 base() {
@@ -531,16 +535,23 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_35.RowDefinitions.Add(row_e_35_1);
             Grid.SetRow(this.e_35, 3);
             // e_36 element
-            this.e_36 = new StackPanel();
+            this.e_36 = new Grid();
             this.e_35.Children.Add(this.e_36);
             this.e_36.Name = "e_36";
             this.e_36.HorizontalAlignment = HorizontalAlignment.Center;
+            ColumnDefinition col_e_36_0 = new ColumnDefinition();
+            col_e_36_0.Width = new GridLength(1F, GridUnitType.Star);
+            this.e_36.ColumnDefinitions.Add(col_e_36_0);
+            ColumnDefinition col_e_36_1 = new ColumnDefinition();
+            col_e_36_1.Width = new GridLength(1F, GridUnitType.Star);
+            this.e_36.ColumnDefinitions.Add(col_e_36_1);
             Grid.SetRow(this.e_36, 0);
             // e_37 element
             this.e_37 = new StackPanel();
             this.e_36.Children.Add(this.e_37);
             this.e_37.Name = "e_37";
             this.e_37.Orientation = Orientation.Horizontal;
+            Grid.SetColumn(this.e_37, 0);
             // color element
             this.color = new ListBox();
             this.e_37.Children.Add(this.color);
@@ -587,19 +598,32 @@ namespace EmptyKeys.UserInterface.Generated {
             Binding binding_e_44_Text = new Binding("ButtonRemoveDisplay");
             this.e_44.SetBinding(TextBlock.TextProperty, binding_e_44_Text);
             // e_45 element
-            this.e_45 = new Button();
-            this.e_35.Children.Add(this.e_45);
+            this.e_45 = new Grid();
+            this.e_37.Children.Add(this.e_45);
             this.e_45.Name = "e_45";
-            this.e_45.HorizontalAlignment = HorizontalAlignment.Right;
-            this.e_45.CommandParameter = null;
-            Grid.SetRow(this.e_45, 1);
-            Binding binding_e_45_Command = new Binding("StartSimulation");
-            this.e_45.SetBinding(Button.CommandProperty, binding_e_45_Command);
+            // preview element
+            this.preview = new Rectangle();
+            this.e_45.Children.Add(this.preview);
+            this.preview.Name = "preview";
+            this.preview.Width = 128F;
+            this.preview.HorizontalAlignment = HorizontalAlignment.Stretch;
+            this.preview.VerticalAlignment = VerticalAlignment.Stretch;
+            this.preview.Stretch = Stretch.UniformToFill;
+            this.preview.Fill = new SolidColorBrush(new ColorW(0, 255, 255, 255));
             // e_46 element
-            this.e_46 = new TextBlock();
-            this.e_45.Content = this.e_46;
+            this.e_46 = new Button();
+            this.e_35.Children.Add(this.e_46);
             this.e_46.Name = "e_46";
-            this.e_46.Text = "start this shit";
+            this.e_46.HorizontalAlignment = HorizontalAlignment.Right;
+            this.e_46.CommandParameter = null;
+            Grid.SetRow(this.e_46, 1);
+            Binding binding_e_46_Command = new Binding("StartSimulation");
+            this.e_46.SetBinding(Button.CommandProperty, binding_e_46_Command);
+            // e_47 element
+            this.e_47 = new TextBlock();
+            this.e_46.Content = this.e_47;
+            this.e_47.Name = "e_47";
+            this.e_47.Text = "start this shit";
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
         }
         

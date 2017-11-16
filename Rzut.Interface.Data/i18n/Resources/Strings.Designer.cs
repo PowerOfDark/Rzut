@@ -80,11 +80,29 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Button_Add {
+            get {
+                return ResourceManager.GetString("Button_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Button_Apply {
             get {
                 return ResourceManager.GetString("Button_Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Button_Remove {
+            get {
+                return ResourceManager.GetString("Button_Remove", resourceCulture);
             }
         }
         
@@ -184,6 +202,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         public static string Header_ChooseLanguage {
             get {
                 return ResourceManager.GetString("Header_ChooseLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.
+        /// </summary>
+        public static string Header_Color {
+            get {
+                return ResourceManager.GetString("Header_Color", resourceCulture);
             }
         }
         

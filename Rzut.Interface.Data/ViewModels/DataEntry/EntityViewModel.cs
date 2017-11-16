@@ -62,8 +62,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _velocity;
         public float Velocity { get => _velocity; set => SetProperty(ref _velocity, value); }
 
-        private float _friction;//UNUSED!1!!!!111 TODO make actual friction
-        public float Friction { get => _friction; set => SetProperty(ref _friction, value); }
+        /*private float _friction;//UNUSED!1!!!!111 TODO make actual friction
+        public float Friction { get => _friction; set => SetProperty(ref _friction, value); }*/
 
         private float _airResistance;
         public float AirResistance { get => _airResistance; set => SetProperty(ref _airResistance, value); }
@@ -102,9 +102,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 case nameof(Velocity):
                     Validation.ValidateRange(this, t => t.Velocity, 0, int.MaxValue, errors, "float");
                     break;
-                case nameof(Friction):
+                /*case nameof(Friction):
                     Validation.ValidateRange(this, t => t.Friction, 0, int.MaxValue, errors, "float");
-                    break;
+                    break;*/
                 case nameof(AirResistance):
                     Validation.ValidateRange(this, t => t.AirResistance, 0, 1, errors, "float");
                     break;
@@ -120,7 +120,23 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             return errors.Count == 0;
         }
 
-
+        public EntityViewModel Clone()
+        {
+            var e = new EntityViewModel(this.Context);
+            e.AirResistance = this.AirResistance;
+            e.AngularDrag = this.AngularDrag;
+            e.Color = Color;
+            e.ColorBrush = ColorBrush;
+            e.GravitationalAcceleration = GravitationalAcceleration;
+            e.IsActive = IsActive;
+            e.Mass = Mass;
+            e.Radius = Radius;
+            e.StartAngle = StartAngle;
+            e.StartX = StartX;
+            e.StartY = StartY;
+            e.Velocity = Velocity;
+            return e;
+        }
 
         /*private readonly Dictionary<string, ICollection<string>> _validationErrors = 
             new Dictionary<string, ICollection<string>>();

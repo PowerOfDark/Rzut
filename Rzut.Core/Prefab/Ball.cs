@@ -26,7 +26,7 @@ namespace Rzut.Core.Prefab
             Data = data;
             Body = CreateBody(world, data);
             Sprite = new Sprite(creator.CircleTexture(data.Radius, material, data.Color, 1f));
-            Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius, material, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
+            Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius/2f, material, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
         }
 
         public static Body CreateBody(World world, EntityViewModel model)

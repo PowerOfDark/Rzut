@@ -25,6 +25,9 @@ namespace Rzut.Core.UI.DataEntry
         DataEntryForm Form;
         ItemsControl Items;
         DataEntryContext Context;
+        ListBox Colors;
+        Button Add;
+        Button Remove;
 
         public override void Draw(GameTime gameTime)
         {
@@ -68,23 +71,65 @@ namespace Rzut.Core.UI.DataEntry
 
             var elements = new Stack<UIElement>();
             elements.Push(VisualTreeHelper.Instance.FindElementByName(Form, "entityEditor"));
-            while(elements.Any())
+            while (elements.Any())
             {
                 var e = elements.Pop();
                 var binds = BindingOperations.GetAllBindings(e);
                 if (binds.Count == 1)
                 {
-                    if(binds[0].ParentBinding.Converter is SystemConvertConverter && binds[0].Target is TextBox b && b.Tag.ToString() == "float")
+                    if (binds[0].ParentBinding.Converter is SystemConvertConverter && binds[0].Target is TextBox b && b.Tag.ToString() == "float")
                         binds[0].ParentBinding.Converter = new FloatProxyConverter();
                 }
                 var children = VisualTreeHelper.Instance.GetChildren(e);
                 if (children == null) continue;
                 foreach (var c in children)
-                    if(c is UIElement child)
+                    if (c is UIElement child)
                         elements.Push(child);
             }
 
+            Colors = (ListBox)VisualTreeHelper.Instance.FindElementByName(Form, "color");
+            Colors.SelectionChanged += Colors_SelectionChanged;
+            Add = (Button)VisualTreeHelper.Instance.FindElementByName(Form, "add");
+            Add.Click += Add_Click;
+            Remove = (Button)VisualTreeHelper.Instance.FindElementByName(Form, "remove");
+            Remove.Click += Remove_Click;
+
             Context.SimulationStarted += Context_SimulationStarted;
+
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            Context.RemoveTab(Context.ActiveEntity);
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Colors.Items.Any()) return;
+            
+            var entity = Context.ActiveEntity.Clone();
+            entity.Color = new Color((Colors.Items[Colors.SelectedIndex] as SolidColorBrush).Color.PackedValue);
+            Context.AddTab(entity);
+            Context.SetActive(entity);
+            if (Colors.Items.Any())
+            {
+                Colors.SelectedIndex = 0;
+                Add.Background = Colors.Items[0] as SolidColorBrush;
+            }
+            else
+            {
+                Add.Background = new SolidColorBrush(ColorW.Black);
+            }
+
+        }
+
+        private void Colors_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems?.Length > 0)
+            {
+                Context.SelectedBrush= e.AddedItems[0] as SolidColorBrush;
+                Add.Background = e.AddedItems[0] as SolidColorBrush;
+            }
 
         }
 

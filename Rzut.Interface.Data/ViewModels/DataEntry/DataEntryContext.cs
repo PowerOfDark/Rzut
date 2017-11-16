@@ -13,6 +13,7 @@ using EmptyKeys.UserInterface.Controls;
 using System.Diagnostics;
 using static Rzut.Interface.Data.ViewModels.DataEntry.EntityViewModel;
 using EmptyKeys.UserInterface;
+using EmptyKeys.UserInterface.Media;
 
 namespace Rzut.Interface.Data.ViewModels.DataEntry
 {
@@ -29,6 +30,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private ObservableCollection<EntityViewModel> _entities;
         public ObservableCollection<EntityViewModel> Entities { get => _entities; set => SetProperty(ref _entities, value); }
 
+        public ObservableCollection<Color> AvailableColors { get; set; }
+        public ObservableCollection<SolidColorBrush> AvailableBrushes { get; set; }
+
         private EntityViewModel _activeEntity;
         public EntityViewModel ActiveEntity { get => _activeEntity; set => SetProperty(ref _activeEntity, value); }
 
@@ -43,6 +47,12 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string AirResistanceDisplay => Strings.EntityViewModel_AirResistance;
         public string AngularDragDisplay => Strings.EntityViewModel_AngularDrag;
         public string GravitationalAccelerationDisplay => Strings.EntityViewModel_GravitationalAcceleration;
+
+        public string ButtonAddDisplay => Strings.Button_Add;
+        public string ButtonRemoveDisplay => Strings.Button_Remove;
+
+        private SolidColorBrush _selectedBrush;
+        public SolidColorBrush SelectedBrush { get => _selectedBrush; set => SetProperty(ref _selectedBrush, value); }
 
         public UIElement Form { get; set; }
 
@@ -61,10 +71,39 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             //model.Index = LastIndex++;
             model.Context = this;
             Entities.Add(model);
+            var b = ToBrush(model.Color);
+            var i = AvailableBrushes.IndexOf(t => t.Color.PackedValue == b.Color.PackedValue);
+            AvailableBrushes.RemoveAt(i);
+        }
+
+        public static SolidColorBrush ToBrush(Color color)
+        {
+            return new SolidColorBrush(new ColorW(color.R, color.G, color.B));
+        }
+
+        public void RemoveTab(EntityViewModel model)
+        {
+            var brush = ToBrush(model.Color);
+            if (Entities.Count == 1) return;
+            model.TabClicked -= DataEntryContext_TabClicked;
+            
+            model.Context = null;
+            Entities.Remove(model);
+            if (model.IsActive)
+            {
+                SetActive(Entities.First());
+            }
+            AvailableBrushes.Add(brush);
         }
 
         public DataEntryContext(UIElement form) : base(null)
         {
+            AvailableColors = new ObservableCollection<Color>()
+            {
+                Color.SkyBlue, Color.Red, Color.Green, Color.Purple, Color.Orange, Color.Yellow, Color.BlueViolet, Color.Turquoise, Color.Pink, Color.Brown
+            };
+            AvailableBrushes = new ObservableCollection<SolidColorBrush>(AvailableColors.Select(ToBrush));
+
             Form = form;
             Entities = new ObservableCollection<EntityViewModel>();
             AddTab(new EntityViewModel(this)
@@ -76,7 +115,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 StartX = 40f,
                 Velocity = 100f,
                 StartAngle = 270f,
-                Friction = 50f,
+                //Friction = 50f,
                 AirResistance = 0.10f,
                 AngularDrag = 0.10f,
                 GravitationalAcceleration = 10
@@ -91,7 +130,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 StartX = 0f,
                 Velocity = 100f,
                 StartAngle = 90f,
-                Friction = 50f,
+                //Friction = 50f,
                 AirResistance = 0.10f,
                 AngularDrag = 0.10f,
                 GravitationalAcceleration = 10
@@ -102,6 +141,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             StartSimulation = new RelayCommand(t => SimulationStarted?.Invoke(this));
 
         }
+
+
 
         [Obsolete("only for design mode", true)]
         public DataEntryContext() : this(null)

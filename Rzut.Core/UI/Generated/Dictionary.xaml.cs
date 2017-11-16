@@ -169,16 +169,24 @@ namespace EmptyKeys.UserInterface.Generated {
             Storyboard.SetTargetProperty(r_4_s_ET_3_AC_0_SB_TL_0, Button.BorderThicknessProperty);
             r_4_s_ET_3_AC_0_SB.Children.Add(r_4_s_ET_3_AC_0_SB_TL_0);
             this.Add("MyButtonStyle", r_4_s);
+            // Resource - [NakedButton] Style
+            Style r_5_s = new Style(typeof(Button));
+            Func<UIElement, UIElement> r_5_s_S_0_ctFunc = r_5_s_S_0_ctMethod;
+            ControlTemplate r_5_s_S_0_ct = new ControlTemplate(typeof(Button), r_5_s_S_0_ctFunc);
+            Setter r_5_s_S_0 = new Setter(Button.TemplateProperty, r_5_s_S_0_ct);
+            r_5_s.Setters.Add(r_5_s_S_0);
+            this.Add("NakedButton", r_5_s);
             // Resource - [pl] BitmapImage
-            BitmapImage r_5_bm = new BitmapImage();
-            r_5_bm.TextureAsset = "Images/pl";
-            this.Add("pl", r_5_bm);
+            BitmapImage r_6_bm = new BitmapImage();
+            r_6_bm.TextureAsset = "Images/pl";
+            this.Add("pl", r_6_bm);
             // Resource - [Tests] DataTemplate
-            Func<UIElement, UIElement> r_6_dtFunc = r_6_dtMethod;
-            this.Add("Tests", new DataTemplate(r_6_dtFunc));
+            Func<UIElement, UIElement> r_7_dtFunc = r_7_dtMethod;
+            this.Add("Tests", new DataTemplate(r_7_dtFunc));
             ImageManager.Instance.AddImage("Images/de");
             ImageManager.Instance.AddImage("Images/en");
             ImageManager.Instance.AddImage("Images/pl");
+            FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
             FontManager.Instance.AddFont("Segoe UI", 100F, FontStyle.Regular, "Segoe_UI_75_Regular");
         }
         
@@ -203,22 +211,51 @@ namespace EmptyKeys.UserInterface.Generated {
             return e_0;
         }
         
-        private static UIElement r_6_dtMethod(UIElement parent) {
+        private static UIElement r_5_s_S_0_ctMethod(UIElement parent) {
             // e_2 element
             Grid e_2 = new Grid();
             e_2.Parent = parent;
             e_2.Name = "e_2";
+            Binding binding_e_2_Background = new Binding("Background");
+            binding_e_2_Background.Source = parent;
+            e_2.SetBinding(Grid.BackgroundProperty, binding_e_2_Background);
             // e_3 element
-            TextBlock e_3 = new TextBlock();
+            Border e_3 = new Border();
             e_2.Children.Add(e_3);
             e_3.Name = "e_3";
-            e_3.HorizontalAlignment = HorizontalAlignment.Center;
-            e_3.VerticalAlignment = VerticalAlignment.Center;
-            e_3.Text = "whatthefuckman";
-            e_3.FontSize = 100F;
-            Binding binding_e_3_Foreground = new Binding("ColorBrush");
-            e_3.SetBinding(TextBlock.ForegroundProperty, binding_e_3_Foreground);
+            Binding binding_e_3_BorderThickness = new Binding("BorderThickness");
+            binding_e_3_BorderThickness.Source = parent;
+            e_3.SetBinding(Border.BorderThicknessProperty, binding_e_3_BorderThickness);
+            Binding binding_e_3_BorderBrush = new Binding("BorderBrush");
+            binding_e_3_BorderBrush.Source = parent;
+            e_3.SetBinding(Border.BorderBrushProperty, binding_e_3_BorderBrush);
+            // e_4 element
+            TextBlock e_4 = new TextBlock();
+            e_3.Child = e_4;
+            e_4.Name = "e_4";
+            e_4.FontSize = 20F;
+            Binding binding_e_4_Text = new Binding("Tag");
+            binding_e_4_Text.Source = parent;
+            e_4.SetBinding(TextBlock.TextProperty, binding_e_4_Text);
             return e_2;
+        }
+        
+        private static UIElement r_7_dtMethod(UIElement parent) {
+            // e_5 element
+            Grid e_5 = new Grid();
+            e_5.Parent = parent;
+            e_5.Name = "e_5";
+            // e_6 element
+            TextBlock e_6 = new TextBlock();
+            e_5.Children.Add(e_6);
+            e_6.Name = "e_6";
+            e_6.HorizontalAlignment = HorizontalAlignment.Center;
+            e_6.VerticalAlignment = VerticalAlignment.Center;
+            e_6.Text = "whatthefuckman";
+            e_6.FontSize = 100F;
+            Binding binding_e_6_Foreground = new Binding("ColorBrush");
+            e_6.SetBinding(TextBlock.ForegroundProperty, binding_e_6_Foreground);
+            return e_5;
         }
     }
 }

@@ -123,8 +123,14 @@
   <data name="Body_Position" xml:space="preserve">
     <value>Position</value>
   </data>
+  <data name="Button_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
   <data name="Button_Apply" xml:space="preserve">
     <value>Apply</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Remove</value>
   </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
     <value>Air resistance coefficient</value>
@@ -158,6 +164,9 @@
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Choose language</value>
+  </data>
+  <data name="Header_Color" xml:space="preserve">
+    <value>Color</value>
   </data>
   <data name="Header_Title" xml:space="preserve">
     <value>Ball throw simulator</value>

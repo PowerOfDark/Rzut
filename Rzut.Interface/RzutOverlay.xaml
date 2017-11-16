@@ -29,8 +29,17 @@
                         <DataTemplate>
                             <Border BorderThickness="2" BorderBrush="Black">
                                 <StackPanel Orientation="Vertical" Background="{Binding Data.ColorBrush}">
-                                    <TextBlock FontSize="20" Text="{Binding LinearVelocityDisplay}"/>
-                                    <TextBlock FontSize="13" Text="{Binding LinearVelocity}"/>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" FontSize="20" Text="{Binding LinearVelocityDisplay}"/>
+                                        <TextBlock Grid.Column="2" FontSize="20" Text="{Binding LinearVelocity}"/>
+                                        
+                                    </Grid>
+                                    <TextBlock Grid.Row="1" FontSize="16" Text="{Binding LinearVelocityDetails}"/>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>

@@ -73,13 +73,13 @@ namespace Rzut.Core
             base.Initialize();
 
             //var rzut = new RzutScreen();
-            //var menu = new MenuScreen("Ayy lmao");
+            var menu = new MenuScreen("Ayy lmao");
             //menu.AddMenuItem("Daj kamienia", EntryType.Screen, rzut);
-            //menu.AddMenuItem("", EntryType.Separator, null);
-            //menu.AddMenuItem("Exit", EntryType.ExitItem, null);
+            menu.AddMenuItem("", EntryType.Separator, null);
+            menu.AddMenuItem("Exit", EntryType.ExitItem, null);
             ScreenManager.AddScreen(new BackgroundScreen());
-            //ScreenManager.AddScreen(menu);
-            //ScreenManager.AddScreen(new DataEntryScreen());
+            ScreenManager.AddScreen(menu);
+            ScreenManager.AddScreen(new DataEntryScreen());
             ScreenManager.AddScreen(new LanguageSelectionScreen());
         }
 

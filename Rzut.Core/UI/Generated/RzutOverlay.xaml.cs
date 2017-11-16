@@ -35,7 +35,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private ListBox list;
         
-        private TextBlock e_7;
+        private TextBlock e_9;
         
         public RzutOverlay() : 
                 base() {
@@ -96,14 +96,14 @@ namespace EmptyKeys.UserInterface.Generated {
             Grid.SetRow(this.list, 0);
             Binding binding_list_ItemsSource = new Binding("Balls");
             this.list.SetBinding(ListBox.ItemsSourceProperty, binding_list_ItemsSource);
-            // e_7 element
-            this.e_7 = new TextBlock();
-            this.e_2.Children.Add(this.e_7);
-            this.e_7.Name = "e_7";
-            this.e_7.Text = "Tutaj będą przyciski xd";
-            Grid.SetRow(this.e_7, 1);
+            // e_9 element
+            this.e_9 = new TextBlock();
+            this.e_2.Children.Add(this.e_9);
+            this.e_9.Name = "e_9";
+            this.e_9.Text = "Tutaj będą przyciski xd";
+            Grid.SetRow(this.e_9, 1);
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
-            FontManager.Instance.AddFont("Segoe UI", 13F, FontStyle.Regular, "Segoe_UI_9.75_Regular");
+            FontManager.Instance.AddFont("Segoe UI", 16F, FontStyle.Regular, "Segoe_UI_12_Regular");
         }
         
         private static UIElement list_dtMethod(UIElement parent) {
@@ -121,19 +121,42 @@ namespace EmptyKeys.UserInterface.Generated {
             Binding binding_e_4_Background = new Binding("Data.ColorBrush");
             e_4.SetBinding(StackPanel.BackgroundProperty, binding_e_4_Background);
             // e_5 element
-            TextBlock e_5 = new TextBlock();
+            Grid e_5 = new Grid();
             e_4.Children.Add(e_5);
             e_5.Name = "e_5";
-            e_5.FontSize = 20F;
-            Binding binding_e_5_Text = new Binding("LinearVelocityDisplay");
-            e_5.SetBinding(TextBlock.TextProperty, binding_e_5_Text);
+            ColumnDefinition col_e_5_0 = new ColumnDefinition();
+            col_e_5_0.Width = new GridLength(1F, GridUnitType.Auto);
+            e_5.ColumnDefinitions.Add(col_e_5_0);
+            ColumnDefinition col_e_5_1 = new ColumnDefinition();
+            col_e_5_1.Width = new GridLength(1F, GridUnitType.Star);
+            e_5.ColumnDefinitions.Add(col_e_5_1);
+            ColumnDefinition col_e_5_2 = new ColumnDefinition();
+            col_e_5_2.Width = new GridLength(1F, GridUnitType.Auto);
+            e_5.ColumnDefinitions.Add(col_e_5_2);
             // e_6 element
             TextBlock e_6 = new TextBlock();
-            e_4.Children.Add(e_6);
+            e_5.Children.Add(e_6);
             e_6.Name = "e_6";
-            e_6.FontSize = 13F;
-            Binding binding_e_6_Text = new Binding("LinearVelocity");
+            e_6.FontSize = 20F;
+            Grid.SetColumn(e_6, 0);
+            Binding binding_e_6_Text = new Binding("LinearVelocityDisplay");
             e_6.SetBinding(TextBlock.TextProperty, binding_e_6_Text);
+            // e_7 element
+            TextBlock e_7 = new TextBlock();
+            e_5.Children.Add(e_7);
+            e_7.Name = "e_7";
+            e_7.FontSize = 20F;
+            Grid.SetColumn(e_7, 2);
+            Binding binding_e_7_Text = new Binding("LinearVelocity");
+            e_7.SetBinding(TextBlock.TextProperty, binding_e_7_Text);
+            // e_8 element
+            TextBlock e_8 = new TextBlock();
+            e_4.Children.Add(e_8);
+            e_8.Name = "e_8";
+            e_8.FontSize = 16F;
+            Grid.SetRow(e_8, 1);
+            Binding binding_e_8_Text = new Binding("LinearVelocityDetails");
+            e_8.SetBinding(TextBlock.TextProperty, binding_e_8_Text);
             return e_3;
         }
     }

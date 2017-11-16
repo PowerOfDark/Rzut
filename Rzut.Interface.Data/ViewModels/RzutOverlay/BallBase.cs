@@ -25,7 +25,9 @@ namespace Rzut.Interface.Data.ViewModels.RzutOverlay
         public string LinearVelocityDetails => string.Format(Strings.Overlay_LinearVelocityDetails, Body.LinearVelocity.X, Body.LinearVelocity.Y);
         public string AngularVelocity => Body.AngularVelocity.ToString("0.00");
         public string Distance => (Body.Position - StartPosition).ToString();
-
+        public string PositionDisplay => Strings.Body_Position;
+        public string Position => string.Format(Strings.Overlay_Position, Body.Position.X, -Body.Position.Y);
+        
         protected Vector2 _lastVelocity;
         protected int _updateCounter = 0;
 
@@ -33,6 +35,7 @@ namespace Rzut.Interface.Data.ViewModels.RzutOverlay
         {
             RaisePropertyChanged(nameof(LinearVelocity));
             RaisePropertyChanged(nameof(LinearVelocityDetails));
+            RaisePropertyChanged(nameof(Position));
         }
     }
 }

@@ -35,7 +35,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private ListBox list;
         
-        private TextBlock e_9;
+        private TextBlock e_11;
         
         public RzutOverlay() : 
                 base() {
@@ -72,7 +72,7 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_0.Children.Add(this.e_1);
             this.e_1.Name = "e_1";
             this.e_1.BorderBrush = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            this.e_1.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
+            this.e_1.BorderThickness = new Thickness(4F, 4F, 4F, 4F);
             Grid.SetColumn(this.e_1, 1);
             // e_2 element
             this.e_2 = new Grid();
@@ -96,12 +96,12 @@ namespace EmptyKeys.UserInterface.Generated {
             Grid.SetRow(this.list, 0);
             Binding binding_list_ItemsSource = new Binding("Balls");
             this.list.SetBinding(ListBox.ItemsSourceProperty, binding_list_ItemsSource);
-            // e_9 element
-            this.e_9 = new TextBlock();
-            this.e_2.Children.Add(this.e_9);
-            this.e_9.Name = "e_9";
-            this.e_9.Text = "Tutaj będą przyciski xd";
-            Grid.SetRow(this.e_9, 1);
+            // e_11 element
+            this.e_11 = new TextBlock();
+            this.e_2.Children.Add(this.e_11);
+            this.e_11.Name = "e_11";
+            this.e_11.Text = "Tutaj będą przyciski xd";
+            Grid.SetRow(this.e_11, 1);
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
             FontManager.Instance.AddFont("Segoe UI", 16F, FontStyle.Regular, "Segoe_UI_12_Regular");
         }
@@ -157,6 +157,22 @@ namespace EmptyKeys.UserInterface.Generated {
             Grid.SetRow(e_8, 1);
             Binding binding_e_8_Text = new Binding("LinearVelocityDetails");
             e_8.SetBinding(TextBlock.TextProperty, binding_e_8_Text);
+            // e_9 element
+            TextBlock e_9 = new TextBlock();
+            e_4.Children.Add(e_9);
+            e_9.Name = "e_9";
+            e_9.FontSize = 20F;
+            Grid.SetRow(e_9, 2);
+            Binding binding_e_9_Text = new Binding("PositionDisplay");
+            e_9.SetBinding(TextBlock.TextProperty, binding_e_9_Text);
+            // e_10 element
+            TextBlock e_10 = new TextBlock();
+            e_4.Children.Add(e_10);
+            e_10.Name = "e_10";
+            e_10.FontSize = 16F;
+            Grid.SetRow(e_10, 3);
+            Binding binding_e_10_Text = new Binding("Position");
+            e_10.SetBinding(TextBlock.TextProperty, binding_e_10_Text);
             return e_3;
         }
     }

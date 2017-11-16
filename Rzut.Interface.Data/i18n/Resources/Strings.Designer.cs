@@ -71,6 +71,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Position.
+        /// </summary>
+        public static string Body_Position {
+            get {
+                return ResourceManager.GetString("Body_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Button_Apply {
@@ -215,7 +224,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to X: {0:0.00} m | Y: {1:0.00} m.
         /// </summary>
         public static string Overlay_Position {
             get {

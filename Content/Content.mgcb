@@ -436,3 +436,17 @@
 /processorParam:TextureFormat=Compressed
 /build:UI/Segoe_UI_12_Regular.spritefont
 
+#begin UI/Segoe_UI_22.5_Regular.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:UI/Segoe_UI_22.5_Regular.spritefont
+
+#begin UI/Segoe_UI_37.5_Bold.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:UI/Segoe_UI_37.5_Bold.spritefont
+

@@ -106,7 +106,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                     Validation.ValidateRange(this, t => t.StartAngle, 0, 360, errors, "float");
                     break;
                 case nameof(Velocity):
-                    Validation.ValidateRange(this, t => t.Velocity, 0, int.MaxValue, errors, "float");
+                    Validation.ValidateRange(this, t => t.Velocity, 0, 200f, errors, "float");
                     break;
                 /*case nameof(Friction):
                     Validation.ValidateRange(this, t => t.Friction, 0, int.MaxValue, errors, "float");

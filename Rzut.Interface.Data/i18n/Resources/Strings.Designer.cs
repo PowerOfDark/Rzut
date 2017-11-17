@@ -107,7 +107,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Air resistance coefficient.
+        ///   Looks up a localized string similar to Air resistance.
         /// </summary>
         public static string EntityViewModel_AirResistance {
             get {
@@ -116,7 +116,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Angular drag coefficient.
+        ///   Looks up a localized string similar to Angular drag.
         /// </summary>
         public static string EntityViewModel_AngularDrag {
             get {
@@ -224,6 +224,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coefficients.
+        /// </summary>
+        public static string Header_Coefficients {
+            get {
+                return ResourceManager.GetString("Header_Coefficients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color.
         /// </summary>
         public static string Header_Color {
@@ -233,11 +242,29 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Throw parameters.
+        /// </summary>
+        public static string Header_ThrowParameters {
+            get {
+                return ResourceManager.GetString("Header_ThrowParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ball throw simulator.
         /// </summary>
         public static string Header_Title {
             get {
                 return ResourceManager.GetString("Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to World.
+        /// </summary>
+        public static string Header_World {
+            get {
+                return ResourceManager.GetString("Header_World", resourceCulture);
             }
         }
         

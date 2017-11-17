@@ -45,86 +45,107 @@
         </Grid>
         </Border>
         <ScrollViewer Grid.Row="2" Name="entityEditor">
-            <WrapPanel Orientation="Horizontal">
-                
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=RadiusDisplay}"/>
-                        <TextBox Tag="float" x:Name="Radius" Text="{Binding ActiveEntity.Radius, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+            <StackPanel Orientation="Vertical">
+                <GroupBox Style="{StaticResource Group}">
+                    <GroupBox.Header>
+                        <TextBlock Margin="10" Foreground="DimGray" FontSize="50" FontWeight="Bold" Text="{Binding ThrowParametersDisplay}"/>
+                    </GroupBox.Header>
+                    <WrapPanel Orientation="Horizontal">
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=RadiusDisplay}"/>
+                            <TextBox Tag="float" x:Name="Radius" Text="{Binding ActiveEntity.Radius, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=MassDisplay}"/>
-                        <TextBox Tag="float" x:Name="Mass" Text="{Binding ActiveEntity.Mass, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=MassDisplay}"/>
+                            <TextBox Tag="float" x:Name="Mass" Text="{Binding ActiveEntity.Mass, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=StartYDisplay}"/>
-                        <TextBox Tag="float" x:Name="StartY" Text="{Binding ActiveEntity.StartY, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=StartYDisplay}"/>
+                            <TextBox Tag="float" x:Name="StartY" Text="{Binding ActiveEntity.StartY, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=StartXDisplay}"/>
-                        <TextBox Tag="float" x:Name="StartX" Text="{Binding ActiveEntity.StartX, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=StartXDisplay}"/>
+                            <TextBox Tag="float" x:Name="StartX" Text="{Binding ActiveEntity.StartX, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=StartAngleDisplay}"/>
-                        <TextBox Tag="float" x:Name="StartAngle" Text="{Binding ActiveEntity.StartAngle, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0}}"/>
-                    </StackPanel>
-                </Border>
-                
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=VelocityDisplay}"/>
-                        <TextBox Tag="float" x:Name="Velocity" Text="{Binding ActiveEntity.Velocity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=StartAngleDisplay}"/>
+                            <TextBox Tag="float" x:Name="StartAngle" Text="{Binding ActiveEntity.StartAngle, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0}}"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=AngularVelocityDisplay}"/>
-                        <TextBox Tag="float" x:Name="AngularVelocity" Text="{Binding ActiveEntity.AngularVelocity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=VelocityDisplay}"/>
+                            <TextBox Tag="float" x:Name="Velocity" Text="{Binding ActiveEntity.Velocity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=AirResistanceDisplay}"/>
-                        <TextBox Tag="float" x:Name="AirResistance" Text="{Binding ActiveEntity.AirResistance, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=AngularVelocityDisplay}"/>
+                            <TextBox Tag="float" x:Name="AngularVelocity" Text="{Binding ActiveEntity.AngularVelocity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
+                    </WrapPanel>
+                </GroupBox>
+                <GroupBox Style="{StaticResource Group}">
+                    <GroupBox.Header>
+                        <TextBlock Margin="10" Foreground="DimGray" FontSize="50" FontWeight="Bold" Text="{Binding CoefficientsDisplay}"/>
+                    </GroupBox.Header>
+                    <WrapPanel Orientation="Horizontal">
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=RestitutionDisplay}"/>
+                            <TextBox Tag="float" x:Name="Restitution" Text="{Binding ActiveEntity.Restitution, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=AirResistanceDisplay}"/>
+                            <TextBox Tag="float" x:Name="AirResistance" Text="{Binding ActiveEntity.AirResistance, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=AngularDragDisplay}"/>
-                        <TextBox Tag="float" x:Name="AngularDrag" Text="{Binding ActiveEntity.AngularDrag, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
-                
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=GravitationalAccelerationDisplay}"/>
-                        <TextBox Tag="float" x:Name="GravitationalAcceleration" Text="{Binding ActiveEntity.GravitationalAcceleration, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                    <Border Style="{StaticResource InputBorder}">
+                        <StackPanel Style="{StaticResource Panel}">
+                            <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=AngularDragDisplay}"/>
+                            <TextBox Tag="float" x:Name="AngularDrag" Text="{Binding ActiveEntity.AngularDrag, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
+                    </WrapPanel>
+                </GroupBox>
 
-                <Border Style="{StaticResource InputBorder}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=RestitutionDisplay}"/>
-                        <TextBox Tag="float" x:Name="Restitution" Text="{Binding ActiveEntity.Restitution, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
-                    </StackPanel>
-                </Border>
+                <GroupBox Style="{StaticResource Group}">
+                    <GroupBox.Header>
+                        <TextBlock Margin="10" Foreground="DimGray" FontSize="50" FontWeight="Bold" Text="{Binding WorldDisplay}"/>
+                    </GroupBox.Header>
+                    <WrapPanel Orientation="Horizontal" Background="LightGray">
+                        <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=GravitationalAccelerationDisplay}"/>
+                                <TextBox Tag="float" x:Name="GravitationalAcceleration" Text="{Binding ActiveEntity.GravitationalAcceleration, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                            </StackPanel>
+                        </Border>
+                    </WrapPanel>
+                </GroupBox>
 
-            </WrapPanel>
+            </StackPanel>
+
+
+
         </ScrollViewer>
         <Grid Grid.Row="3">
             <Grid.RowDefinitions>
@@ -155,10 +176,10 @@
                             <RowDefinition Height="0.5*"/>
                         </Grid.RowDefinitions>
                         <Button Grid.Row="0" Name="add">
-                            <TextBlock FontSize="20" Text="{Binding ButtonAddDisplay}"/>
+                            <TextBlock FontSize="30" Text="{Binding ButtonAddDisplay}"/>
                         </Button>
                         <Button Grid.Row="1" Name="remove">
-                            <TextBlock FontSize="20" Text="{Binding ButtonRemoveDisplay}"/>
+                            <TextBlock FontSize="30" Text="{Binding ButtonRemoveDisplay}"/>
                         </Button>
                     </Grid>
                     <Grid>

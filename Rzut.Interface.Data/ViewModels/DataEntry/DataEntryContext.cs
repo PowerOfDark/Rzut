@@ -49,6 +49,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string GravitationalAccelerationDisplay => Strings.EntityViewModel_GravitationalAcceleration;
         public string RestitutionDisplay => Strings.EntityViewModel_Restitution;
         public string AngularVelocityDisplay => Strings.EntityViewModel_AngularVelocity;
+        public string ThrowParametersDisplay => Strings.Header_ThrowParameters;
+        public string CoefficientsDisplay => Strings.Header_Coefficients;
+        public string WorldDisplay => Strings.Header_World;
 
         public string ButtonAddDisplay => Strings.Button_Add;
         public string ButtonRemoveDisplay => Strings.Button_Remove;

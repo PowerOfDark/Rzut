@@ -133,10 +133,10 @@
     <value>Remove</value>
   </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
-    <value>Air resistance coefficient</value>
+    <value>Air resistance</value>
   </data>
   <data name="EntityViewModel_AngularDrag" xml:space="preserve">
-    <value>Angular drag coefficient</value>
+    <value>Angular drag</value>
   </data>
   <data name="EntityViewModel_AngularVelocity" xml:space="preserve">
     <value>Angular velocity [rad/s]</value>
@@ -171,11 +171,20 @@
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Choose language</value>
   </data>
+  <data name="Header_Coefficients" xml:space="preserve">
+    <value>Coefficients</value>
+  </data>
   <data name="Header_Color" xml:space="preserve">
     <value>Color</value>
   </data>
+  <data name="Header_ThrowParameters" xml:space="preserve">
+    <value>Throw parameters</value>
+  </data>
   <data name="Header_Title" xml:space="preserve">
     <value>Ball throw simulator</value>
+  </data>
+  <data name="Header_World" xml:space="preserve">
+    <value>World</value>
   </data>
   <data name="Overlay_Distance" xml:space="preserve">
     <value />

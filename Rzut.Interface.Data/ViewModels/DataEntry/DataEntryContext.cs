@@ -52,7 +52,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string ButtonAddDisplay => Strings.Button_Add;
         public string ButtonRemoveDisplay => Strings.Button_Remove;
 
-        private SolidColorBrush _selectedBrush;
+        private bool _enableCollision;
+        public bool EnableCollision { get => _enableCollision; set => SetProperty(ref _enableCollision, value); }
 
         public UIElement Form { get; set; }
 

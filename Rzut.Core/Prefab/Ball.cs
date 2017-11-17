@@ -33,7 +33,10 @@ namespace Rzut.Core.Prefab
         {
             var b = world.CreateCircle(model.Radius, 1f, default(Vector2), BodyType.Dynamic);
             float angle = (float)(Math.PI / 180) * (model.StartAngle - 90) % 360 ;
-            b.SetCollidesWith(Category.All & ~Category.Cat2);
+            if (!(model.Context as DataEntryContext).EnableCollision)
+            {
+                b.SetCollidesWith(Category.All & ~Category.Cat2);
+            }
             b.SetCollisionCategories(Category.Cat2);
             b.Mass = model.Mass;
             b.Position = new Vector2(model.StartX,-model.StartY-model.StartY);

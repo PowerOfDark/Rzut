@@ -158,6 +158,7 @@
                         <Rectangle Width="128" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="preview">
                         </Rectangle>
                     </Grid>
+                    <CheckBox IsChecked="{Binding EnableCollision}"/>
                 </StackPanel>
             </Grid>
             <Button Grid.Row="1" Command="{Binding StartSimulation}" CommandParameter="{x:Null}" HorizontalAlignment="Right">

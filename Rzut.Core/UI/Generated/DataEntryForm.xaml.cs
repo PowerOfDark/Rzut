@@ -143,9 +143,11 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private Rectangle preview;
         
-        private Button e_47;
+        private CheckBox e_47;
         
-        private TextBlock e_48;
+        private Button e_48;
+        
+        private TextBlock e_49;
         
         public DataEntryForm() : 
                 base() {
@@ -652,19 +654,25 @@ namespace EmptyKeys.UserInterface.Generated {
             this.preview.VerticalAlignment = VerticalAlignment.Stretch;
             this.preview.Stretch = Stretch.UniformToFill;
             // e_47 element
-            this.e_47 = new Button();
-            this.e_38.Children.Add(this.e_47);
+            this.e_47 = new CheckBox();
+            this.e_40.Children.Add(this.e_47);
             this.e_47.Name = "e_47";
-            this.e_47.HorizontalAlignment = HorizontalAlignment.Right;
-            this.e_47.CommandParameter = null;
-            Grid.SetRow(this.e_47, 1);
-            Binding binding_e_47_Command = new Binding("StartSimulation");
-            this.e_47.SetBinding(Button.CommandProperty, binding_e_47_Command);
+            Binding binding_e_47_IsChecked = new Binding("EnableCollision");
+            this.e_47.SetBinding(CheckBox.IsCheckedProperty, binding_e_47_IsChecked);
             // e_48 element
-            this.e_48 = new TextBlock();
-            this.e_47.Content = this.e_48;
+            this.e_48 = new Button();
+            this.e_38.Children.Add(this.e_48);
             this.e_48.Name = "e_48";
-            this.e_48.Text = "start this shit";
+            this.e_48.HorizontalAlignment = HorizontalAlignment.Right;
+            this.e_48.CommandParameter = null;
+            Grid.SetRow(this.e_48, 1);
+            Binding binding_e_48_Command = new Binding("StartSimulation");
+            this.e_48.SetBinding(Button.CommandProperty, binding_e_48_Command);
+            // e_49 element
+            this.e_49 = new TextBlock();
+            this.e_48.Content = this.e_49;
+            this.e_49.Name = "e_49";
+            this.e_49.Text = "start this shit";
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
         }
         

@@ -18,7 +18,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
     {
         private const float LogoScreenHeightRatio = 0.25f;
         private const float LogoScreenBorderRatio = 0.0375f;
-        private const float LogoWidthHeightRatio = 1.4f;
+        private const float LogoWidthHeightRatio = 1f;
 
         private Texture2D _backgroundTexture;
         private Rectangle _logoDestination;
@@ -41,11 +41,13 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
             Vector2 logoSize = new Vector2();
-            logoSize.Y = viewport.Height * LogoScreenHeightRatio;
-            logoSize.X = logoSize.Y * LogoWidthHeightRatio;
+            var h = viewport.Height;
+            var x = (viewport.Width - h) / 2;
+            logoSize.X = h;//viewport.Height * LogoScreenHeightRatio;
+            logoSize.Y = h;// logoSize.Y * LogoWidthHeightRatio;
 
-            float border = viewport.Height * LogoScreenBorderRatio;
-            Vector2 logoPosition = new Vector2(viewport.Width - border - logoSize.X, viewport.Height - border - logoSize.Y);
+            //float border = viewport.Height * LogoScreenBorderRatio;
+            Vector2 logoPosition = new Vector2(x, 0);
             _logoDestination = new Rectangle((int)logoPosition.X, (int)logoPosition.Y, (int)logoSize.X, (int)logoSize.Y);
             _viewport = viewport.Bounds;
         }
@@ -69,7 +71,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             ScreenManager.SpriteBatch.Begin();
             ScreenManager.SpriteBatch.Draw(_backgroundTexture, _viewport, Color.White);
-            ScreenManager.SpriteBatch.Draw(_logoTexture, _logoDestination, Color.White * 0.6f);
+            ScreenManager.SpriteBatch.Draw(_logoTexture, _logoDestination, Color.White * 0.15f);
             ScreenManager.SpriteBatch.End();
         }
     }

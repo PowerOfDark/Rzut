@@ -45,7 +45,6 @@ namespace Rzut.Core
             _nativeScreenWidth = _graphics.PreferredBackBufferWidth;
             _nativeScreenHeight = _graphics.PreferredBackBufferHeight;
             _graphics.SynchronizeWithVerticalRetrace = false;
-            _graphics.PreferMultiSampling = Platform != Platform.Desktop;
             _graphics.GraphicsProfile = GraphicsProfile.Reach;
             //_graphics.GraphicsProfile = Microsoft.Xna.Framework.Graphics.GraphicsProfile.Reach;
 

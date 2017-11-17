@@ -77,6 +77,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _restitution;
         public float Restitution { get => _restitution; set => SetProperty(ref _restitution, value); }
 
+        private float _angularVelocity;
+        public float AngularVelocity { get => _angularVelocity; set => SetProperty(ref _angularVelocity, value); }
+
         public EntityViewModel(IViewModelCollection context) : base(context)
         {
             TabClickDown = new RelayCommand(t => TabClicked?.Invoke(this));
@@ -91,13 +94,13 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                     Validation.ValidateRange(this, t => t.Radius, 0.01f, 100f, errors, "float");
                     break;
                 case nameof(Mass):
-                    Validation.ValidateRange(this, t => t.Mass, 0.01f, int.MaxValue, errors, "float");
+                    Validation.ValidateRange(this, t => t.Mass, 0.01f, 1_000_000, errors, "float");
                     break;
                 case nameof(StartY):
-                    Validation.ValidateRange(this, t => t.StartY, 0.01f, 10000.0f, errors, "float");
+                    Validation.ValidateRange(this, t => t.StartY, 0f, 10000.0f, errors, "float");
                     break;
                 case nameof(StartX):
-                    Validation.ValidateRange(this, t => t.StartX, int.MinValue, int.MaxValue, errors, "float");
+                    Validation.ValidateRange(this, t => t.StartX, -10_000, 10_000, errors, "float");
                     break;
                 case nameof(StartAngle):
                     Validation.ValidateRange(this, t => t.StartAngle, 0, 360, errors, "float");

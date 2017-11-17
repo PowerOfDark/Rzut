@@ -41,6 +41,7 @@ namespace Rzut.Core.Prefab
             b.Mass = model.Mass;
             b.Position = new Vector2(model.StartX,-model.StartY-model.StartY);
             b.LinearVelocity = new Vector2((float)Math.Cos( angle ) * model.Velocity, (float)Math.Sin( angle ) * model.Velocity);
+            b.AngularVelocity = model.AngularVelocity;
             b.SetRestitution(model.Restitution);
             return b;
         }

@@ -125,6 +125,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Angular velocity [rad/s].
+        /// </summary>
+        public static string EntityViewModel_AngularVelocity {
+            get {
+                return ResourceManager.GetString("EntityViewModel_AngularVelocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Friction.
         /// </summary>
         public static string EntityViewModel_Friction {

@@ -95,7 +95,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBlock e_28;
         
-        private TextBox AirResistance;
+        private TextBox AngularVelocity;
         
         private Border e_29;
         
@@ -103,7 +103,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBlock e_31;
         
-        private TextBox AngularDrag;
+        private TextBox AirResistance;
         
         private Border e_32;
         
@@ -111,7 +111,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBlock e_34;
         
-        private TextBox GravitationalAcceleration;
+        private TextBox AngularDrag;
         
         private Border e_35;
         
@@ -119,35 +119,43 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBlock e_37;
         
+        private TextBox GravitationalAcceleration;
+        
+        private Border e_38;
+        
+        private StackPanel e_39;
+        
+        private TextBlock e_40;
+        
         private TextBox Restitution;
         
-        private Grid e_38;
+        private Grid e_41;
         
-        private Grid e_39;
+        private Grid e_42;
         
-        private StackPanel e_40;
+        private StackPanel e_43;
         
         private ListBox color;
         
-        private Grid e_43;
+        private Grid e_46;
         
         private Button add;
         
-        private TextBlock e_44;
+        private TextBlock e_47;
         
         private Button remove;
         
-        private TextBlock e_45;
+        private TextBlock e_48;
         
-        private Grid e_46;
+        private Grid e_49;
         
         private Rectangle preview;
         
-        private CheckBox e_47;
+        private CheckBox e_50;
         
-        private Button e_48;
+        private Button e_51;
         
-        private TextBlock e_49;
+        private TextBlock e_52;
         
         public DataEntryForm() : 
                 base() {
@@ -456,17 +464,17 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_28.Name = "e_28";
             this.e_28.Margin = new Thickness(10F, 10F, 10F, 10F);
             this.e_28.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            Binding binding_e_28_Text = new Binding("AirResistanceDisplay");
+            Binding binding_e_28_Text = new Binding("AngularVelocityDisplay");
             this.e_28.SetBinding(TextBlock.TextProperty, binding_e_28_Text);
-            // AirResistance element
-            this.AirResistance = new TextBox();
-            this.e_27.Children.Add(this.AirResistance);
-            this.AirResistance.Name = "AirResistance";
-            this.AirResistance.Tag = "float";
-            Binding binding_AirResistance_Text = new Binding("ActiveEntity.AirResistance");
-            binding_AirResistance_Text.Mode = BindingMode.TwoWay;
-            binding_AirResistance_Text.StringFormat = "{0:0.00}";
-            this.AirResistance.SetBinding(TextBox.TextProperty, binding_AirResistance_Text);
+            // AngularVelocity element
+            this.AngularVelocity = new TextBox();
+            this.e_27.Children.Add(this.AngularVelocity);
+            this.AngularVelocity.Name = "AngularVelocity";
+            this.AngularVelocity.Tag = "float";
+            Binding binding_AngularVelocity_Text = new Binding("ActiveEntity.AngularVelocity");
+            binding_AngularVelocity_Text.Mode = BindingMode.TwoWay;
+            binding_AngularVelocity_Text.StringFormat = "{0:0.00}";
+            this.AngularVelocity.SetBinding(TextBox.TextProperty, binding_AngularVelocity_Text);
             // e_29 element
             this.e_29 = new Border();
             this.e_7.Children.Add(this.e_29);
@@ -490,17 +498,17 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_31.Name = "e_31";
             this.e_31.Margin = new Thickness(10F, 10F, 10F, 10F);
             this.e_31.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            Binding binding_e_31_Text = new Binding("AngularDragDisplay");
+            Binding binding_e_31_Text = new Binding("AirResistanceDisplay");
             this.e_31.SetBinding(TextBlock.TextProperty, binding_e_31_Text);
-            // AngularDrag element
-            this.AngularDrag = new TextBox();
-            this.e_30.Children.Add(this.AngularDrag);
-            this.AngularDrag.Name = "AngularDrag";
-            this.AngularDrag.Tag = "float";
-            Binding binding_AngularDrag_Text = new Binding("ActiveEntity.AngularDrag");
-            binding_AngularDrag_Text.Mode = BindingMode.TwoWay;
-            binding_AngularDrag_Text.StringFormat = "{0:0.00}";
-            this.AngularDrag.SetBinding(TextBox.TextProperty, binding_AngularDrag_Text);
+            // AirResistance element
+            this.AirResistance = new TextBox();
+            this.e_30.Children.Add(this.AirResistance);
+            this.AirResistance.Name = "AirResistance";
+            this.AirResistance.Tag = "float";
+            Binding binding_AirResistance_Text = new Binding("ActiveEntity.AirResistance");
+            binding_AirResistance_Text.Mode = BindingMode.TwoWay;
+            binding_AirResistance_Text.StringFormat = "{0:0.00}";
+            this.AirResistance.SetBinding(TextBox.TextProperty, binding_AirResistance_Text);
             // e_32 element
             this.e_32 = new Border();
             this.e_7.Children.Add(this.e_32);
@@ -524,17 +532,17 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_34.Name = "e_34";
             this.e_34.Margin = new Thickness(10F, 10F, 10F, 10F);
             this.e_34.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            Binding binding_e_34_Text = new Binding("GravitationalAccelerationDisplay");
+            Binding binding_e_34_Text = new Binding("AngularDragDisplay");
             this.e_34.SetBinding(TextBlock.TextProperty, binding_e_34_Text);
-            // GravitationalAcceleration element
-            this.GravitationalAcceleration = new TextBox();
-            this.e_33.Children.Add(this.GravitationalAcceleration);
-            this.GravitationalAcceleration.Name = "GravitationalAcceleration";
-            this.GravitationalAcceleration.Tag = "float";
-            Binding binding_GravitationalAcceleration_Text = new Binding("ActiveEntity.GravitationalAcceleration");
-            binding_GravitationalAcceleration_Text.Mode = BindingMode.TwoWay;
-            binding_GravitationalAcceleration_Text.StringFormat = "{0:0.00}";
-            this.GravitationalAcceleration.SetBinding(TextBox.TextProperty, binding_GravitationalAcceleration_Text);
+            // AngularDrag element
+            this.AngularDrag = new TextBox();
+            this.e_33.Children.Add(this.AngularDrag);
+            this.AngularDrag.Name = "AngularDrag";
+            this.AngularDrag.Tag = "float";
+            Binding binding_AngularDrag_Text = new Binding("ActiveEntity.AngularDrag");
+            binding_AngularDrag_Text.Mode = BindingMode.TwoWay;
+            binding_AngularDrag_Text.StringFormat = "{0:0.00}";
+            this.AngularDrag.SetBinding(TextBox.TextProperty, binding_AngularDrag_Text);
             // e_35 element
             this.e_35 = new Border();
             this.e_7.Children.Add(this.e_35);
@@ -558,121 +566,155 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_37.Name = "e_37";
             this.e_37.Margin = new Thickness(10F, 10F, 10F, 10F);
             this.e_37.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            Binding binding_e_37_Text = new Binding("RestitutionDisplay");
+            Binding binding_e_37_Text = new Binding("GravitationalAccelerationDisplay");
             this.e_37.SetBinding(TextBlock.TextProperty, binding_e_37_Text);
+            // GravitationalAcceleration element
+            this.GravitationalAcceleration = new TextBox();
+            this.e_36.Children.Add(this.GravitationalAcceleration);
+            this.GravitationalAcceleration.Name = "GravitationalAcceleration";
+            this.GravitationalAcceleration.Tag = "float";
+            Binding binding_GravitationalAcceleration_Text = new Binding("ActiveEntity.GravitationalAcceleration");
+            binding_GravitationalAcceleration_Text.Mode = BindingMode.TwoWay;
+            binding_GravitationalAcceleration_Text.StringFormat = "{0:0.00}";
+            this.GravitationalAcceleration.SetBinding(TextBox.TextProperty, binding_GravitationalAcceleration_Text);
+            // e_38 element
+            this.e_38 = new Border();
+            this.e_7.Children.Add(this.e_38);
+            this.e_38.Name = "e_38";
+            Style e_38_s = new Style(typeof(Border));
+            Setter e_38_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_38_s.Setters.Add(e_38_s_S_0);
+            Setter e_38_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_38_s.Setters.Add(e_38_s_S_1);
+            Setter e_38_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_38_s.Setters.Add(e_38_s_S_2);
+            this.e_38.Style = e_38_s;
+            // e_39 element
+            this.e_39 = new StackPanel();
+            this.e_38.Child = this.e_39;
+            this.e_39.Name = "e_39";
+            this.e_39.Orientation = Orientation.Horizontal;
+            // e_40 element
+            this.e_40 = new TextBlock();
+            this.e_39.Children.Add(this.e_40);
+            this.e_40.Name = "e_40";
+            this.e_40.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_40.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_40_Text = new Binding("RestitutionDisplay");
+            this.e_40.SetBinding(TextBlock.TextProperty, binding_e_40_Text);
             // Restitution element
             this.Restitution = new TextBox();
-            this.e_36.Children.Add(this.Restitution);
+            this.e_39.Children.Add(this.Restitution);
             this.Restitution.Name = "Restitution";
             this.Restitution.Tag = "float";
             Binding binding_Restitution_Text = new Binding("ActiveEntity.Restitution");
             binding_Restitution_Text.Mode = BindingMode.TwoWay;
             binding_Restitution_Text.StringFormat = "{0:0.00}";
             this.Restitution.SetBinding(TextBox.TextProperty, binding_Restitution_Text);
-            // e_38 element
-            this.e_38 = new Grid();
-            this.e_0.Children.Add(this.e_38);
-            this.e_38.Name = "e_38";
-            RowDefinition row_e_38_0 = new RowDefinition();
-            row_e_38_0.Height = new GridLength(0.7F, GridUnitType.Star);
-            this.e_38.RowDefinitions.Add(row_e_38_0);
-            RowDefinition row_e_38_1 = new RowDefinition();
-            row_e_38_1.Height = new GridLength(0.3F, GridUnitType.Star);
-            this.e_38.RowDefinitions.Add(row_e_38_1);
-            Grid.SetRow(this.e_38, 3);
-            // e_39 element
-            this.e_39 = new Grid();
-            this.e_38.Children.Add(this.e_39);
-            this.e_39.Name = "e_39";
-            this.e_39.HorizontalAlignment = HorizontalAlignment.Center;
-            ColumnDefinition col_e_39_0 = new ColumnDefinition();
-            col_e_39_0.Width = new GridLength(1F, GridUnitType.Star);
-            this.e_39.ColumnDefinitions.Add(col_e_39_0);
-            ColumnDefinition col_e_39_1 = new ColumnDefinition();
-            col_e_39_1.Width = new GridLength(1F, GridUnitType.Star);
-            this.e_39.ColumnDefinitions.Add(col_e_39_1);
-            Grid.SetRow(this.e_39, 0);
-            // e_40 element
-            this.e_40 = new StackPanel();
-            this.e_39.Children.Add(this.e_40);
-            this.e_40.Name = "e_40";
-            this.e_40.Orientation = Orientation.Horizontal;
-            Grid.SetColumn(this.e_40, 0);
+            // e_41 element
+            this.e_41 = new Grid();
+            this.e_0.Children.Add(this.e_41);
+            this.e_41.Name = "e_41";
+            RowDefinition row_e_41_0 = new RowDefinition();
+            row_e_41_0.Height = new GridLength(0.7F, GridUnitType.Star);
+            this.e_41.RowDefinitions.Add(row_e_41_0);
+            RowDefinition row_e_41_1 = new RowDefinition();
+            row_e_41_1.Height = new GridLength(0.3F, GridUnitType.Star);
+            this.e_41.RowDefinitions.Add(row_e_41_1);
+            Grid.SetRow(this.e_41, 3);
+            // e_42 element
+            this.e_42 = new Grid();
+            this.e_41.Children.Add(this.e_42);
+            this.e_42.Name = "e_42";
+            this.e_42.HorizontalAlignment = HorizontalAlignment.Center;
+            ColumnDefinition col_e_42_0 = new ColumnDefinition();
+            col_e_42_0.Width = new GridLength(1F, GridUnitType.Star);
+            this.e_42.ColumnDefinitions.Add(col_e_42_0);
+            ColumnDefinition col_e_42_1 = new ColumnDefinition();
+            col_e_42_1.Width = new GridLength(1F, GridUnitType.Star);
+            this.e_42.ColumnDefinitions.Add(col_e_42_1);
+            Grid.SetRow(this.e_42, 0);
+            // e_43 element
+            this.e_43 = new StackPanel();
+            this.e_42.Children.Add(this.e_43);
+            this.e_43.Name = "e_43";
+            this.e_43.Orientation = Orientation.Horizontal;
+            Grid.SetColumn(this.e_43, 0);
             // color element
             this.color = new ListBox();
-            this.e_40.Children.Add(this.color);
+            this.e_43.Children.Add(this.color);
             this.color.Name = "color";
             Func<UIElement, UIElement> color_dtFunc = color_dtMethod;
             this.color.ItemTemplate = new DataTemplate(color_dtFunc);
             this.color.SelectedIndex = -1;
             Binding binding_color_ItemsSource = new Binding("AvailableBrushes");
             this.color.SetBinding(ListBox.ItemsSourceProperty, binding_color_ItemsSource);
-            // e_43 element
-            this.e_43 = new Grid();
-            this.e_40.Children.Add(this.e_43);
-            this.e_43.Name = "e_43";
-            RowDefinition row_e_43_0 = new RowDefinition();
-            row_e_43_0.Height = new GridLength(0.5F, GridUnitType.Star);
-            this.e_43.RowDefinitions.Add(row_e_43_0);
-            RowDefinition row_e_43_1 = new RowDefinition();
-            row_e_43_1.Height = new GridLength(0.5F, GridUnitType.Star);
-            this.e_43.RowDefinitions.Add(row_e_43_1);
-            // add element
-            this.add = new Button();
-            this.e_43.Children.Add(this.add);
-            this.add.Name = "add";
-            Grid.SetRow(this.add, 0);
-            // e_44 element
-            this.e_44 = new TextBlock();
-            this.add.Content = this.e_44;
-            this.e_44.Name = "e_44";
-            this.e_44.FontSize = 20F;
-            Binding binding_e_44_Text = new Binding("ButtonAddDisplay");
-            this.e_44.SetBinding(TextBlock.TextProperty, binding_e_44_Text);
-            // remove element
-            this.remove = new Button();
-            this.e_43.Children.Add(this.remove);
-            this.remove.Name = "remove";
-            Grid.SetRow(this.remove, 1);
-            // e_45 element
-            this.e_45 = new TextBlock();
-            this.remove.Content = this.e_45;
-            this.e_45.Name = "e_45";
-            this.e_45.FontSize = 20F;
-            Binding binding_e_45_Text = new Binding("ButtonRemoveDisplay");
-            this.e_45.SetBinding(TextBlock.TextProperty, binding_e_45_Text);
             // e_46 element
             this.e_46 = new Grid();
-            this.e_40.Children.Add(this.e_46);
+            this.e_43.Children.Add(this.e_46);
             this.e_46.Name = "e_46";
+            RowDefinition row_e_46_0 = new RowDefinition();
+            row_e_46_0.Height = new GridLength(0.5F, GridUnitType.Star);
+            this.e_46.RowDefinitions.Add(row_e_46_0);
+            RowDefinition row_e_46_1 = new RowDefinition();
+            row_e_46_1.Height = new GridLength(0.5F, GridUnitType.Star);
+            this.e_46.RowDefinitions.Add(row_e_46_1);
+            // add element
+            this.add = new Button();
+            this.e_46.Children.Add(this.add);
+            this.add.Name = "add";
+            Grid.SetRow(this.add, 0);
+            // e_47 element
+            this.e_47 = new TextBlock();
+            this.add.Content = this.e_47;
+            this.e_47.Name = "e_47";
+            this.e_47.FontSize = 20F;
+            Binding binding_e_47_Text = new Binding("ButtonAddDisplay");
+            this.e_47.SetBinding(TextBlock.TextProperty, binding_e_47_Text);
+            // remove element
+            this.remove = new Button();
+            this.e_46.Children.Add(this.remove);
+            this.remove.Name = "remove";
+            Grid.SetRow(this.remove, 1);
+            // e_48 element
+            this.e_48 = new TextBlock();
+            this.remove.Content = this.e_48;
+            this.e_48.Name = "e_48";
+            this.e_48.FontSize = 20F;
+            Binding binding_e_48_Text = new Binding("ButtonRemoveDisplay");
+            this.e_48.SetBinding(TextBlock.TextProperty, binding_e_48_Text);
+            // e_49 element
+            this.e_49 = new Grid();
+            this.e_43.Children.Add(this.e_49);
+            this.e_49.Name = "e_49";
             // preview element
             this.preview = new Rectangle();
-            this.e_46.Children.Add(this.preview);
+            this.e_49.Children.Add(this.preview);
             this.preview.Name = "preview";
             this.preview.Width = 128F;
             this.preview.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.preview.VerticalAlignment = VerticalAlignment.Stretch;
             this.preview.Stretch = Stretch.UniformToFill;
-            // e_47 element
-            this.e_47 = new CheckBox();
-            this.e_40.Children.Add(this.e_47);
-            this.e_47.Name = "e_47";
-            Binding binding_e_47_IsChecked = new Binding("EnableCollision");
-            this.e_47.SetBinding(CheckBox.IsCheckedProperty, binding_e_47_IsChecked);
-            // e_48 element
-            this.e_48 = new Button();
-            this.e_38.Children.Add(this.e_48);
-            this.e_48.Name = "e_48";
-            this.e_48.HorizontalAlignment = HorizontalAlignment.Right;
-            this.e_48.CommandParameter = null;
-            Grid.SetRow(this.e_48, 1);
-            Binding binding_e_48_Command = new Binding("StartSimulation");
-            this.e_48.SetBinding(Button.CommandProperty, binding_e_48_Command);
-            // e_49 element
-            this.e_49 = new TextBlock();
-            this.e_48.Content = this.e_49;
-            this.e_49.Name = "e_49";
-            this.e_49.Text = "start this shit";
+            // e_50 element
+            this.e_50 = new CheckBox();
+            this.e_43.Children.Add(this.e_50);
+            this.e_50.Name = "e_50";
+            Binding binding_e_50_IsChecked = new Binding("EnableCollision");
+            this.e_50.SetBinding(CheckBox.IsCheckedProperty, binding_e_50_IsChecked);
+            // e_51 element
+            this.e_51 = new Button();
+            this.e_41.Children.Add(this.e_51);
+            this.e_51.Name = "e_51";
+            this.e_51.HorizontalAlignment = HorizontalAlignment.Right;
+            this.e_51.CommandParameter = null;
+            Grid.SetRow(this.e_51, 1);
+            Binding binding_e_51_Command = new Binding("StartSimulation");
+            this.e_51.SetBinding(Button.CommandProperty, binding_e_51_Command);
+            // e_52 element
+            this.e_52 = new TextBlock();
+            this.e_51.Content = this.e_52;
+            this.e_52.Name = "e_52";
+            this.e_52.Text = "start this shit";
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
         }
         
@@ -785,23 +827,23 @@ namespace EmptyKeys.UserInterface.Generated {
         }
         
         private static UIElement color_dtMethod(UIElement parent) {
-            // e_41 element
-            Border e_41 = new Border();
-            e_41.Parent = parent;
-            e_41.Name = "e_41";
-            e_41.BorderBrush = new SolidColorBrush(new ColorW(240, 248, 255, 255));
-            e_41.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
-            // e_42 element
-            Grid e_42 = new Grid();
-            e_41.Child = e_42;
-            e_42.Name = "e_42";
-            e_42.Height = 25F;
-            e_42.Width = 100F;
-            e_42.HorizontalAlignment = HorizontalAlignment.Stretch;
-            e_42.VerticalAlignment = VerticalAlignment.Stretch;
-            Binding binding_e_42_Background = new Binding();
-            e_42.SetBinding(Grid.BackgroundProperty, binding_e_42_Background);
-            return e_41;
+            // e_44 element
+            Border e_44 = new Border();
+            e_44.Parent = parent;
+            e_44.Name = "e_44";
+            e_44.BorderBrush = new SolidColorBrush(new ColorW(240, 248, 255, 255));
+            e_44.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
+            // e_45 element
+            Grid e_45 = new Grid();
+            e_44.Child = e_45;
+            e_45.Name = "e_45";
+            e_45.Height = 25F;
+            e_45.Width = 100F;
+            e_45.HorizontalAlignment = HorizontalAlignment.Stretch;
+            e_45.VerticalAlignment = VerticalAlignment.Stretch;
+            Binding binding_e_45_Background = new Binding();
+            e_45.SetBinding(Grid.BackgroundProperty, binding_e_45_Background);
+            return e_44;
         }
     }
 }

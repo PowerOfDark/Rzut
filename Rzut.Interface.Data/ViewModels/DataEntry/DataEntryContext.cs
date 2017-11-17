@@ -48,6 +48,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string AngularDragDisplay => Strings.EntityViewModel_AngularDrag;
         public string GravitationalAccelerationDisplay => Strings.EntityViewModel_GravitationalAcceleration;
         public string RestitutionDisplay => Strings.EntityViewModel_Restitution;
+        public string AngularVelocityDisplay => Strings.EntityViewModel_AngularVelocity;
 
         public string ButtonAddDisplay => Strings.Button_Add;
         public string ButtonRemoveDisplay => Strings.Button_Remove;
@@ -119,7 +120,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 //Friction = 50f,
                 AirResistance = 0.10f,
                 AngularDrag = 0.10f,
-                GravitationalAcceleration = 10
+                GravitationalAcceleration = 10,
+                AngularVelocity = 50,
             });
 
             AddTab(new EntityViewModel(this)
@@ -134,7 +136,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 //Friction = 50f,
                 AirResistance = 0.10f,
                 AngularDrag = 0.10f,
-                GravitationalAcceleration = 10
+                GravitationalAcceleration = 10,
+                AngularVelocity = 1
             });
 
             SetActive(Entities.First());

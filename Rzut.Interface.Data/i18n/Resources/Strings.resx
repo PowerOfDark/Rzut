@@ -138,6 +138,9 @@
   <data name="EntityViewModel_AngularDrag" xml:space="preserve">
     <value>Angular drag coefficient</value>
   </data>
+  <data name="EntityViewModel_AngularVelocity" xml:space="preserve">
+    <value>Angular velocity [rad/s]</value>
+  </data>
   <data name="EntityViewModel_Friction" xml:space="preserve">
     <value>Friction</value>
   </data>

@@ -127,10 +127,10 @@
     <value>Zastosuj</value>
   </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
-    <value>Współczynnik oporu powietrza</value>
+    <value>Opór powietrza [wsp.]</value>
   </data>
   <data name="EntityViewModel_AngularDrag" xml:space="preserve">
-    <value>Współczynnik oporu obrotu</value>
+    <value>Opór obrotu [wsp.]</value>
   </data>
   <data name="EntityViewModel_Friction" xml:space="preserve">
     <value>Tarcie</value>
@@ -143,6 +143,9 @@
   </data>
   <data name="EntityViewModel_Radius" xml:space="preserve">
     <value>Promień [m]</value>
+  </data>
+  <data name="EntityViewModel_Restitution" xml:space="preserve">
+    <value>Sprężystość [wsp.]</value>
   </data>
   <data name="EntityViewModel_StartAngle" xml:space="preserve">
     <value>Kąt startowy [stopnie]</value>

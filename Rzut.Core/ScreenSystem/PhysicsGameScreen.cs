@@ -101,7 +101,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public override void HandleInput(InputHelper input, GameTime gameTime)
         {
             // Control debug view
-            if (input.IsNewButtonPress(Buttons.Start))
+            if (input.IsNewKeyPress(Keys.F12))
             {
                 EnableOrDisableFlag(DebugViewFlags.Shape);
                 EnableOrDisableFlag(DebugViewFlags.DebugPanel);

@@ -74,6 +74,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _gravitationalAcceleration;
         public float GravitationalAcceleration { get => _gravitationalAcceleration; set => SetProperty(ref _gravitationalAcceleration, value); }
 
+        private float _restitution;
+        public float Restitution { get => _restitution; set => SetProperty(ref _restitution, value); }
+
         public EntityViewModel(IViewModelCollection context) : base(context)
         {
             TabClickDown = new RelayCommand(t => TabClicked?.Invoke(this));
@@ -137,19 +140,5 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             e.Velocity = Velocity;
             return e;
         }
-
-        /*private readonly Dictionary<string, ICollection<string>> _validationErrors = 
-            new Dictionary<string, ICollection<string>>();
-
-        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
-        public bool HasErrors => _validationErrors.Any();
-        public IEnumerable GetErrors(string propertyName)
-        {
-            if (string.IsNullOrEmpty(propertyName)
-                || !_validationErrors.ContainsKey(propertyName))
-                return null;
-
-            return _validationErrors[propertyName];
-        }*/
     }
 }

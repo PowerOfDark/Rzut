@@ -118,6 +118,7 @@ namespace Rzut.Core
             ScreenManager.SpriteBatch.End();
 
             ScreenManager.LineBatch.Begin(Camera.SimProjection, Camera.SimView);
+            
             for (int i = 0; i < _ramps.Count; ++i)
             {
                 ScreenManager.LineBatch.DrawLineShape(_ramps[i].FixtureList[0].Shape, Color.Black);

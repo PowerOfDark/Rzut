@@ -150,6 +150,9 @@
   <data name="EntityViewModel_Radius" xml:space="preserve">
     <value>Radius [m]</value>
   </data>
+  <data name="EntityViewModel_Restitution" xml:space="preserve">
+    <value>Restitution</value>
+  </data>
   <data name="EntityViewModel_StartAngle" xml:space="preserve">
     <value>Clockwise angle [degrees]</value>
   </data>

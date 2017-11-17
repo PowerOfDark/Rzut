@@ -161,6 +161,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restitution.
+        /// </summary>
+        public static string EntityViewModel_Restitution {
+            get {
+                return ResourceManager.GetString("EntityViewModel_Restitution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clockwise angle [degrees].
         /// </summary>
         public static string EntityViewModel_StartAngle {

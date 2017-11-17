@@ -113,29 +113,39 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private TextBox GravitationalAcceleration;
         
-        private Grid e_35;
+        private Border e_35;
         
-        private Grid e_36;
+        private StackPanel e_36;
         
-        private StackPanel e_37;
+        private TextBlock e_37;
+        
+        private TextBox Restitution;
+        
+        private Grid e_38;
+        
+        private Grid e_39;
+        
+        private StackPanel e_40;
         
         private ListBox color;
         
-        private Grid e_40;
+        private Grid e_43;
         
         private Button add;
         
-        private Button remove;
-        
         private TextBlock e_44;
         
-        private Grid e_45;
+        private Button remove;
+        
+        private TextBlock e_45;
+        
+        private Grid e_46;
         
         private Rectangle preview;
         
-        private Button e_46;
+        private Button e_47;
         
-        private TextBlock e_47;
+        private TextBlock e_48;
         
         public DataEntryForm() : 
                 base() {
@@ -524,106 +534,137 @@ namespace EmptyKeys.UserInterface.Generated {
             binding_GravitationalAcceleration_Text.StringFormat = "{0:0.00}";
             this.GravitationalAcceleration.SetBinding(TextBox.TextProperty, binding_GravitationalAcceleration_Text);
             // e_35 element
-            this.e_35 = new Grid();
-            this.e_0.Children.Add(this.e_35);
+            this.e_35 = new Border();
+            this.e_7.Children.Add(this.e_35);
             this.e_35.Name = "e_35";
-            RowDefinition row_e_35_0 = new RowDefinition();
-            row_e_35_0.Height = new GridLength(0.7F, GridUnitType.Star);
-            this.e_35.RowDefinitions.Add(row_e_35_0);
-            RowDefinition row_e_35_1 = new RowDefinition();
-            row_e_35_1.Height = new GridLength(0.3F, GridUnitType.Star);
-            this.e_35.RowDefinitions.Add(row_e_35_1);
-            Grid.SetRow(this.e_35, 3);
+            Style e_35_s = new Style(typeof(Border));
+            Setter e_35_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_35_s.Setters.Add(e_35_s_S_0);
+            Setter e_35_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_35_s.Setters.Add(e_35_s_S_1);
+            Setter e_35_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_35_s.Setters.Add(e_35_s_S_2);
+            this.e_35.Style = e_35_s;
             // e_36 element
-            this.e_36 = new Grid();
-            this.e_35.Children.Add(this.e_36);
+            this.e_36 = new StackPanel();
+            this.e_35.Child = this.e_36;
             this.e_36.Name = "e_36";
-            this.e_36.HorizontalAlignment = HorizontalAlignment.Center;
-            ColumnDefinition col_e_36_0 = new ColumnDefinition();
-            col_e_36_0.Width = new GridLength(1F, GridUnitType.Star);
-            this.e_36.ColumnDefinitions.Add(col_e_36_0);
-            ColumnDefinition col_e_36_1 = new ColumnDefinition();
-            col_e_36_1.Width = new GridLength(1F, GridUnitType.Star);
-            this.e_36.ColumnDefinitions.Add(col_e_36_1);
-            Grid.SetRow(this.e_36, 0);
+            this.e_36.Orientation = Orientation.Horizontal;
             // e_37 element
-            this.e_37 = new StackPanel();
+            this.e_37 = new TextBlock();
             this.e_36.Children.Add(this.e_37);
             this.e_37.Name = "e_37";
-            this.e_37.Orientation = Orientation.Horizontal;
-            Grid.SetColumn(this.e_37, 0);
+            this.e_37.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_37.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_37_Text = new Binding("RestitutionDisplay");
+            this.e_37.SetBinding(TextBlock.TextProperty, binding_e_37_Text);
+            // Restitution element
+            this.Restitution = new TextBox();
+            this.e_36.Children.Add(this.Restitution);
+            this.Restitution.Name = "Restitution";
+            this.Restitution.Tag = "float";
+            Binding binding_Restitution_Text = new Binding("ActiveEntity.Restitution");
+            binding_Restitution_Text.Mode = BindingMode.TwoWay;
+            binding_Restitution_Text.StringFormat = "{0:0.00}";
+            this.Restitution.SetBinding(TextBox.TextProperty, binding_Restitution_Text);
+            // e_38 element
+            this.e_38 = new Grid();
+            this.e_0.Children.Add(this.e_38);
+            this.e_38.Name = "e_38";
+            RowDefinition row_e_38_0 = new RowDefinition();
+            row_e_38_0.Height = new GridLength(0.7F, GridUnitType.Star);
+            this.e_38.RowDefinitions.Add(row_e_38_0);
+            RowDefinition row_e_38_1 = new RowDefinition();
+            row_e_38_1.Height = new GridLength(0.3F, GridUnitType.Star);
+            this.e_38.RowDefinitions.Add(row_e_38_1);
+            Grid.SetRow(this.e_38, 3);
+            // e_39 element
+            this.e_39 = new Grid();
+            this.e_38.Children.Add(this.e_39);
+            this.e_39.Name = "e_39";
+            this.e_39.HorizontalAlignment = HorizontalAlignment.Center;
+            ColumnDefinition col_e_39_0 = new ColumnDefinition();
+            col_e_39_0.Width = new GridLength(1F, GridUnitType.Star);
+            this.e_39.ColumnDefinitions.Add(col_e_39_0);
+            ColumnDefinition col_e_39_1 = new ColumnDefinition();
+            col_e_39_1.Width = new GridLength(1F, GridUnitType.Star);
+            this.e_39.ColumnDefinitions.Add(col_e_39_1);
+            Grid.SetRow(this.e_39, 0);
+            // e_40 element
+            this.e_40 = new StackPanel();
+            this.e_39.Children.Add(this.e_40);
+            this.e_40.Name = "e_40";
+            this.e_40.Orientation = Orientation.Horizontal;
+            Grid.SetColumn(this.e_40, 0);
             // color element
             this.color = new ListBox();
-            this.e_37.Children.Add(this.color);
+            this.e_40.Children.Add(this.color);
             this.color.Name = "color";
             Func<UIElement, UIElement> color_dtFunc = color_dtMethod;
             this.color.ItemTemplate = new DataTemplate(color_dtFunc);
             this.color.SelectedIndex = -1;
             Binding binding_color_ItemsSource = new Binding("AvailableBrushes");
             this.color.SetBinding(ListBox.ItemsSourceProperty, binding_color_ItemsSource);
-            // e_40 element
-            this.e_40 = new Grid();
-            this.e_37.Children.Add(this.e_40);
-            this.e_40.Name = "e_40";
-            RowDefinition row_e_40_0 = new RowDefinition();
-            row_e_40_0.Height = new GridLength(0.5F, GridUnitType.Star);
-            this.e_40.RowDefinitions.Add(row_e_40_0);
-            RowDefinition row_e_40_1 = new RowDefinition();
-            row_e_40_1.Height = new GridLength(0.5F, GridUnitType.Star);
-            this.e_40.RowDefinitions.Add(row_e_40_1);
+            // e_43 element
+            this.e_43 = new Grid();
+            this.e_40.Children.Add(this.e_43);
+            this.e_43.Name = "e_43";
+            RowDefinition row_e_43_0 = new RowDefinition();
+            row_e_43_0.Height = new GridLength(0.5F, GridUnitType.Star);
+            this.e_43.RowDefinitions.Add(row_e_43_0);
+            RowDefinition row_e_43_1 = new RowDefinition();
+            row_e_43_1.Height = new GridLength(0.5F, GridUnitType.Star);
+            this.e_43.RowDefinitions.Add(row_e_43_1);
             // add element
             this.add = new Button();
-            this.e_40.Children.Add(this.add);
+            this.e_43.Children.Add(this.add);
             this.add.Name = "add";
-            Style add_s = new Style(typeof(Button));
-            Func<UIElement, UIElement> add_s_S_0_ctFunc = add_s_S_0_ctMethod;
-            ControlTemplate add_s_S_0_ct = new ControlTemplate(typeof(Button), add_s_S_0_ctFunc);
-            Setter add_s_S_0 = new Setter(Button.TemplateProperty, add_s_S_0_ct);
-            add_s.Setters.Add(add_s_S_0);
-            this.add.Style = add_s;
-            this.add.Background = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             Grid.SetRow(this.add, 0);
-            Binding binding_add_Tag = new Binding("ButtonAddDisplay");
-            this.add.SetBinding(Button.TagProperty, binding_add_Tag);
-            // remove element
-            this.remove = new Button();
-            this.e_40.Children.Add(this.remove);
-            this.remove.Name = "remove";
-            Grid.SetRow(this.remove, 1);
             // e_44 element
             this.e_44 = new TextBlock();
-            this.remove.Content = this.e_44;
+            this.add.Content = this.e_44;
             this.e_44.Name = "e_44";
             this.e_44.FontSize = 20F;
-            Binding binding_e_44_Text = new Binding("ButtonRemoveDisplay");
+            Binding binding_e_44_Text = new Binding("ButtonAddDisplay");
             this.e_44.SetBinding(TextBlock.TextProperty, binding_e_44_Text);
+            // remove element
+            this.remove = new Button();
+            this.e_43.Children.Add(this.remove);
+            this.remove.Name = "remove";
+            Grid.SetRow(this.remove, 1);
             // e_45 element
-            this.e_45 = new Grid();
-            this.e_37.Children.Add(this.e_45);
+            this.e_45 = new TextBlock();
+            this.remove.Content = this.e_45;
             this.e_45.Name = "e_45";
+            this.e_45.FontSize = 20F;
+            Binding binding_e_45_Text = new Binding("ButtonRemoveDisplay");
+            this.e_45.SetBinding(TextBlock.TextProperty, binding_e_45_Text);
+            // e_46 element
+            this.e_46 = new Grid();
+            this.e_40.Children.Add(this.e_46);
+            this.e_46.Name = "e_46";
             // preview element
             this.preview = new Rectangle();
-            this.e_45.Children.Add(this.preview);
+            this.e_46.Children.Add(this.preview);
             this.preview.Name = "preview";
             this.preview.Width = 128F;
             this.preview.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.preview.VerticalAlignment = VerticalAlignment.Stretch;
             this.preview.Stretch = Stretch.UniformToFill;
-            this.preview.Fill = new SolidColorBrush(new ColorW(0, 255, 255, 255));
-            // e_46 element
-            this.e_46 = new Button();
-            this.e_35.Children.Add(this.e_46);
-            this.e_46.Name = "e_46";
-            this.e_46.HorizontalAlignment = HorizontalAlignment.Right;
-            this.e_46.CommandParameter = null;
-            Grid.SetRow(this.e_46, 1);
-            Binding binding_e_46_Command = new Binding("StartSimulation");
-            this.e_46.SetBinding(Button.CommandProperty, binding_e_46_Command);
             // e_47 element
-            this.e_47 = new TextBlock();
-            this.e_46.Content = this.e_47;
+            this.e_47 = new Button();
+            this.e_38.Children.Add(this.e_47);
             this.e_47.Name = "e_47";
-            this.e_47.Text = "start this shit";
+            this.e_47.HorizontalAlignment = HorizontalAlignment.Right;
+            this.e_47.CommandParameter = null;
+            Grid.SetRow(this.e_47, 1);
+            Binding binding_e_47_Command = new Binding("StartSimulation");
+            this.e_47.SetBinding(Button.CommandProperty, binding_e_47_Command);
+            // e_48 element
+            this.e_48 = new TextBlock();
+            this.e_47.Content = this.e_48;
+            this.e_48.Name = "e_48";
+            this.e_48.Text = "start this shit";
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
         }
         
@@ -736,51 +777,22 @@ namespace EmptyKeys.UserInterface.Generated {
         }
         
         private static UIElement color_dtMethod(UIElement parent) {
-            // e_38 element
-            Border e_38 = new Border();
-            e_38.Parent = parent;
-            e_38.Name = "e_38";
-            e_38.BorderBrush = new SolidColorBrush(new ColorW(240, 248, 255, 255));
-            e_38.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
-            // e_39 element
-            Grid e_39 = new Grid();
-            e_38.Child = e_39;
-            e_39.Name = "e_39";
-            e_39.Height = 25F;
-            e_39.Width = 100F;
-            e_39.HorizontalAlignment = HorizontalAlignment.Stretch;
-            e_39.VerticalAlignment = VerticalAlignment.Stretch;
-            Binding binding_e_39_Background = new Binding();
-            e_39.SetBinding(Grid.BackgroundProperty, binding_e_39_Background);
-            return e_38;
-        }
-        
-        private static UIElement add_s_S_0_ctMethod(UIElement parent) {
             // e_41 element
-            Grid e_41 = new Grid();
+            Border e_41 = new Border();
             e_41.Parent = parent;
             e_41.Name = "e_41";
-            Binding binding_e_41_Background = new Binding("Background");
-            binding_e_41_Background.Source = parent;
-            e_41.SetBinding(Grid.BackgroundProperty, binding_e_41_Background);
+            e_41.BorderBrush = new SolidColorBrush(new ColorW(240, 248, 255, 255));
+            e_41.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
             // e_42 element
-            Border e_42 = new Border();
-            e_41.Children.Add(e_42);
+            Grid e_42 = new Grid();
+            e_41.Child = e_42;
             e_42.Name = "e_42";
-            Binding binding_e_42_BorderThickness = new Binding("BorderThickness");
-            binding_e_42_BorderThickness.Source = parent;
-            e_42.SetBinding(Border.BorderThicknessProperty, binding_e_42_BorderThickness);
-            Binding binding_e_42_BorderBrush = new Binding("BorderBrush");
-            binding_e_42_BorderBrush.Source = parent;
-            e_42.SetBinding(Border.BorderBrushProperty, binding_e_42_BorderBrush);
-            // e_43 element
-            TextBlock e_43 = new TextBlock();
-            e_42.Child = e_43;
-            e_43.Name = "e_43";
-            e_43.FontSize = 20F;
-            Binding binding_e_43_Text = new Binding("Tag");
-            binding_e_43_Text.Source = parent;
-            e_43.SetBinding(TextBlock.TextProperty, binding_e_43_Text);
+            e_42.Height = 25F;
+            e_42.Width = 100F;
+            e_42.HorizontalAlignment = HorizontalAlignment.Stretch;
+            e_42.VerticalAlignment = VerticalAlignment.Stretch;
+            Binding binding_e_42_Background = new Binding();
+            e_42.SetBinding(Grid.BackgroundProperty, binding_e_42_Background);
             return e_41;
         }
     }

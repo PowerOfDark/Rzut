@@ -47,12 +47,12 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string AirResistanceDisplay => Strings.EntityViewModel_AirResistance;
         public string AngularDragDisplay => Strings.EntityViewModel_AngularDrag;
         public string GravitationalAccelerationDisplay => Strings.EntityViewModel_GravitationalAcceleration;
+        public string RestitutionDisplay => Strings.EntityViewModel_Restitution;
 
         public string ButtonAddDisplay => Strings.Button_Add;
         public string ButtonRemoveDisplay => Strings.Button_Remove;
 
         private SolidColorBrush _selectedBrush;
-        public SolidColorBrush SelectedBrush { get => _selectedBrush; set => SetProperty(ref _selectedBrush, value); }
 
         public UIElement Form { get; set; }
 

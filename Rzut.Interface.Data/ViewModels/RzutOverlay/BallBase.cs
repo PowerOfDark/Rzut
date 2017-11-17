@@ -22,7 +22,7 @@ namespace Rzut.Interface.Data.ViewModels.RzutOverlay
 
         public string LinearVelocityDisplay => Strings.Body_LinearVelocity;
         public string LinearVelocity => string.Format(Strings.Overlay_LinearVelocity, Body.LinearVelocity.Length());
-        public string LinearVelocityDetails => string.Format(Strings.Overlay_LinearVelocityDetails, Body.LinearVelocity.X, Body.LinearVelocity.Y);
+        public string LinearVelocityDetails => string.Format(Strings.Overlay_LinearVelocityDetails, Body.LinearVelocity.X, -Body.LinearVelocity.Y);
         public string AngularVelocity => Body.AngularVelocity.ToString("0.00");
         public string Distance => (Body.Position - StartPosition).ToString();
         public string PositionDisplay => Strings.Body_Position;

@@ -47,6 +47,7 @@ namespace Rzut.Core.UI.DataEntry
                 var p = Preview.VisualPosition;
                 var s = Preview.Width;
                 ScreenManager.SpriteBatch.Draw(txt.Texture, new Vector2(p.X, p.Y), null, Color.White, 0f, Vector2.Zero, s/txt.Texture.Width, SpriteEffects.None, 0);
+                
                 ScreenManager.SpriteBatch.End();
             }
             base.Draw(gameTime);
@@ -105,7 +106,7 @@ namespace Rzut.Core.UI.DataEntry
             }
 
             Colors = (ListBox)VisualTreeHelper.Instance.FindElementByName(Form, "color");
-            Colors.SelectionChanged += Colors_SelectionChanged;
+
             Add = (Button)VisualTreeHelper.Instance.FindElementByName(Form, "add");
             Add.Click += Add_Click;
             Remove = (Button)VisualTreeHelper.Instance.FindElementByName(Form, "remove");
@@ -139,21 +140,6 @@ namespace Rzut.Core.UI.DataEntry
             if (Colors.Items.Any())
             {
                 Colors.SelectedIndex = 0;
-                Add.Background = Colors.Items[0] as SolidColorBrush;
-            }
-            else
-            {
-                Add.Background = new SolidColorBrush(ColorW.Black);
-            }
-
-        }
-
-        private void Colors_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems?.Length > 0)
-            {
-                Context.SelectedBrush= e.AddedItems[0] as SolidColorBrush;
-                Add.Background = e.AddedItems[0] as SolidColorBrush;
             }
 
         }

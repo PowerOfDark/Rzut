@@ -31,7 +31,7 @@ namespace Rzut.Core.Prefab
             Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius/2f, MaterialType.Blank, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
             StartPosition = Body.Position;
             Body.OnCollision += Body_OnCollision;
-            Marker = new Marker(creator, data.Radius, 2f, data.Color, 0.5f);
+            Marker = new Marker(creator, data.Radius, 1.5f, data.Color, 0.4f);
             Marker.Add(StartPosition);
         }
 

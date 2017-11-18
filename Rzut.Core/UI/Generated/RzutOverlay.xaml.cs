@@ -35,7 +35,11 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private ListBox list;
         
-        private TextBlock e_17;
+        private Grid e_17;
+        
+        private Button e_18;
+        
+        private TextBlock e_19;
         
         public RzutOverlay() : 
                 base() {
@@ -97,11 +101,22 @@ namespace EmptyKeys.UserInterface.Generated {
             Binding binding_list_ItemsSource = new Binding("Balls");
             this.list.SetBinding(ListBox.ItemsSourceProperty, binding_list_ItemsSource);
             // e_17 element
-            this.e_17 = new TextBlock();
+            this.e_17 = new Grid();
             this.e_2.Children.Add(this.e_17);
             this.e_17.Name = "e_17";
-            this.e_17.Text = "Tutaj będą przyciski xd";
             Grid.SetRow(this.e_17, 1);
+            // e_18 element
+            this.e_18 = new Button();
+            this.e_17.Children.Add(this.e_18);
+            this.e_18.Name = "e_18";
+            this.e_18.CommandParameter = null;
+            Binding binding_e_18_Command = new Binding("ExitCommand");
+            this.e_18.SetBinding(Button.CommandProperty, binding_e_18_Command);
+            // e_19 element
+            this.e_19 = new TextBlock();
+            this.e_18.Content = this.e_19;
+            this.e_19.Name = "e_19";
+            this.e_19.Text = "Exit";
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
             FontManager.Instance.AddFont("Segoe UI", 16F, FontStyle.Regular, "Segoe_UI_12_Regular");
         }

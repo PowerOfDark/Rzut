@@ -71,7 +71,7 @@ namespace Rzut.Core.Prefab
             {
                 Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area * Data.AirDensity);
             }
-            var V = ((4 / 3) * (float)Math.PI * (float)Math.Pow(Data.Radius, 3.0));
+            var V = ((4.0f / 3.0f) * (float)Math.PI * (float)Math.Pow(Data.Radius, 3.0));
             Body.ApplyForce(new Vector2(0,-Data.AirDensity * Data.GravitationalAcceleration * V));
             if (Data.AngularDrag > float.Epsilon)
             {

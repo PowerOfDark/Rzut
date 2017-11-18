@@ -184,5 +184,27 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             }
             return errors.Count == 0;
         }
+
+        public bool ValidateAll()
+        {
+            var props = typeof(DataEntryContext).GetProperties();
+            foreach(var p in props)
+            {
+                if (!VerifyF(p.Name)) return false;
+            }
+            props = typeof(EntityViewModel).GetProperties();
+            foreach (var b in Entities)
+            {
+                foreach (var p in props)
+                {
+                    if(!b.VerifyF(p.Name))
+                    {
+                        SetActive(b);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

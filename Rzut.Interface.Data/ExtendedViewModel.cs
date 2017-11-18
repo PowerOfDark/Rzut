@@ -30,44 +30,26 @@ namespace Rzut.Interface.Data
             this.PropertyChanged += ViewModel_PropertyChanged;
         }
 
-        private void ViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        protected void ViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (Context?.Form == null) return;
-            var elem = VisualTreeHelper.Instance.FindElementByName(Context.Form, e.PropertyName);
+            VerifyF(e.PropertyName);
+            
+        }
+        internal bool VerifyF(string prop)
+        {
+            if (Context?.Form == null) return true;
+            var elem = VisualTreeHelper.Instance.FindElementByName(Context.Form, prop);
             var err = VisualTreeHelper.Instance.FindElementByName(Context.Form, "errors");
-            if (elem == null || err == null) return;
-            if (!Validate(e.PropertyName, out var errors))
+            if (elem == null || err == null) return true;
+            if (!Validate(prop, out var errors))
             {
-                /*var t = elem.ToolTip as ToolTip;
-                if(t == null)
-                {
-                    elem.ToolTip = t = new ToolTip();
-                    t.Placement = EmptyKeys.UserInterface.Controls.Primitives.PlacementMode.Top;
-
-                    t.IsHitTestVisible = true;
-                    t.TabIndex = -1;
-                    //t.PlacementTarget = elem;
-                    //t.Parent = elem;
-                }
-                t.IsOpen = true;
-                t.IsEnabled = true;*/
-
                 (err as TextBlock).Text = string.Join("\r\n", errors);
-
+                return false;
             }
             else
             {
-                /*if(elem.ToolTip is ToolTip t)
-                {
-                    t.IsOpen = false;
-                    t.IsEnabled = false;
-                    t.Content = null;
-                    //t.IsEnabled = false;
-                    //t.Content = null;
-                }*/
                 (err as TextBlock).Text = null;
-                //elem.ToolTip = null;
-
+                return true;
             }
         }
     }

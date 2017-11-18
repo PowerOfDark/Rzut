@@ -159,6 +159,7 @@ namespace Rzut.Core.UI.DataEntry
         private void Context_SimulationStarted(DataEntryContext context)
         {
             if (ScreenManager._screens.Last() is RzutScreen) return;
+            if (!context.ValidateAll()) return;
             ScreenManager.AddScreen(new RzutScreen(context));
             ScreenManager.RemoveScreen(this);
         }

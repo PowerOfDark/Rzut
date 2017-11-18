@@ -72,8 +72,8 @@ namespace Rzut.Core.Prefab
             Vector2 v = Body.LinearVelocity;
             float C = 0.47f;//Drag coefficient
             float value = d * density * C * area;
-            Body.ApplyForce(new Vector2((float)((v.X < 0.0f ? -1 : 1) * value * v.X * v.X), (float)( (v.Y < 0.0f ? -1 : 1) * value * v.Y * v.Y) ));
-            Body.ApplyForce(new Vector2(0,-density * Data.GravitationalAcceleration * ((4/3) * (float)Math.PI * (float)Math.Pow(Data.Radius,3.0))));
+            Body.ApplyForce(new Vector2((float)((v.X < 0.0f ? -1 : 1) * value), (float)( (v.Y < 0.0f ? -1 : 1) * value * v.Y) ));
+            Body.ApplyForce(new Vector2(0,-density * Data.GravitationalAcceleration * ((4f/3f) * (float)Math.PI * (float)Math.Pow(Data.Radius,3))));
             if (Data.AngularDrag > float.Epsilon)
             {
                 Body.ApplyTorque(-Body.Inertia / Body.Mass * area * Body.AngularVelocity * Data.AngularDrag);

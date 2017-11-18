@@ -206,9 +206,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 camMove.X -= Speed * time;
             if (input.KeyboardState.IsKeyDown(Keys.D))
                 camMove.X += Speed * time;
-            if (input.KeyboardState.IsKeyDown(Keys.PageUp))
+            if (input.KeyboardState.IsKeyDown(Keys.PageUp) || input.KeyboardState.IsKeyDown(Keys.OemPlus))
                 Camera.Zoom += (Speed/2) * time * Camera.Zoom / 20f;
-            if (input.KeyboardState.IsKeyDown(Keys.PageDown))
+            if (input.KeyboardState.IsKeyDown(Keys.PageDown) || input.KeyboardState.IsKeyDown(Keys.OemMinus))
                 Camera.Zoom -= (Speed/2) * time * Camera.Zoom / 20f;
 
             foreach (var gesture in ScreenManager.Input.Gestures)

@@ -79,9 +79,9 @@ namespace Rzut.Core
             _ramps = new List<Body>();
             Balls = new ObservableCollection<Ball>();
 
-            _ramps.Add(World.CreateEdge(new Vector2(-100000, 0f), new Vector2(1000000, 0f)));
+            _ramps.Add(World.CreateEdge(new Vector2(-10_000_0000, 0f), new Vector2(10_000_000, 0f)));
             _ramps[0].SetCollidesWith(Category.All);
-            _ramps[0].SetFriction(50);
+
 
 
             int i = 0;

@@ -120,6 +120,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 case nameof(GravitationalAcceleration):
                     Validation.ValidateRange(this, t => t.GravitationalAcceleration, 0, 1000, errors, "float");
                     break;
+                case nameof(Restitution):
+                    Validation.ValidateRange(this, t => t.Restitution, 0, 1000, errors, "float");
+                    break;
                 default:
                     break;
             }

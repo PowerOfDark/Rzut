@@ -11,7 +11,7 @@ namespace Rzut.Core
 {
     public enum Platform
     {
-        Android = 1, Desktop = 2, WindowsDesktop = 3
+        Android = 1, Desktop = 2, WindowsDesktop = 3, Apple = 4
     }
     public class RzutGame : Game
     {

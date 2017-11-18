@@ -134,13 +134,12 @@ namespace Rzut.Core.UI.DataEntry
             if (!Colors.Items.Any() || Colors.SelectedIndex == -1) return;
             
             var entity = Context.ActiveEntity.Clone();
-            entity.Color = new Color((Colors.Items[Colors.SelectedIndex] as SolidColorBrush).Color.PackedValue);
+            var selectedBrush = Colors.SelectedItem as SolidColorBrush;
+            entity.Color = new Color(selectedBrush.Color.PackedValue);
+            var nextColor = Context.AvailableBrushes.FirstOrDefault(t => t != selectedBrush);
             Context.AddTab(entity);
             Context.SetActive(entity);
-            if (Colors.Items.Any())
-            {
-                Colors.SelectedIndex = 0;
-            }
+            Colors.SelectedItem = nextColor;
 
         }
 

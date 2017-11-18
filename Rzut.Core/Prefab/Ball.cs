@@ -67,13 +67,12 @@ namespace Rzut.Core.Prefab
         {
             Body.ApplyForce(new Vector2(0, Body.Mass * Data.GravitationalAcceleration));
             var area = (float)(Math.PI * Data.Radius * Data.Radius);
-            float density = 1f;
             if (Data.AirResistance > float.Epsilon)
             {
-                Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area);
+                Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area * Data.AirDensity);
             }
             var V = ((4 / 3) * (float)Math.PI * (float)Math.Pow(Data.Radius, 3.0));
-            Body.ApplyForce(new Vector2(0,-density * Data.GravitationalAcceleration * V));
+            Body.ApplyForce(new Vector2(0,-Data.AirDensity * Data.GravitationalAcceleration * V));
             if (Data.AngularDrag > float.Epsilon)
             {
                 Body.ApplyTorque(-Body.Inertia / Body.Mass * area * Body.AngularVelocity * Data.AngularDrag);

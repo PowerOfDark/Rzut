@@ -105,7 +105,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         {
             AvailableColors = new ObservableCollection<Color>()
             {
-                Color.SkyBlue, Color.Red, Color.Green, Color.Purple, Color.Orange, Color.Yellow, Color.BlueViolet, Color.Turquoise, Color.Pink, Color.Brown
+                Color.Red, Color.Green, Color.Purple, Color.Yellow, Color.CornflowerBlue, Color.Cyan, Color.DarkGoldenrod, Color.LightPink, Color.Lavender, Color.IndianRed
             };
             AvailableBrushes = new ObservableCollection<SolidColorBrush>(AvailableColors.Select(ToBrush));
 

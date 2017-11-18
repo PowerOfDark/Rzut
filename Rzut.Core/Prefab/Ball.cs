@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using tainicom.Aether.Physics2D;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.DrawingSystem;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace Rzut.Core.Prefab
 {
@@ -19,6 +20,7 @@ namespace Rzut.Core.Prefab
         public override Body Body { get; set; }
         public Sprite Sprite { get; set; }
         public Trail Trail { get; set; }
+        public Marker Marker { get; set; }
 
         public Ball(World world, EntityViewModel data, AssetCreator creator)
         {
@@ -27,6 +29,16 @@ namespace Rzut.Core.Prefab
             Body = CreateBody(world, data);
             Sprite = new Sprite(creator.CircleTexture(data.Radius, material, data.Color, 1f));
             Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius/2f, MaterialType.Blank, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
+            StartPosition = Body.Position;
+            Body.OnCollision += Body_OnCollision;
+            Marker = new Marker(creator, data.Radius, 2f, data.Color, 0.5f);
+            Marker.Add(StartPosition);
+        }
+
+        private bool Body_OnCollision(Fixture sender, Fixture other, tainicom.Aether.Physics2D.Dynamics.Contacts.Contact contact)
+        {
+            Marker.Add(Body.Position);
+            return true;
         }
 
         public static Body CreateBody(World world, EntityViewModel model)
@@ -39,7 +51,7 @@ namespace Rzut.Core.Prefab
             }
             b.SetCollisionCategories(Category.Cat2);
             b.Mass = model.Mass;
-            b.Position = new Vector2(model.StartX,-model.StartY-model.StartY);
+            b.Position = new Vector2(model.StartX, -model.StartY);
             b.LinearVelocity = new Vector2((float)Math.Cos( angle ) * model.Velocity, (float)Math.Sin( angle ) * model.Velocity);
             b.AngularVelocity = model.AngularVelocity;
             b.SetRestitution(model.Restitution);
@@ -73,6 +85,12 @@ namespace Rzut.Core.Prefab
         {
             Trail.Draw(time, batch);
             batch.Draw(Sprite.Texture, ConvertUnits.ToDisplayUnits(Body.Position), null, Color.White, Body.Rotation, Sprite.Origin, 1f, SpriteEffects.None, 0f);
+            Marker.Draw(time, batch);
+        }
+
+        public void HandleInput(InputHelper input, GameTime gameTime)
+        {
+            Marker.HandleInput(input, gameTime);
         }
     }
 }

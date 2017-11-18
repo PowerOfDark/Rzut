@@ -30,14 +30,15 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
     {
         private const int CircleSegments = 32;
 
-        private GraphicsDevice _device;
+        public GraphicsDevice Device { get; }
         private BasicEffect _effect;
         private Dictionary<MaterialType, Texture2D> _materials = new Dictionary<MaterialType, Texture2D>();
 
+
         public AssetCreator(GraphicsDevice device)
         {
-            _device = device;
-            _effect = new BasicEffect(_device);
+            Device = device;
+            _effect = new BasicEffect(Device);
         }
 
         public static Vector2 CalculateOrigin(Body b)
@@ -206,13 +207,13 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
         private Texture2D RenderTexture(int width, int height, Texture2D material, List<VertexPositionColorTexture[]> verticesFill, VertexPositionColor[] verticesOutline)
         {
             Matrix halfPixelOffset = Matrix.CreateTranslation(-0.5f, -0.5f, 0f);
-            PresentationParameters pp = _device.PresentationParameters;
-            RenderTarget2D texture = new RenderTarget2D(_device, width + 2, height + 2, false, SurfaceFormat.Color, DepthFormat.None, pp.MultiSampleCount, RenderTargetUsage.DiscardContents);
-            _device.RasterizerState = RasterizerState.CullNone;
-            _device.SamplerStates[0] = SamplerState.LinearWrap;
+            PresentationParameters pp = Device.PresentationParameters;
+            RenderTarget2D texture = new RenderTarget2D(Device, width + 2, height + 2, false, SurfaceFormat.Color, DepthFormat.None, pp.MultiSampleCount, RenderTargetUsage.DiscardContents);
+            Device.RasterizerState = RasterizerState.CullNone;
+            Device.SamplerStates[0] = SamplerState.LinearWrap;
 
-            _device.SetRenderTarget(texture);
-            _device.Clear(Color.Transparent);
+            Device.SetRenderTarget(texture);
+            Device.Clear(Color.Transparent);
             _effect.Projection = Matrix.CreateOrthographic(width + 2f, -height - 2f, 0f, 1f);
             _effect.View = halfPixelOffset;
             // render shape;
@@ -222,13 +223,13 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
             _effect.Techniques[0].Passes[0].Apply();
             for (int i = 0; i < verticesFill.Count; ++i)
             {
-                _device.DrawUserPrimitives(PrimitiveType.TriangleList, verticesFill[i], 0, verticesFill[i].Length / 3);
+                Device.DrawUserPrimitives(PrimitiveType.TriangleList, verticesFill[i], 0, verticesFill[i].Length / 3);
             }
             // render outline;
             _effect.TextureEnabled = false;
             _effect.Techniques[0].Passes[0].Apply();
-            _device.DrawUserPrimitives(PrimitiveType.LineList, verticesOutline, 0, verticesOutline.Length / 2);
-            _device.SetRenderTarget(null);
+            Device.DrawUserPrimitives(PrimitiveType.LineList, verticesOutline, 0, verticesOutline.Length / 2);
+            Device.SetRenderTarget(null);
             return texture;
         }
     }

@@ -27,7 +27,7 @@ namespace Rzut.Core
         public static SpriteFont DetailsFont { get; set; }
         public RzutOverlay Overlay { get; set; }
         public ListBox List { get; set; }
-
+        public static Camera2D CameraInstance;
 
         #region IDemoScreen Members
 
@@ -61,7 +61,7 @@ namespace Rzut.Core
         public override void LoadContent()
         {
             base.LoadContent();
-
+            CameraInstance = Camera;
             DetailsFont = ScreenManager.Content.Load<SpriteFont>("UI/Segoe_UI_30_Regular");
             _ramps = new List<Body>();
             Balls = new ObservableCollection<Ball>();
@@ -142,6 +142,15 @@ namespace Rzut.Core
                 Overlay.UpdateLayout(gameTime.ElapsedGameTime.TotalMilliseconds);
             }
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+        }
+
+        public override void HandleInput(InputHelper input, GameTime gameTime)
+        {
+            foreach(var ball in Balls)
+            {
+                ball.HandleInput(input, gameTime);
+            }
+            base.HandleInput(input, gameTime);
         }
 
         public void UpdateContext(DataEntryContext context)

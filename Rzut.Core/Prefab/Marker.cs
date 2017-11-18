@@ -46,7 +46,7 @@ namespace Rzut.Core.Prefab
             {
                 var last = Data.Last.Value;
                 var dist = pos - last.Position;
-                if (dist.Length() + Size < Step) return;
+                if (dist.Length() < Step + Size) return;
             }
             Data.AddLast(new MarkerData() { Position = pos});
         }

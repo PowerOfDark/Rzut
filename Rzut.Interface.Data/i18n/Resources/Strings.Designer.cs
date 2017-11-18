@@ -62,6 +62,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Angular vel..
+        /// </summary>
+        public static string Body_AngularVelocity {
+            get {
+                return ResourceManager.GetString("Body_AngularVelocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Linear velocity.
         /// </summary>
         public static string Body_LinearVelocity {
@@ -76,6 +85,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         public static string Body_Position {
             get {
                 return ResourceManager.GetString("Body_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Range.
+        /// </summary>
+        public static string Body_Range {
+            get {
+                return ResourceManager.GetString("Body_Range", resourceCulture);
             }
         }
         
@@ -278,6 +296,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0:0.00} rad/s.
+        /// </summary>
+        public static string Overlay_AngularVelocity {
+            get {
+                return ResourceManager.GetString("Overlay_AngularVelocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string Overlay_Distance {
@@ -310,6 +337,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         public static string Overlay_Position {
             get {
                 return ResourceManager.GetString("Overlay_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0:0.00} m.
+        /// </summary>
+        public static string Overlay_Range {
+            get {
+                return ResourceManager.GetString("Overlay_Range", resourceCulture);
             }
         }
         

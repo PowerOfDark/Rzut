@@ -39,8 +39,29 @@
                                         <TextBlock Grid.Column="2" FontSize="20" Foreground="Black" Text="{Binding LinearVelocity}"/>
                                     </Grid>
                                     <TextBlock Grid.Row="1" FontSize="16" Foreground="Black" Text="{Binding LinearVelocityDetails}"/>
-                                    <TextBlock Grid.Row="2" FontSize="20" Foreground="Black" Text="{Binding PositionDisplay}"/>
-                                    <TextBlock Grid.Row="3" FontSize="16" Foreground="Black" Text="{Binding Position}"/>
+                                    
+                                    <TextBlock FontSize="20" Foreground="Black" Text="{Binding PositionDisplay}"/>
+                                    <TextBlock FontSize="16" Foreground="Black" Text="{Binding Position}"/>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" FontSize="20" Foreground="Black" Text="{Binding AngularVelocityDisplay}"/>
+                                        <TextBlock Grid.Column="2" FontSize="20" Foreground="Black" Text="{Binding AngularVelocity}"/>
+                                    </Grid>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" FontSize="20" Foreground="Black" Text="{Binding RangeDisplay}"/>
+                                        <TextBlock Grid.Column="2" FontSize="20" Foreground="Black" Text="{Binding Range}"/>
+                                    </Grid>
 
                                 </StackPanel>
                             </Border>

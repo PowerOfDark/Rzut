@@ -216,10 +216,10 @@ namespace EmptyKeys.UserInterface.Generated {
             row_e_0_1.Height = new GridLength(0.1F, GridUnitType.Star);
             this.e_0.RowDefinitions.Add(row_e_0_1);
             RowDefinition row_e_0_2 = new RowDefinition();
-            row_e_0_2.Height = new GridLength(0.67F, GridUnitType.Star);
+            row_e_0_2.Height = new GridLength(0.71F, GridUnitType.Star);
             this.e_0.RowDefinitions.Add(row_e_0_2);
             RowDefinition row_e_0_3 = new RowDefinition();
-            row_e_0_3.Height = new GridLength(0.15F, GridUnitType.Star);
+            row_e_0_3.Height = new GridLength(0.11F, GridUnitType.Star);
             this.e_0.RowDefinitions.Add(row_e_0_3);
             // tabItems element
             this.tabItems = new ItemsControl();
@@ -814,19 +814,19 @@ namespace EmptyKeys.UserInterface.Generated {
             col_e_51_0.Width = new GridLength(1F, GridUnitType.Auto);
             this.e_51.ColumnDefinitions.Add(col_e_51_0);
             ColumnDefinition col_e_51_1 = new ColumnDefinition();
-            col_e_51_1.Width = new GridLength(0.2F, GridUnitType.Star);
+            col_e_51_1.Width = new GridLength(0.05F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_1);
             ColumnDefinition col_e_51_2 = new ColumnDefinition();
-            col_e_51_2.Width = new GridLength(0.1F, GridUnitType.Star);
+            col_e_51_2.Width = new GridLength(0.05F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_2);
             ColumnDefinition col_e_51_3 = new ColumnDefinition();
-            col_e_51_3.Width = new GridLength(0.2F, GridUnitType.Star);
+            col_e_51_3.Width = new GridLength(0.12F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_3);
             ColumnDefinition col_e_51_4 = new ColumnDefinition();
-            col_e_51_4.Width = new GridLength(0.4F, GridUnitType.Star);
+            col_e_51_4.Width = new GridLength(0.45F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_4);
             ColumnDefinition col_e_51_5 = new ColumnDefinition();
-            col_e_51_5.Width = new GridLength(0.1F, GridUnitType.Star);
+            col_e_51_5.Width = new GridLength(1F, GridUnitType.Auto);
             this.e_51.ColumnDefinitions.Add(col_e_51_5);
             Grid.SetRow(this.e_51, 3);
             // e_52 element
@@ -868,7 +868,7 @@ namespace EmptyKeys.UserInterface.Generated {
             this.preview = new Rectangle();
             this.e_55.Children.Add(this.preview);
             this.preview.Name = "preview";
-            this.preview.Width = 100F;
+            this.preview.Width = 70F;
             this.preview.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.preview.VerticalAlignment = VerticalAlignment.Stretch;
             this.preview.Stretch = Stretch.UniformToFill;
@@ -918,6 +918,7 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_62 = new WrapPanel();
             this.e_51.Children.Add(this.e_62);
             this.e_62.Name = "e_62";
+            this.e_62.VerticalAlignment = VerticalAlignment.Center;
             this.e_62.Orientation = Orientation.Vertical;
             Grid.SetColumn(this.e_62, 4);
             // e_63 element
@@ -952,7 +953,6 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_66 = new TextBlock();
             this.e_65.Children.Add(this.e_66);
             this.e_66.Name = "e_66";
-            this.e_66.Margin = new Thickness(10F, 10F, 10F, 10F);
             this.e_66.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             Binding binding_e_66_Text = new Binding("UnitRatioDisplay");
             this.e_66.SetBinding(TextBlock.TextProperty, binding_e_66_Text);
@@ -969,16 +969,18 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_67 = new Button();
             this.e_51.Children.Add(this.e_67);
             this.e_67.Name = "e_67";
+            this.e_67.Margin = new Thickness(677F, 0F, 0F, 0F);
             this.e_67.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.e_67.CommandParameter = null;
-            Grid.SetColumn(this.e_67, 5);
+            Grid.SetColumn(this.e_67, 4);
             Binding binding_e_67_Command = new Binding("StartSimulation");
             this.e_67.SetBinding(Button.CommandProperty, binding_e_67_Command);
             // e_68 element
             this.e_68 = new TextBlock();
             this.e_67.Content = this.e_68;
             this.e_68.Name = "e_68";
-            this.e_68.Text = "start this shit";
+            this.e_68.Text = "Start";
+            this.e_68.FontSize = 30F;
             FontManager.Instance.AddFont("Segoe UI", 30F, FontStyle.Regular, "Segoe_UI_22.5_Regular");
             FontManager.Instance.AddFont("Segoe UI", 50F, FontStyle.Bold, "Segoe_UI_37.5_Bold");
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");

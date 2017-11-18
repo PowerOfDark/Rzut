@@ -16,9 +16,12 @@ using EmptyKeys.UserInterface;
 using EmptyKeys.UserInterface.Controls;
 using EmptyKeys.UserInterface.Media;
 using EmptyKeys.UserInterface.Input;
+using Xamarin.Forms.Internals;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace Rzut.Core
 {
+    [Preserve(AllMembers = true)]
     internal class RzutScreen : PhysicsGameScreen, IDemoScreen, IOverlayContext<Ball>
     {
         private List<Body> _ramps;
@@ -70,7 +73,6 @@ namespace Rzut.Core
         public override void LoadContent()
         {
             base.LoadContent();
-            
             CameraInstance = Camera;
             DetailsFont = ScreenManager.Content.Load<SpriteFont>("UI/Segoe_UI_30_Regular");
             _ramps = new List<Body>();
@@ -106,10 +108,19 @@ namespace Rzut.Core
             FontManager.Instance.LoadFonts(ScreenManager.Content, "UI/");
             ImageManager.Instance.LoadImages(ScreenManager.Content, "UI/");
             List = VisualTreeHelper.Instance.FindElementByName(Overlay, "list") as ListBox;
-            List.SelectionChanged += List_SelectionChanged;
-
+            List.PreviewTouchDown += List_PreviewTouchDown;
+            
             
         }
+
+        private void List_PreviewTouchDown(object sender, RoutedEventArgs e)
+        {
+            if(e.Source is UIElement el && el.DataContext is Ball ball)
+            {
+                OverlaySelectionChanged(ball.Body);
+            }
+        }
+
 
         private void ExitButton(object arg)
         {
@@ -119,11 +130,14 @@ namespace Rzut.Core
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var body = (e.AddedItems[0] as Ball).Body;
+            OverlaySelectionChanged(body);
+        }
+
+        private void OverlaySelectionChanged(Body body)
+        {
             Camera.Position = ConvertUnits.ToDisplayUnits(body.Position);
             Camera.TrackingBody = body;
             Camera.Jump2Target();
-            
-
         }
 
         public override void Draw(GameTime gameTime)

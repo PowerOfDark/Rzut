@@ -8,6 +8,7 @@
              xmlns:c="clr-namespace:EmptyKeys.UserInterface.Designer.Charts;assembly=EmptyKeys.UserInterface.Designer"
              xmlns:data="clr-namespace:Rzut.Interface.Data.ViewModels.DataEntry;assembly=Rzut.Interface.Data"
              xmlns:ex="clr-namespace:Rzut.Interface.Data.UI;assembly=Rzut.Interface.Data"
+           xmlns:eki="clr-namespace:EmptyKeys.UserInterface.Designer.Interactions;assembly=EmptyKeys.UserInterface.Designer"
         mc:Ignorable="d"
         d:DesignWidth="1280" d:DesignHeight="720">
     <ek:UIRoot.Background>

@@ -25,14 +25,16 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         ExtraButton2
     }
 
+
     public class InputHelper
     {
-        private readonly List<GestureSample> _gestures = new List<GestureSample>();
+        public readonly List<GestureSample> Gestures = new List<GestureSample>();
 
         private bool _handleVirtualStick;
 
         private bool _cursorIsVisible;
         private Sprite _cursorSprite;
+
 
 #if WINDOWS_PHONE
         private VirtualStick _phoneStick;
@@ -148,6 +150,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             KeyboardState = Keyboard.GetState();
             GamePadState = GamePad.GetState(PlayerIndex.One);
             MouseState = Mouse.GetState();
+            ShowCursor = false;
+            TouchPanel.EnabledGestures = GestureType.HorizontalDrag | GestureType.VerticalDrag | GestureType.Pinch | GestureType.DragComplete;
+            TouchPanel.EnableMouseTouchPoint = true;
 
             if (_handleVirtualStick)
             {
@@ -158,10 +163,12 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 #endif
             }
 
-            _gestures.Clear();
+            Gestures.Clear();
             while (TouchPanel.IsGestureAvailable)
             {
-                _gestures.Add(TouchPanel.ReadGesture());
+                var gesture = TouchPanel.ReadGesture();
+                Gestures.Add(gesture);
+                //_gestures.Add(TouchPanel.ReadGesture());
             }
 
             TouchCollection = TouchPanel.GetState();
@@ -179,6 +186,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             {
                 Cursor = TouchCollection[0].Position;
                 Mouse.SetPosition((int) Cursor.X, (int) Cursor.Y);
+                
             }else
             {
                 Cursor = new Vector2(MouseState.X, MouseState.Y);
@@ -200,12 +208,12 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public void Draw()
         {
-            if (_cursorIsVisible && IsCursorValid)
+            /*if (_cursorIsVisible && IsCursorValid)
             {
                 _manager.SpriteBatch.Begin();
                 _manager.SpriteBatch.Draw(_cursorSprite.Texture, Cursor, null, Color.White, 0f, _cursorSprite.Origin, 1f, SpriteEffects.None, 0f);
                 _manager.SpriteBatch.End();
-            }
+            }*/
 #if WINDOWS_PHONE
             if (_handleVirtualStick)
             {

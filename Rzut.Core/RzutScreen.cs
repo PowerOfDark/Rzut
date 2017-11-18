@@ -19,6 +19,7 @@ using EmptyKeys.UserInterface.Input;
 using Xamarin.Forms.Internals;
 using Microsoft.Xna.Framework.Input.Touch;
 using Rzut.Core.UI.DataEntry;
+using Rzut.Interface.Data.i18n.Resources;
 
 namespace Rzut.Core
 {
@@ -34,6 +35,7 @@ namespace Rzut.Core
         public ListBox List { get; set; }
         public static Camera2D CameraInstance;
 
+        public string BackDisplay => Strings.Overlay_Back;
         public ICommand ExitCommand { get; set; }
 
         #region IDemoScreen Members
@@ -79,7 +81,9 @@ namespace Rzut.Core
             _ramps = new List<Body>();
             Balls = new ObservableCollection<Ball>();
 
-            _ramps.Add(World.CreateEdge(new Vector2(-10_000_0000, 0f), new Vector2(10_000_000, 0f)));
+            _ramps.Add(World.CreateEdge(new Vector2(-1_000_000, 0), new Vector2(1_000_000, 0)));
+            _ramps.Add(World.CreateEdge(new Vector2(-1_000_000, 0), new Vector2(-1_000_000, -1_000_000)));
+            _ramps.Add(World.CreateEdge(new Vector2(1_000_000, 0), new Vector2(1_000_000, -1_000_000)));
             _ramps[0].SetCollidesWith(Category.All);
 
 

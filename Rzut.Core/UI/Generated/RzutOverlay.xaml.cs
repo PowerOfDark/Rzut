@@ -116,7 +116,8 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_19 = new TextBlock();
             this.e_18.Content = this.e_19;
             this.e_19.Name = "e_19";
-            this.e_19.Text = "Exit";
+            Binding binding_e_19_Text = new Binding("BackDisplay");
+            this.e_19.SetBinding(TextBlock.TextProperty, binding_e_19_Text);
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
             FontManager.Instance.AddFont("Segoe UI", 16F, FontStyle.Regular, "Segoe_UI_12_Regular");
         }

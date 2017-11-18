@@ -323,6 +323,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Overlay_Back {
+            get {
+                return ResourceManager.GetString("Overlay_Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string Overlay_Distance {

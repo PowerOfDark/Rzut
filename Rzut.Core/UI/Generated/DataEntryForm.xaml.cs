@@ -295,7 +295,7 @@ namespace EmptyKeys.UserInterface.Generated {
             e_9_s.Setters.Add(e_9_s_S_1);
             Setter e_9_s_S_2 = new Setter(GroupBox.BackgroundProperty, new SolidColorBrush(new ColorW(211, 211, 211, 255)));
             e_9_s.Setters.Add(e_9_s_S_2);
-            Setter e_9_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(10F));
+            Setter e_9_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(5F));
             e_9_s.Setters.Add(e_9_s_S_3);
             this.e_9.Style = e_9_s;
             this.e_9.Background = new SolidColorBrush(new ColorW(169, 169, 169, 255));
@@ -598,7 +598,7 @@ namespace EmptyKeys.UserInterface.Generated {
             e_33_s.Setters.Add(e_33_s_S_1);
             Setter e_33_s_S_2 = new Setter(GroupBox.BackgroundProperty, new SolidColorBrush(new ColorW(211, 211, 211, 255)));
             e_33_s.Setters.Add(e_33_s_S_2);
-            Setter e_33_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(10F));
+            Setter e_33_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(5F));
             e_33_s.Setters.Add(e_33_s_S_3);
             this.e_33.Style = e_33_s;
             this.e_33.Background = new SolidColorBrush(new ColorW(169, 169, 169, 255));
@@ -745,7 +745,7 @@ namespace EmptyKeys.UserInterface.Generated {
             e_45_s.Setters.Add(e_45_s_S_1);
             Setter e_45_s_S_2 = new Setter(GroupBox.BackgroundProperty, new SolidColorBrush(new ColorW(211, 211, 211, 255)));
             e_45_s.Setters.Add(e_45_s_S_2);
-            Setter e_45_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(10F));
+            Setter e_45_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(5F));
             e_45_s.Setters.Add(e_45_s_S_3);
             this.e_45.Style = e_45_s;
             this.e_45.Background = new SolidColorBrush(new ColorW(169, 169, 169, 255));

@@ -13,5 +13,6 @@ namespace Rzut.Interface.Data.ViewModels.RzutOverlay
     {
         ObservableCollection<T> Balls { get; set; }
         ICommand ExitCommand { get; set; }
+        string BackDisplay { get; }
     }
 }

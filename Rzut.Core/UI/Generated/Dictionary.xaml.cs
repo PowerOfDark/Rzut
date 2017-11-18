@@ -56,7 +56,7 @@ namespace EmptyKeys.UserInterface.Generated {
             r_2_s.Setters.Add(r_2_s_S_1);
             Setter r_2_s_S_2 = new Setter(GroupBox.BackgroundProperty, new SolidColorBrush(new ColorW(211, 211, 211, 255)));
             r_2_s.Setters.Add(r_2_s_S_2);
-            Setter r_2_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(10F));
+            Setter r_2_s_S_3 = new Setter(GroupBox.MarginProperty, new Thickness(5F));
             r_2_s.Setters.Add(r_2_s_S_3);
             this.Add("Group", r_2_s);
             // Resource - [imageContainerStyle] Style

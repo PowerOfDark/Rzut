@@ -71,7 +71,7 @@
                 </ListBox>
                 <Grid Grid.Row="1">
                     <Button Command="{Binding ExitCommand}" CommandParameter="{x:Null}">
-                        <TextBlock Text="Exit"/>
+                        <TextBlock Text="{Binding BackDisplay}"/>
                     </Button>
                 </Grid>
             </Grid>

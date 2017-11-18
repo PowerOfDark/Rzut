@@ -139,7 +139,7 @@
                     <GroupBox.Header>
                         <TextBlock Margin="10" Foreground="Black" FontSize="50" FontWeight="Bold" Text="{Binding WorldDisplay}"/>
                     </GroupBox.Header>
-                    <WrapPanel Orientation="Horizontal" Background="LightGray">
+                    <WrapPanel Orientation="Horizontal">
                         <Border Style="{StaticResource InputBorder}">
                             <StackPanel Style="{StaticResource Panel}">
                                 <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=GravitationalAccelerationDisplay}"/>

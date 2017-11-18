@@ -755,7 +755,6 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_47 = new WrapPanel();
             this.e_45.Content = this.e_47;
             this.e_47.Name = "e_47";
-            this.e_47.Background = new SolidColorBrush(new ColorW(211, 211, 211, 255));
             this.e_47.Orientation = Orientation.Horizontal;
             // e_48 element
             this.e_48 = new Border();

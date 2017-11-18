@@ -31,7 +31,7 @@ namespace Rzut.Core.Prefab
             Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius/2f, MaterialType.Blank, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
             StartPosition = Body.Position;
             Body.OnCollision += Body_OnCollision;
-            Marker = new Marker(creator, data.Radius, 1.5f, data.Color, 0.4f);
+            Marker = new Marker(creator, data.Radius, 1.5f, data.Color, 0.5f);
             Marker.Add(StartPosition);
         }
 
@@ -84,8 +84,8 @@ namespace Rzut.Core.Prefab
         public void Draw(GameTime time, SpriteBatch batch)
         {
             Trail.Draw(time, batch);
-            batch.Draw(Sprite.Texture, ConvertUnits.ToDisplayUnits(Body.Position), null, Color.White, Body.Rotation, Sprite.Origin, 1f, SpriteEffects.None, 0f);
             Marker.Draw(time, batch);
+            batch.Draw(Sprite.Texture, ConvertUnits.ToDisplayUnits(Body.Position), null, Color.White, Body.Rotation, Sprite.Origin, 1f, SpriteEffects.None, 0f);
         }
 
         public void HandleInput(InputHelper input, GameTime gameTime)

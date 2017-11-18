@@ -80,6 +80,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _angularVelocity;
         public float AngularVelocity { get => _angularVelocity; set => SetProperty(ref _angularVelocity, value); }
 
+
+
         public EntityViewModel(IViewModelCollection context) : base(context)
         {
             TabClickDown = new RelayCommand(t => TabClicked?.Invoke(this));
@@ -144,6 +146,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             e.StartX = StartX;
             e.StartY = StartY;
             e.Velocity = Velocity;
+            e.Restitution = Restitution;
             return e;
         }
     }

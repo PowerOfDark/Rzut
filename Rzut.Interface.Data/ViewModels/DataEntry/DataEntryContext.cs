@@ -48,6 +48,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string FrictionDisplay => Strings.EntityViewModel_Friction;
         public string AirResistanceDisplay => Strings.EntityViewModel_AirResistance;
         public string AngularDragDisplay => Strings.EntityViewModel_AngularDrag;
+        public string AirDensityDisplay => Strings.EntityViewModel_AirDensity;
         public string GravitationalAccelerationDisplay => Strings.EntityViewModel_GravitationalAcceleration;
         public string RestitutionDisplay => Strings.EntityViewModel_Restitution;
         public string AngularVelocityDisplay => Strings.EntityViewModel_AngularVelocity;
@@ -131,7 +132,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 AngularDrag = 0.10f,
                 GravitationalAcceleration = 10f,
                 AngularVelocity = 50f,
-                Restitution = 0.2f
+                Restitution = 0.2f,
+                AirDensity = 1f
+
             });
 
             AddTab(new EntityViewModel(this)
@@ -148,7 +151,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 AngularDrag = 0.10f,
                 GravitationalAcceleration = 10f,
                 AngularVelocity = 1f,
-                Restitution = 0.3f
+                Restitution = 0.3f,
+                AirDensity = 1f
 
             });
 

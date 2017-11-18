@@ -68,8 +68,12 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <TextBlock Grid.Row="1">Tutaj będą przyciski xd</TextBlock>
-        </Grid>
+                <Grid Grid.Row="1">
+                    <Button Command="{Binding ExitCommand}" CommandParameter="{x:Null}">
+                        <TextBlock Text="Exit"/>
+                    </Button>
+                </Grid>
+            </Grid>
         </Border>
     </Grid>
 </ek:UIRoot>

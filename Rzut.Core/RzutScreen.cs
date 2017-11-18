@@ -15,6 +15,7 @@ using Rzut.Interface.Data.ViewModels.RzutOverlay;
 using EmptyKeys.UserInterface;
 using EmptyKeys.UserInterface.Controls;
 using EmptyKeys.UserInterface.Media;
+using EmptyKeys.UserInterface.Input;
 
 namespace Rzut.Core
 {
@@ -28,6 +29,8 @@ namespace Rzut.Core
         public RzutOverlay Overlay { get; set; }
         public ListBox List { get; set; }
         public static Camera2D CameraInstance;
+
+        public ICommand ExitCommand { get; set; }
 
         #region IDemoScreen Members
 
@@ -90,12 +93,20 @@ namespace Rzut.Core
             Camera.MaxPosition = new Vector2(float.MaxValue, -(ScreenManager.GraphicsDevice.Viewport.Height/2f -20f));
             // Create sprite based on body
 
+            ExitCommand = new RelayCommand(ExitButton);
+
             Overlay = new RzutOverlay() { DataContext = this };
             FontManager.Instance.LoadFonts(ScreenManager.Content, "UI/");
             ImageManager.Instance.LoadImages(ScreenManager.Content, "UI/");
             List = VisualTreeHelper.Instance.FindElementByName(Overlay, "list") as ListBox;
             List.SelectionChanged += List_SelectionChanged;
-            _rectangleSprite = new Sprite(ScreenManager.Content.Load<Texture2D>("Materials/kamil"));
+
+            
+        }
+
+        private void ExitButton(object arg)
+        {
+            ExitScreen();
         }
 
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)

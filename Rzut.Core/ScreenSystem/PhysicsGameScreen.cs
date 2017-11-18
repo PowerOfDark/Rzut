@@ -181,18 +181,18 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             Vector2 camMove = Vector2.Zero;
 
-            if (input.KeyboardState.IsKeyDown(Keys.Up))
-                camMove.Y -= 10f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (input.KeyboardState.IsKeyDown(Keys.Down))
-                camMove.Y += 10f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (input.KeyboardState.IsKeyDown(Keys.Left))
-                camMove.X -= 10f * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (input.KeyboardState.IsKeyDown(Keys.Right))
-                camMove.X += 10f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (input.KeyboardState.IsKeyDown(Keys.W))
+                camMove.Y -= 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (input.KeyboardState.IsKeyDown(Keys.S))
+                camMove.Y += 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (input.KeyboardState.IsKeyDown(Keys.A))
+                camMove.X -= 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (input.KeyboardState.IsKeyDown(Keys.D))
+                camMove.X += 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (input.KeyboardState.IsKeyDown(Keys.PageUp))
-                Camera.Zoom += 5f * (float)gameTime.ElapsedGameTime.TotalSeconds * Camera.Zoom / 20f;
+                Camera.Zoom += 50f * (float)gameTime.ElapsedGameTime.TotalSeconds * Camera.Zoom / 20f;
             if (input.KeyboardState.IsKeyDown(Keys.PageDown))
-                Camera.Zoom -= 5f * (float)gameTime.ElapsedGameTime.TotalSeconds * Camera.Zoom / 20f;
+                Camera.Zoom -= 50f * (float)gameTime.ElapsedGameTime.TotalSeconds * Camera.Zoom / 20f;
             if (camMove != Vector2.Zero)
                 Camera.MoveCamera(camMove);
             if (input.IsNewKeyPress(Keys.Home))

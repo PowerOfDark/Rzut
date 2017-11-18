@@ -35,6 +35,10 @@ namespace Rzut.Core.UI.DataEntry
 
         public readonly Dictionary<Color, Sprite> Previews = new Dictionary<Color, Sprite>();
 
+        public DataEntryScreen(DataEntryContext ctx = null)
+        {
+            Context = ctx;
+        }
 
         public override void Draw(GameTime gameTime)
         {
@@ -72,7 +76,7 @@ namespace Rzut.Core.UI.DataEntry
             var font = ScreenManager.Content.Load<SpriteFont>("UI/Segoe_UI_30_Regular");
             FontManager.DefaultFont = Engine.Instance.Renderer.CreateFont(font);
 
-            Context = new DataEntryContext(Form);
+            Context = Context ?? new DataEntryContext(Form);
             Context.TabClicked += Context_TabClicked1;
 
             var viewport = ScreenManager.GraphicsDevice.Viewport;
@@ -154,7 +158,9 @@ namespace Rzut.Core.UI.DataEntry
 
         private void Context_SimulationStarted(DataEntryContext context)
         {
+            if (ScreenManager._screens.Last() is RzutScreen) return;
             ScreenManager.AddScreen(new RzutScreen(context));
+            ScreenManager.RemoveScreen(this);
         }
 
         private void Context_TabClicked1(EntityViewModel entity)
@@ -174,10 +180,6 @@ namespace Rzut.Core.UI.DataEntry
             r.TouchDown += (s, e) => Tab_Click(s as EmptyKeys.UserInterface.Shapes.Rectangle);
         }
 
-        private void Btn_Click(object sender, RoutedEventArgs e)
-        {
-            ExitScreen();
-        }
 
         private void LanguageClick(object sender)
         {
@@ -190,6 +192,7 @@ namespace Rzut.Core.UI.DataEntry
         {
             if (input.IsNewButtonPress(Buttons.Back) || input.IsNewKeyPress(Keys.Escape))
                 ExitScreen();
+
             base.HandleInput(input, gameTime);
         }
     }

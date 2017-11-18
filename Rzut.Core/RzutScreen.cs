@@ -18,6 +18,7 @@ using EmptyKeys.UserInterface.Media;
 using EmptyKeys.UserInterface.Input;
 using Xamarin.Forms.Internals;
 using Microsoft.Xna.Framework.Input.Touch;
+using Rzut.Core.UI.DataEntry;
 
 namespace Rzut.Core
 {
@@ -109,6 +110,8 @@ namespace Rzut.Core
             ImageManager.Instance.LoadImages(ScreenManager.Content, "UI/");
             List = VisualTreeHelper.Instance.FindElementByName(Overlay, "list") as ListBox;
             List.PreviewTouchDown += List_PreviewTouchDown;
+            if(RzutGame.Platform != Platform.Android)
+                List.PreviewMouseDown += List_PreviewTouchDown;
             
             
         }
@@ -124,7 +127,9 @@ namespace Rzut.Core
 
         private void ExitButton(object arg)
         {
-            ExitScreen();
+            
+            ScreenManager.AddScreen(new DataEntryScreen(DataEntryContext));
+            ScreenManager.RemoveScreen(this);
         }
 
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)

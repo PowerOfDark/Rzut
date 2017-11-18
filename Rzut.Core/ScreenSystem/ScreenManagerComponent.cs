@@ -23,7 +23,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public InputHelper Input { get; }
         private bool _isInitialized;
 
-        private List<GameScreen> _screens;
+        internal List<GameScreen> _screens;
         private List<GameScreen> _screensToUpdate;
 
         private List<RenderTarget2D> _transitions;

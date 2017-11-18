@@ -78,8 +78,6 @@ namespace Rzut.Core
             menu.AddMenuItem("", EntryType.Separator, null);
             menu.AddMenuItem("Exit", EntryType.ExitItem, null);
             ScreenManager.AddScreen(new BackgroundScreen());
-            ScreenManager.AddScreen(menu);
-            ScreenManager.AddScreen(new DataEntryScreen());
             ScreenManager.AddScreen(new LanguageSelectionScreen());
         }
 

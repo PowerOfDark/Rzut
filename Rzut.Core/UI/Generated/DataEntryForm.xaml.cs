@@ -216,10 +216,10 @@ namespace EmptyKeys.UserInterface.Generated {
             row_e_0_1.Height = new GridLength(0.1F, GridUnitType.Star);
             this.e_0.RowDefinitions.Add(row_e_0_1);
             RowDefinition row_e_0_2 = new RowDefinition();
-            row_e_0_2.Height = new GridLength(0.71F, GridUnitType.Star);
+            row_e_0_2.Height = new GridLength(0.67F, GridUnitType.Star);
             this.e_0.RowDefinitions.Add(row_e_0_2);
             RowDefinition row_e_0_3 = new RowDefinition();
-            row_e_0_3.Height = new GridLength(0.11F, GridUnitType.Star);
+            row_e_0_3.Height = new GridLength(0.15F, GridUnitType.Star);
             this.e_0.RowDefinitions.Add(row_e_0_3);
             // tabItems element
             this.tabItems = new ItemsControl();
@@ -814,19 +814,19 @@ namespace EmptyKeys.UserInterface.Generated {
             col_e_51_0.Width = new GridLength(1F, GridUnitType.Auto);
             this.e_51.ColumnDefinitions.Add(col_e_51_0);
             ColumnDefinition col_e_51_1 = new ColumnDefinition();
-            col_e_51_1.Width = new GridLength(0.05F, GridUnitType.Star);
+            col_e_51_1.Width = new GridLength(0.09F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_1);
             ColumnDefinition col_e_51_2 = new ColumnDefinition();
-            col_e_51_2.Width = new GridLength(0.05F, GridUnitType.Star);
+            col_e_51_2.Width = new GridLength(0.09F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_2);
             ColumnDefinition col_e_51_3 = new ColumnDefinition();
-            col_e_51_3.Width = new GridLength(0.12F, GridUnitType.Star);
+            col_e_51_3.Width = new GridLength(0.15F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_3);
             ColumnDefinition col_e_51_4 = new ColumnDefinition();
-            col_e_51_4.Width = new GridLength(0.45F, GridUnitType.Star);
+            col_e_51_4.Width = new GridLength(0.5F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_4);
             ColumnDefinition col_e_51_5 = new ColumnDefinition();
-            col_e_51_5.Width = new GridLength(1F, GridUnitType.Auto);
+            col_e_51_5.Width = new GridLength(0.1F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_5);
             Grid.SetRow(this.e_51, 3);
             // e_52 element
@@ -868,7 +868,7 @@ namespace EmptyKeys.UserInterface.Generated {
             this.preview = new Rectangle();
             this.e_55.Children.Add(this.preview);
             this.preview.Name = "preview";
-            this.preview.Width = 70F;
+            this.preview.Width = 100F;
             this.preview.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.preview.VerticalAlignment = VerticalAlignment.Stretch;
             this.preview.Stretch = Stretch.UniformToFill;
@@ -931,6 +931,7 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_64 = new Border();
             this.e_63.Children.Add(this.e_64);
             this.e_64.Name = "e_64";
+            this.e_64.Height = 99F;
             Style e_64_s = new Style(typeof(Border));
             Setter e_64_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
             e_64_s.Setters.Add(e_64_s_S_0);
@@ -953,14 +954,20 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_66 = new TextBlock();
             this.e_65.Children.Add(this.e_66);
             this.e_66.Name = "e_66";
+            this.e_66.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_66.VerticalAlignment = VerticalAlignment.Center;
             this.e_66.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            this.e_66.FontSize = 30F;
             Binding binding_e_66_Text = new Binding("UnitRatioDisplay");
             this.e_66.SetBinding(TextBlock.TextProperty, binding_e_66_Text);
             // UnitRatio element
             this.UnitRatio = new TextBox();
             this.e_65.Children.Add(this.UnitRatio);
             this.UnitRatio.Name = "UnitRatio";
+            this.UnitRatio.Height = 93F;
             this.UnitRatio.Tag = "float";
+            this.UnitRatio.VerticalAlignment = VerticalAlignment.Center;
+            this.UnitRatio.FontSize = 30F;
             Binding binding_UnitRatio_Text = new Binding("UnitRatio");
             binding_UnitRatio_Text.Mode = BindingMode.TwoWay;
             binding_UnitRatio_Text.StringFormat = "{0:0.00}";
@@ -969,10 +976,9 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_67 = new Button();
             this.e_51.Children.Add(this.e_67);
             this.e_67.Name = "e_67";
-            this.e_67.Margin = new Thickness(677F, 0F, 0F, 0F);
             this.e_67.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.e_67.CommandParameter = null;
-            Grid.SetColumn(this.e_67, 4);
+            Grid.SetColumn(this.e_67, 5);
             Binding binding_e_67_Command = new Binding("StartSimulation");
             this.e_67.SetBinding(Button.CommandProperty, binding_e_67_Command);
             // e_68 element

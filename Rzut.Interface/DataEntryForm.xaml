@@ -23,8 +23,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.08*"/>
             <RowDefinition Height="0.10*"/>
-            <RowDefinition Height="0.71*"/>
-            <RowDefinition Height="0.11*"/>
+            <RowDefinition Height="0.67*"/>
+            <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
         <ItemsControl Grid.Row="0" ItemsSource="{Binding Entities}" Name="tabItems">
 
@@ -156,11 +156,11 @@
         <Grid Grid.Row="3" HorizontalAlignment="Stretch" Background="DarkGray">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="0.05*"/>
-                <ColumnDefinition Width="0.05*"/>
-                <ColumnDefinition Width="0.12*"/>
-                <ColumnDefinition Width="0.45*"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="0.09*"/>
+                <ColumnDefinition Width="0.09*"/>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.10*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
                 <ListBox ItemsSource="{Binding AvailableBrushes}" SelectedIndex="0" Name="color">
@@ -184,7 +184,7 @@
                 </Grid.RowDefinitions>
                 <Rectangle Grid.Row="0">
                 </Rectangle>
-                <Rectangle Width="70" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="preview">
+                <Rectangle Width="100" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="preview">
                 </Rectangle>
                 <Rectangle Grid.Row="2">
                 </Rectangle>
@@ -202,16 +202,16 @@
 
             <WrapPanel Grid.Column="4" VerticalAlignment="Center" Orientation="Vertical">
                 <WrapPanel Orientation="Horizontal" Background="DarkGray">
-                    <Border Style="{StaticResource InputBorder}">
+                    <Border Style="{StaticResource InputBorder}" Height="99">
                         <StackPanel Style="{StaticResource Panel}">
-                            <TextBlock Foreground="Black" Text="{Binding UnitRatioDisplay}"/>
-                            <TextBox Tag="float" x:Name="UnitRatio" Text="{Binding UnitRatio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                            <TextBlock VerticalAlignment="Center" Margin="10" FontSize="30" Foreground="Black" Text="{Binding UnitRatioDisplay}"/>
+                            <TextBox VerticalAlignment="Center" Tag="float" FontSize="30" x:Name="UnitRatio" TextAlignment="Center" Text="{Binding UnitRatio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}" Height="93"/>
                         </StackPanel>
                     </Border>
                 </WrapPanel>
             </WrapPanel>
 
-            <Button Grid.Column="4" Command="{Binding StartSimulation}" CommandParameter="{x:Null}" HorizontalAlignment="Stretch" Margin="677,0,0,0">
+            <Button Grid.Column="5" Command="{Binding StartSimulation}" CommandParameter="{x:Null}" HorizontalAlignment="Stretch">
                 <TextBlock FontSize="30" Text="Start"/>
             </Button>
 

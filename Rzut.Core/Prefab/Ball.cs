@@ -65,13 +65,15 @@ namespace Rzut.Core.Prefab
 
         public override void Update(GameTime time)
         {
-            var area = (float)(Math.PI * Data.Radius * Data.Radius);
             Body.ApplyForce(new Vector2(0, Body.Mass * Data.GravitationalAcceleration));
-            if (Data.AirResistance > float.Epsilon)
-            {
-                Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area);
-            }
-
+            var area = (float)(Math.PI * Data.Radius * Data.Radius);
+            float d = -0.5f;
+            float density = 1f;
+            Vector2 v = Body.LinearVelocity;
+            float C = 0.47f;//Drag coefficient
+            float value = d * density * C * area;
+            Body.ApplyForce(new Vector2((float)((v.X < 0.0f ? -1 : 1) * value * v.X * v.X), (float)( (v.Y < 0.0f ? -1 : 1) * value * v.Y * v.Y) ));
+            Body.ApplyForce(new Vector2(0,-density * Data.GravitationalAcceleration * ((4/3) * (float)Math.PI * (float)Math.Pow(Data.Radius,3.0))));
             if (Data.AngularDrag > float.Epsilon)
             {
                 Body.ApplyTorque(-Body.Inertia / Body.Mass * area * Body.AngularVelocity * Data.AngularDrag);

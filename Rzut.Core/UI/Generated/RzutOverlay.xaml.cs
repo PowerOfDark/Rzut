@@ -137,6 +137,7 @@ namespace EmptyKeys.UserInterface.Generated {
             TextBlock e_6 = new TextBlock();
             e_5.Children.Add(e_6);
             e_6.Name = "e_6";
+            e_6.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             e_6.FontSize = 20F;
             Grid.SetColumn(e_6, 0);
             Binding binding_e_6_Text = new Binding("LinearVelocityDisplay");
@@ -145,6 +146,7 @@ namespace EmptyKeys.UserInterface.Generated {
             TextBlock e_7 = new TextBlock();
             e_5.Children.Add(e_7);
             e_7.Name = "e_7";
+            e_7.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             e_7.FontSize = 20F;
             Grid.SetColumn(e_7, 2);
             Binding binding_e_7_Text = new Binding("LinearVelocity");
@@ -153,6 +155,7 @@ namespace EmptyKeys.UserInterface.Generated {
             TextBlock e_8 = new TextBlock();
             e_4.Children.Add(e_8);
             e_8.Name = "e_8";
+            e_8.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             e_8.FontSize = 16F;
             Grid.SetRow(e_8, 1);
             Binding binding_e_8_Text = new Binding("LinearVelocityDetails");
@@ -161,6 +164,7 @@ namespace EmptyKeys.UserInterface.Generated {
             TextBlock e_9 = new TextBlock();
             e_4.Children.Add(e_9);
             e_9.Name = "e_9";
+            e_9.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             e_9.FontSize = 20F;
             Grid.SetRow(e_9, 2);
             Binding binding_e_9_Text = new Binding("PositionDisplay");
@@ -169,6 +173,7 @@ namespace EmptyKeys.UserInterface.Generated {
             TextBlock e_10 = new TextBlock();
             e_4.Children.Add(e_10);
             e_10.Name = "e_10";
+            e_10.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             e_10.FontSize = 16F;
             Grid.SetRow(e_10, 3);
             Binding binding_e_10_Text = new Binding("Position");

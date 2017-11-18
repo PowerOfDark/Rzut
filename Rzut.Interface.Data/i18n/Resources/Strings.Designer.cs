@@ -107,6 +107,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable collisions.
+        /// </summary>
+        public static string Checkbox_EnableCollisions {
+            get {
+                return ResourceManager.GetString("Checkbox_EnableCollisions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Air resistance.
         /// </summary>
         public static string EntityViewModel_AirResistance {

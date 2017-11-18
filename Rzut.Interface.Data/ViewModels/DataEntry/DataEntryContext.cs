@@ -52,7 +52,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string ThrowParametersDisplay => Strings.Header_ThrowParameters;
         public string CoefficientsDisplay => Strings.Header_Coefficients;
         public string WorldDisplay => Strings.Header_World;
-
+        public string CheckboxEnableCollisionsDisplay => Strings.Checkbox_EnableCollisions;
         public string ButtonAddDisplay => Strings.Button_Add;
         public string ButtonRemoveDisplay => Strings.Button_Remove;
 

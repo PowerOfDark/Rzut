@@ -132,6 +132,9 @@
   <data name="Button_Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
+  <data name="Checkbox_EnableCollisions" xml:space="preserve">
+    <value>Enable collisions</value>
+  </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
     <value>Air resistance</value>
   </data>

@@ -35,7 +35,7 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private ListBox list;
         
-        private TextBlock e_11;
+        private TextBlock e_17;
         
         public RzutOverlay() : 
                 base() {
@@ -96,12 +96,12 @@ namespace EmptyKeys.UserInterface.Generated {
             Grid.SetRow(this.list, 0);
             Binding binding_list_ItemsSource = new Binding("Balls");
             this.list.SetBinding(ListBox.ItemsSourceProperty, binding_list_ItemsSource);
-            // e_11 element
-            this.e_11 = new TextBlock();
-            this.e_2.Children.Add(this.e_11);
-            this.e_11.Name = "e_11";
-            this.e_11.Text = "Tutaj będą przyciski xd";
-            Grid.SetRow(this.e_11, 1);
+            // e_17 element
+            this.e_17 = new TextBlock();
+            this.e_2.Children.Add(this.e_17);
+            this.e_17.Name = "e_17";
+            this.e_17.Text = "Tutaj będą przyciski xd";
+            Grid.SetRow(this.e_17, 1);
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
             FontManager.Instance.AddFont("Segoe UI", 16F, FontStyle.Regular, "Segoe_UI_12_Regular");
         }
@@ -166,7 +166,6 @@ namespace EmptyKeys.UserInterface.Generated {
             e_9.Name = "e_9";
             e_9.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             e_9.FontSize = 20F;
-            Grid.SetRow(e_9, 2);
             Binding binding_e_9_Text = new Binding("PositionDisplay");
             e_9.SetBinding(TextBlock.TextProperty, binding_e_9_Text);
             // e_10 element
@@ -175,9 +174,70 @@ namespace EmptyKeys.UserInterface.Generated {
             e_10.Name = "e_10";
             e_10.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
             e_10.FontSize = 16F;
-            Grid.SetRow(e_10, 3);
             Binding binding_e_10_Text = new Binding("Position");
             e_10.SetBinding(TextBlock.TextProperty, binding_e_10_Text);
+            // e_11 element
+            Grid e_11 = new Grid();
+            e_4.Children.Add(e_11);
+            e_11.Name = "e_11";
+            ColumnDefinition col_e_11_0 = new ColumnDefinition();
+            col_e_11_0.Width = new GridLength(1F, GridUnitType.Auto);
+            e_11.ColumnDefinitions.Add(col_e_11_0);
+            ColumnDefinition col_e_11_1 = new ColumnDefinition();
+            col_e_11_1.Width = new GridLength(1F, GridUnitType.Star);
+            e_11.ColumnDefinitions.Add(col_e_11_1);
+            ColumnDefinition col_e_11_2 = new ColumnDefinition();
+            col_e_11_2.Width = new GridLength(1F, GridUnitType.Auto);
+            e_11.ColumnDefinitions.Add(col_e_11_2);
+            // e_12 element
+            TextBlock e_12 = new TextBlock();
+            e_11.Children.Add(e_12);
+            e_12.Name = "e_12";
+            e_12.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            e_12.FontSize = 20F;
+            Grid.SetColumn(e_12, 0);
+            Binding binding_e_12_Text = new Binding("AngularVelocityDisplay");
+            e_12.SetBinding(TextBlock.TextProperty, binding_e_12_Text);
+            // e_13 element
+            TextBlock e_13 = new TextBlock();
+            e_11.Children.Add(e_13);
+            e_13.Name = "e_13";
+            e_13.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            e_13.FontSize = 20F;
+            Grid.SetColumn(e_13, 2);
+            Binding binding_e_13_Text = new Binding("AngularVelocity");
+            e_13.SetBinding(TextBlock.TextProperty, binding_e_13_Text);
+            // e_14 element
+            Grid e_14 = new Grid();
+            e_4.Children.Add(e_14);
+            e_14.Name = "e_14";
+            ColumnDefinition col_e_14_0 = new ColumnDefinition();
+            col_e_14_0.Width = new GridLength(1F, GridUnitType.Auto);
+            e_14.ColumnDefinitions.Add(col_e_14_0);
+            ColumnDefinition col_e_14_1 = new ColumnDefinition();
+            col_e_14_1.Width = new GridLength(1F, GridUnitType.Star);
+            e_14.ColumnDefinitions.Add(col_e_14_1);
+            ColumnDefinition col_e_14_2 = new ColumnDefinition();
+            col_e_14_2.Width = new GridLength(1F, GridUnitType.Auto);
+            e_14.ColumnDefinitions.Add(col_e_14_2);
+            // e_15 element
+            TextBlock e_15 = new TextBlock();
+            e_14.Children.Add(e_15);
+            e_15.Name = "e_15";
+            e_15.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            e_15.FontSize = 20F;
+            Grid.SetColumn(e_15, 0);
+            Binding binding_e_15_Text = new Binding("RangeDisplay");
+            e_15.SetBinding(TextBlock.TextProperty, binding_e_15_Text);
+            // e_16 element
+            TextBlock e_16 = new TextBlock();
+            e_14.Children.Add(e_16);
+            e_16.Name = "e_16";
+            e_16.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            e_16.FontSize = 20F;
+            Grid.SetColumn(e_16, 2);
+            Binding binding_e_16_Text = new Binding("Range");
+            e_16.SetBinding(TextBlock.TextProperty, binding_e_16_Text);
             return e_3;
         }
     }

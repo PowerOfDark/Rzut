@@ -46,7 +46,7 @@ namespace Rzut.Core.Prefab
             {
                 var last = Data.Last.Value;
                 var dist = pos - last.Position;
-                if (dist.Length() + Size < Step) return;
+                if (dist.Length() < Step + Size) return;
             }
             Data.AddLast(new MarkerData() { Position = pos});
         }
@@ -54,15 +54,16 @@ namespace Rzut.Core.Prefab
         public void Draw(GameTime time, SpriteBatch batch)
         {
             //batch.Draw(Texture,)
+            const int BorderSize = 2;
             foreach (var point in Data)
             {
                 var targetRect = ConvertUnits.ToDisplayUnits(point.Position.X - Size, point.Position.Y - Size, Size * 2, Size * 2);
-                var borderRect = new Rectangle(targetRect.X - 2, targetRect.Y - 2, targetRect.Width + 4, targetRect.Height + 4);
+                var borderRect = new Rectangle(targetRect.X - BorderSize, targetRect.Y - BorderSize, targetRect.Width + 2*BorderSize, targetRect.Height + 2*BorderSize);
                 batch.Draw(Border, borderRect, Color.White);
                 batch.Draw(Texture,targetRect, Color.White);
                 var mouseVect = ConvertUnits.ToDisplayUnits(RzutScreen.CameraInstance.ConvertScreenToWorld(_cursor));
                 if(targetRect.Contains(mouseVect.X, mouseVect.Y))
-                batch.DrawString(RzutScreen.DetailsFont, $"X: {point.Position.X:0.0}m\nY: {point.Position.Y:0.0}m", new Vector2(targetRect.X, targetRect.Y-50), Color.White);
+                batch.DrawString(RzutScreen.DetailsFont, $"X: {point.Position.X:0.0}m\nY: {-point.Position.Y:0.0}m", new Vector2(targetRect.X, targetRect.Y-50), Color.White);
             }
         }
 

@@ -31,6 +31,11 @@ namespace tainicom.Aether.Physics2D
             return simUnits * _displayUnitsToSimUnitsRatio;
         }
 
+        public static Rectangle ToDisplayUnits(float x, float y, float width, float height)
+        {
+            return new Rectangle((int)(x * _displayUnitsToSimUnitsRatio), (int)(y * _displayUnitsToSimUnitsRatio), (int)(width * _displayUnitsToSimUnitsRatio), (int)(height * _displayUnitsToSimUnitsRatio));
+        }
+
         public static float ToDisplayUnits(int simUnits)
         {
             return simUnits * _displayUnitsToSimUnitsRatio;

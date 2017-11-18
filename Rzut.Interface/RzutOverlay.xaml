@@ -35,12 +35,12 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" FontSize="20" Text="{Binding LinearVelocityDisplay}"/>
-                                        <TextBlock Grid.Column="2" FontSize="20" Text="{Binding LinearVelocity}"/>
+                                        <TextBlock Grid.Column="0" FontSize="20" Foreground="Black" Text="{Binding LinearVelocityDisplay}"/>
+                                        <TextBlock Grid.Column="2" FontSize="20" Foreground="Black" Text="{Binding LinearVelocity}"/>
                                     </Grid>
-                                    <TextBlock Grid.Row="1" FontSize="16" Text="{Binding LinearVelocityDetails}"/>
-                                    <TextBlock Grid.Row="2" FontSize="20" Text="{Binding PositionDisplay}"/>
-                                    <TextBlock Grid.Row="3" FontSize="16" Text="{Binding Position}"/>
+                                    <TextBlock Grid.Row="1" FontSize="16" Foreground="Black" Text="{Binding LinearVelocityDetails}"/>
+                                    <TextBlock Grid.Row="2" FontSize="20" Foreground="Black" Text="{Binding PositionDisplay}"/>
+                                    <TextBlock Grid.Row="3" FontSize="16" Foreground="Black" Text="{Binding Position}"/>
 
                                 </StackPanel>
                             </Border>

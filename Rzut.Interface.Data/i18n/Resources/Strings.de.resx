@@ -117,14 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Body_AngularVelocity" xml:space="preserve">
+    <value>Winkelgeschwindigkeit</value>
+  </data>
   <data name="Body_LinearVelocity" xml:space="preserve">
     <value>Lineargeschwindigkeit</value>
   </data>
   <data name="Body_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Body_Range" xml:space="preserve">
     <value>Lage</value>
+  </data>
+  <data name="Button_Add" xml:space="preserve">
+    <value>Hinzufügen</value>
   </data>
   <data name="Button_Apply" xml:space="preserve">
     <value>Bewerben</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="Checkbox_EnableCollisions" xml:space="preserve">
+    <value>Kollisionen aktivieren</value>
+  </data>
+  <data name="Config_UnitRatio" xml:space="preserve">
+    <value>Einheitsverhältnis [px/m]</value>
+  </data>
+  <data name="EntityViewModel_AirDensity" xml:space="preserve">
+    <value>Luftdichte [kg/m^3]</value>
   </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
     <value>Luftwiderstand</value>
@@ -132,17 +153,23 @@
   <data name="EntityViewModel_AngularDrag" xml:space="preserve">
     <value>Winkelwiderstand</value>
   </data>
+  <data name="EntityViewModel_AngularVelocity" xml:space="preserve">
+    <value>Winkelgeschwindigkeit [rad/s]</value>
+  </data>
   <data name="EntityViewModel_Friction" xml:space="preserve">
     <value>Reibung</value>
   </data>
   <data name="EntityViewModel_GravitationalAcceleration" xml:space="preserve">
-    <value>Schwerkraftbeschleunigung</value>
+    <value>Beschleunigung [m/s^2]</value>
   </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
-    <value>Masse</value>
+    <value>Masse [kg]</value>
   </data>
   <data name="EntityViewModel_Radius" xml:space="preserve">
-    <value>Halbmesser</value>
+    <value>Halbmesser [m]</value>
+  </data>
+  <data name="EntityViewModel_Restitution" xml:space="preserve">
+    <value>Restitution</value>
   </data>
   <data name="EntityViewModel_StartAngle" xml:space="preserve">
     <value>Startwinkel (im Uhrzeigersinn)</value>
@@ -157,10 +184,25 @@
     <value>Geschwindigkeit [m/s]</value>
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
-    <value>Wähle eine Sprache</value>
+    <value>Wähle eine Sprach</value>
+  </data>
+  <data name="Header_Coefficients" xml:space="preserve">
+    <value>Koeffizienten</value>
+  </data>
+  <data name="Header_Color" xml:space="preserve">
+    <value>Farbe</value>
+  </data>
+  <data name="Header_ThrowParameters" xml:space="preserve">
+    <value>Wurfparameter</value>
   </data>
   <data name="Header_Title" xml:space="preserve">
     <value>Ballwurfsimulator</value>
+  </data>
+  <data name="Header_World" xml:space="preserve">
+    <value>Welt</value>
+  </data>
+  <data name="Overlay_AngularVelocity" xml:space="preserve">
+    <value>{0:0.00} rad/s</value>
   </data>
   <data name="Tab_Ball" xml:space="preserve">
     <value>Ball {0}</value>

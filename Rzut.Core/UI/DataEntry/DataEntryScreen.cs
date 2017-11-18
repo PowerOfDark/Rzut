@@ -158,8 +158,9 @@ namespace Rzut.Core.UI.DataEntry
 
         private void Context_SimulationStarted(DataEntryContext context)
         {
-            ExitScreen();
+            if (ScreenManager._screens.Last() is RzutScreen) return;
             ScreenManager.AddScreen(new RzutScreen(context));
+            ScreenManager.RemoveScreen(this);
         }
 
         private void Context_TabClicked1(EntityViewModel entity)

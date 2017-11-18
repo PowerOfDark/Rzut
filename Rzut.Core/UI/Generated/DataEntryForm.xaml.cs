@@ -169,9 +169,21 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private CheckBox e_61;
         
-        private Button e_62;
+        private WrapPanel e_62;
         
-        private TextBlock e_63;
+        private WrapPanel e_63;
+        
+        private Border e_64;
+        
+        private StackPanel e_65;
+        
+        private TextBlock e_66;
+        
+        private TextBox UnitRatio;
+        
+        private Button e_67;
+        
+        private TextBlock e_68;
         
         public DataEntryForm() : 
                 base() {
@@ -903,19 +915,70 @@ namespace EmptyKeys.UserInterface.Generated {
             Binding binding_e_61_IsChecked = new Binding("EnableCollision");
             this.e_61.SetBinding(CheckBox.IsCheckedProperty, binding_e_61_IsChecked);
             // e_62 element
-            this.e_62 = new Button();
+            this.e_62 = new WrapPanel();
             this.e_51.Children.Add(this.e_62);
             this.e_62.Name = "e_62";
-            this.e_62.HorizontalAlignment = HorizontalAlignment.Stretch;
-            this.e_62.CommandParameter = null;
-            Grid.SetColumn(this.e_62, 5);
-            Binding binding_e_62_Command = new Binding("StartSimulation");
-            this.e_62.SetBinding(Button.CommandProperty, binding_e_62_Command);
+            this.e_62.Orientation = Orientation.Vertical;
+            Grid.SetColumn(this.e_62, 4);
             // e_63 element
-            this.e_63 = new TextBlock();
-            this.e_62.Content = this.e_63;
+            this.e_63 = new WrapPanel();
+            this.e_62.Children.Add(this.e_63);
             this.e_63.Name = "e_63";
-            this.e_63.Text = "start this shit";
+            this.e_63.Background = new SolidColorBrush(new ColorW(169, 169, 169, 255));
+            this.e_63.Orientation = Orientation.Horizontal;
+            // e_64 element
+            this.e_64 = new Border();
+            this.e_63.Children.Add(this.e_64);
+            this.e_64.Name = "e_64";
+            Style e_64_s = new Style(typeof(Border));
+            Setter e_64_s_S_0 = new Setter(Border.BorderBrushProperty, new SolidColorBrush(new ColorW(0, 0, 0, 255)));
+            e_64_s.Setters.Add(e_64_s_S_0);
+            Setter e_64_s_S_1 = new Setter(Border.BorderThicknessProperty, new Thickness(3F));
+            e_64_s.Setters.Add(e_64_s_S_1);
+            Setter e_64_s_S_2 = new Setter(Border.MarginProperty, new Thickness(3F));
+            e_64_s.Setters.Add(e_64_s_S_2);
+            this.e_64.Style = e_64_s;
+            // e_65 element
+            this.e_65 = new StackPanel();
+            this.e_64.Child = this.e_65;
+            this.e_65.Name = "e_65";
+            Style e_65_s = new Style(typeof(StackPanel));
+            Setter e_65_s_S_0 = new Setter(StackPanel.OrientationProperty, Orientation.Horizontal);
+            e_65_s.Setters.Add(e_65_s_S_0);
+            Setter e_65_s_S_1 = new Setter(StackPanel.BackgroundProperty, new SolidColorBrush(new ColorW(211, 211, 211, 255)));
+            e_65_s.Setters.Add(e_65_s_S_1);
+            this.e_65.Style = e_65_s;
+            // e_66 element
+            this.e_66 = new TextBlock();
+            this.e_65.Children.Add(this.e_66);
+            this.e_66.Name = "e_66";
+            this.e_66.Margin = new Thickness(10F, 10F, 10F, 10F);
+            this.e_66.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            Binding binding_e_66_Text = new Binding("UnitRatioDisplay");
+            this.e_66.SetBinding(TextBlock.TextProperty, binding_e_66_Text);
+            // UnitRatio element
+            this.UnitRatio = new TextBox();
+            this.e_65.Children.Add(this.UnitRatio);
+            this.UnitRatio.Name = "UnitRatio";
+            this.UnitRatio.Tag = "float";
+            Binding binding_UnitRatio_Text = new Binding("UnitRatio");
+            binding_UnitRatio_Text.Mode = BindingMode.TwoWay;
+            binding_UnitRatio_Text.StringFormat = "{0:0.00}";
+            this.UnitRatio.SetBinding(TextBox.TextProperty, binding_UnitRatio_Text);
+            // e_67 element
+            this.e_67 = new Button();
+            this.e_51.Children.Add(this.e_67);
+            this.e_67.Name = "e_67";
+            this.e_67.HorizontalAlignment = HorizontalAlignment.Stretch;
+            this.e_67.CommandParameter = null;
+            Grid.SetColumn(this.e_67, 5);
+            Binding binding_e_67_Command = new Binding("StartSimulation");
+            this.e_67.SetBinding(Button.CommandProperty, binding_e_67_Command);
+            // e_68 element
+            this.e_68 = new TextBlock();
+            this.e_67.Content = this.e_68;
+            this.e_68.Name = "e_68";
+            this.e_68.Text = "start this shit";
             FontManager.Instance.AddFont("Segoe UI", 30F, FontStyle.Regular, "Segoe_UI_22.5_Regular");
             FontManager.Instance.AddFont("Segoe UI", 50F, FontStyle.Bold, "Segoe_UI_37.5_Bold");
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");

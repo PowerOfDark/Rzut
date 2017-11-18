@@ -134,6 +134,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unit ratio [px/m].
+        /// </summary>
+        public static string Config_UnitRatio {
+            get {
+                return ResourceManager.GetString("Config_UnitRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Air resistance.
         /// </summary>
         public static string EntityViewModel_AirResistance {

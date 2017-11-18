@@ -200,6 +200,17 @@
                 <CheckBox VerticalAlignment="Center" Margin="5,0,0,0" IsChecked="{Binding EnableCollision}"/>
             </WrapPanel>
 
+            <WrapPanel Grid.Column="4" Orientation="Vertical">
+                <WrapPanel Orientation="Horizontal" Background="DarkGray">
+                    <Border Style="{StaticResource InputBorder}">
+                        <StackPanel Style="{StaticResource Panel}">
+                            <TextBlock Margin="10" Foreground="Black" Text="{Binding UnitRatioDisplay}"/>
+                            <TextBox Tag="float" x:Name="UnitRatio" Text="{Binding UnitRatio, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+                    </Border>
+                </WrapPanel>
+            </WrapPanel>
+            
             <Button Grid.Column="5" Command="{Binding StartSimulation}" CommandParameter="{x:Null}" HorizontalAlignment="Stretch">
                 <TextBlock Text="start this shit"/>
             </Button>

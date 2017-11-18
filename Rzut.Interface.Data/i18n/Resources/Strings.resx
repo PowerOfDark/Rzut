@@ -141,6 +141,9 @@
   <data name="Checkbox_EnableCollisions" xml:space="preserve">
     <value>Enable collisions</value>
   </data>
+  <data name="Config_UnitRatio" xml:space="preserve">
+    <value>Unit ratio [px/m]</value>
+  </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
     <value>Air resistance</value>
   </data>

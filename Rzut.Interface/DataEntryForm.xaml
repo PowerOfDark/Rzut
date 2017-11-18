@@ -139,7 +139,7 @@
                     <GroupBox.Header>
                         <TextBlock Margin="10" Foreground="Black" FontSize="50" FontWeight="Bold" Text="{Binding WorldDisplay}"/>
                     </GroupBox.Header>
-                    <WrapPanel Orientation="Horizontal">
+                    <WrapPanel Orientation="Horizontal" Background="DarkGray">
                         <Border Style="{StaticResource InputBorder}">
                             <StackPanel Style="{StaticResource Panel}">
                                 <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=GravitationalAccelerationDisplay}"/>
@@ -152,53 +152,59 @@
             </StackPanel>
 
         </ScrollViewer>
-        <Grid Grid.Row="3" Background="DarkGray">
+
+        <Grid Grid.Row="3" HorizontalAlignment="Stretch" Background="DarkGray">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.7*"/>
-                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="0.20*"/>
+                <ColumnDefinition Width="0.10*"/>
+                <ColumnDefinition Width="0.20*"/>
+                <ColumnDefinition Width="0.40*"/>
+                <ColumnDefinition Width="0.10*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalAlignment="Left">
-                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
-                    <ListBox ItemsSource="{Binding AvailableBrushes}" SelectedIndex="0" Name="color">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Border BorderThickness="2" BorderBrush="AliceBlue">
-                                    <Grid Width="100" Height="25" Background="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <ListBox ItemsSource="{Binding AvailableBrushes}" SelectedIndex="0" Name="color">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="2" BorderBrush="AliceBlue">
+                                <Grid Width="100" Height="25" Background="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
 
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0.1*"/>
-                            <RowDefinition Height="0.8*"/>
-                            <RowDefinition Height="0.1*"/>
-                        </Grid.RowDefinitions>
-                        <Rectangle Width="110" Grid.Row="0">
-                        </Rectangle>
-                        <Rectangle Width="100" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="preview">
-                        </Rectangle>
-                        <Rectangle Grid.Row="2">
-                        </Rectangle>
-                    </Grid>
-                  
-                    <Button Name="add" Width="180">
-                        <TextBlock FontSize="30" Text="{Binding ButtonAddDisplay}"/>
-                    </Button>
-                    <Rectangle Width="10">
-                    </Rectangle>
-                    <TextBlock VerticalAlignment="Center" Foreground="Black" FontSize="20" Text="{Binding CheckboxEnableCollisionsDisplay}"/>
-                    <Rectangle Width="10">
-                    </Rectangle>
-                    <CheckBox VerticalAlignment="Center" IsChecked="{Binding EnableCollision}"/>
-                </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0">
+                </Rectangle>
+                <Rectangle Width="100" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="preview">
+                </Rectangle>
+                <Rectangle Grid.Row="2">
+                </Rectangle>
             </Grid>
-            <Button Grid.Column="1" Command="{Binding StartSimulation}" CommandParameter="{x:Null}" HorizontalAlignment="Stretch">
+
+            <Button Grid.Column="2" Name="add">
+                <TextBlock FontSize="30" Text="{Binding ButtonAddDisplay}"/>
+            </Button>
+
+
+            <WrapPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock VerticalAlignment="Center" Foreground="Black" FontSize="20" Text="{Binding CheckboxEnableCollisionsDisplay}"/>
+                <CheckBox VerticalAlignment="Center" Margin="5,0,0,0" IsChecked="{Binding EnableCollision}"/>
+            </WrapPanel>
+
+            <Button Grid.Column="5" Command="{Binding StartSimulation}" CommandParameter="{x:Null}" HorizontalAlignment="Stretch">
                 <TextBlock Text="start this shit"/>
             </Button>
+
+
         </Grid>
     </Grid>
 </ek:UIRoot>

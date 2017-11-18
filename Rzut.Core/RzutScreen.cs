@@ -61,9 +61,16 @@ namespace Rzut.Core
 
         #endregion
 
+        public RzutScreen(DataEntryContext context) : base()
+        {
+            DataEntryContext = context;
+            ConvertUnits.SetDisplayUnitToSimUnitRatio(DataEntryContext.UnitRatio);
+        }
+
         public override void LoadContent()
         {
             base.LoadContent();
+            
             CameraInstance = Camera;
             DetailsFont = ScreenManager.Content.Load<SpriteFont>("UI/Segoe_UI_30_Regular");
             _ramps = new List<Body>();

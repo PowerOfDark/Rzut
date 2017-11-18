@@ -14,6 +14,8 @@ using System.Diagnostics;
 using static Rzut.Interface.Data.ViewModels.DataEntry.EntityViewModel;
 using EmptyKeys.UserInterface;
 using EmptyKeys.UserInterface.Media;
+using Rzut.Interface.Data.i18n;
+using tainicom.Aether.Physics2D;
 
 namespace Rzut.Interface.Data.ViewModels.DataEntry
 {
@@ -55,12 +57,14 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         public string CheckboxEnableCollisionsDisplay => Strings.Checkbox_EnableCollisions;
         public string ButtonAddDisplay => Strings.Button_Add;
         public string ButtonRemoveDisplay => Strings.Button_Remove;
+        public string UnitRatioDisplay => Strings.Config_UnitRatio;
 
         private bool _enableCollision;
         public bool EnableCollision { get => _enableCollision; set => SetProperty(ref _enableCollision, value); }
 
         private float _unitRatio;
         public float UnitRatio { get => _unitRatio; set => SetProperty(ref _unitRatio, value); }
+
 
         public UIElement Form { get; set; }
 
@@ -148,6 +152,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
 
             SetActive(Entities.First());
 
+            UnitRatio = ConvertUnits.Ratio;
+
             StartSimulation = new RelayCommand(t => SimulationStarted?.Invoke(this));
 
         }
@@ -170,10 +176,13 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             errors = new List<string>();
             switch (property)
             {
-
+                case nameof(UnitRatio):
+                    Validation.ValidateRange(this, t => t.UnitRatio, 1f, 1000f, errors, "float");
+                    break;
                 default:
                     return true;
             }
+            return errors.Count == 0;
         }
     }
 }

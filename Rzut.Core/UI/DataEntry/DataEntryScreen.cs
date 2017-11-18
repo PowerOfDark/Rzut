@@ -145,7 +145,7 @@ namespace Rzut.Core.UI.DataEntry
 
         private void Context_SimulationStarted(DataEntryContext context)
         {
-            ScreenManager.AddScreen(new RzutScreen() { DataEntryContext = context });
+            ScreenManager.AddScreen(new RzutScreen(context));
         }
 
         private void Context_TabClicked1(EntityViewModel entity)

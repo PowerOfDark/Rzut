@@ -144,6 +144,9 @@
   <data name="Config_UnitRatio" xml:space="preserve">
     <value>Unit ratio [px/m]</value>
   </data>
+  <data name="EntityViewModel_AirDensity" xml:space="preserve">
+    <value>Density [kg/m^3]</value>
+  </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
     <value>Air resistance</value>
   </data>

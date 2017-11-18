@@ -65,7 +65,6 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _unitRatio;
         public float UnitRatio { get => _unitRatio; set => SetProperty(ref _unitRatio, value); }
 
-
         public UIElement Form { get; set; }
 
         public void SetActive(EntityViewModel entity)
@@ -122,32 +121,35 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
             {
                 Color = Color.Red,
                 Radius = 1.5f,
-                Mass = 2f,
-                StartY = 60f,
-                StartX = 40f,
-                Velocity = 100f,
+                Mass = 20f,
+                StartY = 70f,
+                StartX = 0f,
+                Velocity = 120f,
                 StartAngle = 270f,
                 //Friction = 50f,
-                AirResistance = 0.10f,
+                AirResistance = 0.47f,
                 AngularDrag = 0.10f,
-                GravitationalAcceleration = 10,
-                AngularVelocity = 50,
+                GravitationalAcceleration = 10f,
+                AngularVelocity = 50f,
+                Restitution = 0.2f
             });
 
             AddTab(new EntityViewModel(this)
             {
                 Color = Color.Green,
                 Radius = 2f,
-                Mass = 3f,
+                Mass = 30f,
                 StartY = 60f,
                 StartX = 0f,
                 Velocity = 100f,
-                StartAngle = 90f,
+                StartAngle = 270f,
                 //Friction = 50f,
-                AirResistance = 0.10f,
+                AirResistance = 0.47f,
                 AngularDrag = 0.10f,
-                GravitationalAcceleration = 10,
-                AngularVelocity = 1
+                GravitationalAcceleration = 10f,
+                AngularVelocity = 1f,
+                Restitution = 0.3f
+
             });
 
             SetActive(Entities.First());

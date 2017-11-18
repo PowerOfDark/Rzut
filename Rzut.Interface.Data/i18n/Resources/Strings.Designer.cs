@@ -143,6 +143,15 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Density [kg/m^3].
+        /// </summary>
+        public static string EntityViewModel_AirDensity {
+            get {
+                return ResourceManager.GetString("EntityViewModel_AirDensity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Air resistance.
         /// </summary>
         public static string EntityViewModel_AirResistance {

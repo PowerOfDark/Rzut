@@ -164,10 +164,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="0.09*"/>
-                <ColumnDefinition Width="0.09*"/>
-                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.12*"/>
+                <ColumnDefinition Width="0.20*"/>
                 <ColumnDefinition Width="0.5*"/>
-                <ColumnDefinition Width="0.10*"/>
+                <ColumnDefinition Width="0.12*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
                 <ListBox ItemsSource="{Binding AvailableBrushes}" SelectedIndex="0" Name="color">

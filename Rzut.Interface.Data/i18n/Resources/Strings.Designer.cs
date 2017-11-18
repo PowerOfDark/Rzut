@@ -323,7 +323,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Back.
+        ///   Looks up a localized string similar to Return.
         /// </summary>
         public static string Overlay_Back {
             get {

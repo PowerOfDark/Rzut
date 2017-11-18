@@ -142,16 +142,16 @@
     <value>Kolizje</value>
   </data>
   <data name="Config_UnitRatio" xml:space="preserve">
-    <value>Stosunek jednostek</value>
+    <value>Stosunek jednostek [px/m]</value>
   </data>
   <data name="EntityViewModel_AirDensity" xml:space="preserve">
     <value>Gęstość powietrza [kg/m^3]</value>
   </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
-    <value>Opór powietrza [wsp.]</value>
+    <value>Opór powietrza</value>
   </data>
   <data name="EntityViewModel_AngularDrag" xml:space="preserve">
-    <value>Opór obrotu [wsp.]</value>
+    <value>Opór obrotu</value>
   </data>
   <data name="EntityViewModel_AngularVelocity" xml:space="preserve">
     <value>Prędkość kątowa [rad/s]</value>
@@ -184,7 +184,7 @@
     <value>Prędkość liniowa [m/s]</value>
   </data>
   <data name="Header_AngularVelocity" xml:space="preserve">
-    <value>Prędkość kątowa</value>
+    <value>Prędkość kąt.</value>
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
     <value>Wybierz język</value>
@@ -200,6 +200,9 @@
   </data>
   <data name="Header_Title" xml:space="preserve">
     <value>Symulator rzutu piłką</value>
+  </data>
+  <data name="Overlay_Back" xml:space="preserve">
+    <value>Powrót</value>
   </data>
   <data name="Overlay_Distance" xml:space="preserve">
     <value>Odległość</value>

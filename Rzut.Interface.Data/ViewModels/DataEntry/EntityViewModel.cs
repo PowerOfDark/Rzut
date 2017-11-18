@@ -80,6 +80,8 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private float _angularVelocity;
         public float AngularVelocity { get => _angularVelocity; set => SetProperty(ref _angularVelocity, value); }
 
+        private float _airDensity;
+        public float AirDensity { get => _airDensity; set => SetProperty(ref _airDensity, value); }
 
 
         public EntityViewModel(IViewModelCollection context) : base(context)
@@ -125,6 +127,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 case nameof(Restitution):
                     Validation.ValidateRange(this, t => t.Restitution, 0, 1000, errors, "float");
                     break;
+                case nameof(AirDensity):
+                    Validation.ValidateRange(this, t => t.AirDensity, 0.01f, 100, errors, "float");
+                    break;
                 default:
                     break;
             }
@@ -135,6 +140,7 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         {
             var e = new EntityViewModel(this.Context);
             e.AirResistance = this.AirResistance;
+            e.AirDensity = AirDensity;
             e.AngularDrag = this.AngularDrag;
             e.Color = Color;
             e.ColorBrush = ColorBrush;

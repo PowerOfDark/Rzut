@@ -62,7 +62,6 @@ namespace Rzut.Core.Prefab
         {
             return new Sprite(creator.CircleTexture(radius, MaterialType.Squares, color, 2f/ConvertUnits.Ratio));
         }
-
         public override void Update(GameTime time)
         {
             Body.ApplyForce(new Vector2(0, Body.Mass * Data.GravitationalAcceleration));
@@ -72,7 +71,7 @@ namespace Rzut.Core.Prefab
                 Body.ApplyForce(Body.LinearVelocity * -Data.AirResistance * area * Data.AirDensity);
             }
             var V = ((4.0f / 3.0f) * (float)Math.PI * (float)Math.Pow(Data.Radius, 3.0));
-            Body.ApplyForce(new Vector2(0,-Data.AirDensity * Data.GravitationalAcceleration * V));
+            Body.ApplyForce(new Vector2(0, -Data.AirDensity * Data.GravitationalAcceleration * V));
             if (Data.AngularDrag > float.Epsilon)
             {
                 Body.ApplyTorque(-Body.Inertia / Body.Mass * area * Body.AngularVelocity * Data.AngularDrag);

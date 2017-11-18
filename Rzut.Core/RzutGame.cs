@@ -57,7 +57,7 @@ namespace Rzut.Core
             }
             else
             {
-                ConvertUnits.SetDisplayUnitToSimUnitRatio(10f);
+                ConvertUnits.SetDisplayUnitToSimUnitRatio(15f);
             }
             IsMouseVisible = true;
 

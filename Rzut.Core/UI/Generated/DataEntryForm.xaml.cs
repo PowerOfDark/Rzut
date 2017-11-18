@@ -864,16 +864,16 @@ namespace EmptyKeys.UserInterface.Generated {
             col_e_54_1.Width = new GridLength(0.09F, GridUnitType.Star);
             this.e_54.ColumnDefinitions.Add(col_e_54_1);
             ColumnDefinition col_e_54_2 = new ColumnDefinition();
-            col_e_54_2.Width = new GridLength(0.09F, GridUnitType.Star);
+            col_e_54_2.Width = new GridLength(0.12F, GridUnitType.Star);
             this.e_54.ColumnDefinitions.Add(col_e_54_2);
             ColumnDefinition col_e_54_3 = new ColumnDefinition();
-            col_e_54_3.Width = new GridLength(0.15F, GridUnitType.Star);
+            col_e_54_3.Width = new GridLength(0.2F, GridUnitType.Star);
             this.e_54.ColumnDefinitions.Add(col_e_54_3);
             ColumnDefinition col_e_54_4 = new ColumnDefinition();
             col_e_54_4.Width = new GridLength(0.5F, GridUnitType.Star);
             this.e_54.ColumnDefinitions.Add(col_e_54_4);
             ColumnDefinition col_e_54_5 = new ColumnDefinition();
-            col_e_54_5.Width = new GridLength(0.1F, GridUnitType.Star);
+            col_e_54_5.Width = new GridLength(0.12F, GridUnitType.Star);
             this.e_54.ColumnDefinitions.Add(col_e_54_5);
             Grid.SetRow(this.e_54, 3);
             // e_55 element

@@ -93,6 +93,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FodyWeavers.xml" />
     <Content Include="shaders\DirectionalBlurShader.fx" />
   </ItemGroup>
   <ItemGroup>

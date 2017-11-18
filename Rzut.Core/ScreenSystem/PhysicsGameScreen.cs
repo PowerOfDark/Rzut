@@ -152,7 +152,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 EnableOrDisableFlag(DebugViewFlags.AABB);
 
             if (input.IsNewButtonPress(Buttons.Back) || input.IsNewKeyPress(Keys.Escape))
-                ExitScreen();
+                ScreenManager.Game.Exit();
 
             if (HasCursor)
                 HandleCursor(input);

@@ -67,8 +67,14 @@ namespace Rzut.Core.Screens
 
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
-            ExitScreen();
-            ScreenManager.AddScreen(new DataEntryScreen());
+            lock(ScreenManager._screens)
+            {
+                if (ScreenManager._screens.Last() is DataEntryScreen) return;
+                
+                ScreenManager.AddScreen(new DataEntryScreen());
+                ScreenManager.RemoveScreen(this);
+            }
+            
         }
 
         private void LanguageClick(object sender)

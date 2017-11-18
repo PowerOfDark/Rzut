@@ -41,7 +41,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
     public abstract class GameScreen
     {
         private GestureType _enabledGestures = GestureType.None;
-        private bool _otherScreenHasFocus;
+        internal bool _otherScreenHasFocus;
 
         public GameScreen()
         {
@@ -98,7 +98,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// <summary>
         /// Gets the current screen transition state.
         /// </summary>
-        public ScreenState ScreenState { get; protected set; }
+        public ScreenState ScreenState { get; internal set; }
 
         /// <summary>
         /// There are two possible reasons why a screen might be transitioning

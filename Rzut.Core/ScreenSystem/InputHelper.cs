@@ -152,7 +152,6 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             MouseState = Mouse.GetState();
             ShowCursor = false;
             TouchPanel.EnabledGestures = GestureType.HorizontalDrag | GestureType.VerticalDrag | GestureType.Pinch | GestureType.DragComplete;
-            TouchPanel.EnableMouseTouchPoint = true;
 
             if (_handleVirtualStick)
             {

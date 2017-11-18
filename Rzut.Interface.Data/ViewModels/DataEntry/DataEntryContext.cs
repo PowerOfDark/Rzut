@@ -59,6 +59,9 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
         private bool _enableCollision;
         public bool EnableCollision { get => _enableCollision; set => SetProperty(ref _enableCollision, value); }
 
+        private float _unitRatio;
+        public float UnitRatio { get => _unitRatio; set => SetProperty(ref _unitRatio, value); }
+
         public UIElement Form { get; set; }
 
         public void SetActive(EntityViewModel entity)

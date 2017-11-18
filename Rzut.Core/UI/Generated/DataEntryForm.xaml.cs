@@ -147,35 +147,31 @@ namespace EmptyKeys.UserInterface.Generated {
         
         private Grid e_51;
         
-        private Grid e_52;
-        
-        private StackPanel e_53;
+        private StackPanel e_52;
         
         private ListBox color;
         
-        private Grid e_56;
+        private Grid e_55;
         
-        private Rectangle e_57;
+        private Rectangle e_56;
         
         private Rectangle preview;
         
-        private Rectangle e_58;
+        private Rectangle e_57;
         
         private Button add;
         
-        private TextBlock e_59;
+        private TextBlock e_58;
         
-        private Rectangle e_60;
+        private WrapPanel e_59;
         
-        private TextBlock e_61;
+        private TextBlock e_60;
         
-        private Rectangle e_62;
+        private CheckBox e_61;
         
-        private CheckBox e_63;
+        private Button e_62;
         
-        private Button e_64;
-        
-        private TextBlock e_65;
+        private TextBlock e_63;
         
         public DataEntryForm() : 
                 base() {
@@ -755,6 +751,7 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_47 = new WrapPanel();
             this.e_45.Content = this.e_47;
             this.e_47.Name = "e_47";
+            this.e_47.Background = new SolidColorBrush(new ColorW(169, 169, 169, 255));
             this.e_47.Orientation = Orientation.Horizontal;
             // e_48 element
             this.e_48 = new Border();
@@ -799,121 +796,126 @@ namespace EmptyKeys.UserInterface.Generated {
             this.e_51 = new Grid();
             this.e_0.Children.Add(this.e_51);
             this.e_51.Name = "e_51";
+            this.e_51.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.e_51.Background = new SolidColorBrush(new ColorW(169, 169, 169, 255));
             ColumnDefinition col_e_51_0 = new ColumnDefinition();
-            col_e_51_0.Width = new GridLength(0.7F, GridUnitType.Star);
+            col_e_51_0.Width = new GridLength(1F, GridUnitType.Auto);
             this.e_51.ColumnDefinitions.Add(col_e_51_0);
             ColumnDefinition col_e_51_1 = new ColumnDefinition();
-            col_e_51_1.Width = new GridLength(0.3F, GridUnitType.Star);
+            col_e_51_1.Width = new GridLength(0.2F, GridUnitType.Star);
             this.e_51.ColumnDefinitions.Add(col_e_51_1);
+            ColumnDefinition col_e_51_2 = new ColumnDefinition();
+            col_e_51_2.Width = new GridLength(0.1F, GridUnitType.Star);
+            this.e_51.ColumnDefinitions.Add(col_e_51_2);
+            ColumnDefinition col_e_51_3 = new ColumnDefinition();
+            col_e_51_3.Width = new GridLength(0.2F, GridUnitType.Star);
+            this.e_51.ColumnDefinitions.Add(col_e_51_3);
+            ColumnDefinition col_e_51_4 = new ColumnDefinition();
+            col_e_51_4.Width = new GridLength(0.4F, GridUnitType.Star);
+            this.e_51.ColumnDefinitions.Add(col_e_51_4);
+            ColumnDefinition col_e_51_5 = new ColumnDefinition();
+            col_e_51_5.Width = new GridLength(0.1F, GridUnitType.Star);
+            this.e_51.ColumnDefinitions.Add(col_e_51_5);
             Grid.SetRow(this.e_51, 3);
             // e_52 element
-            this.e_52 = new Grid();
+            this.e_52 = new StackPanel();
             this.e_51.Children.Add(this.e_52);
             this.e_52.Name = "e_52";
             this.e_52.HorizontalAlignment = HorizontalAlignment.Left;
+            this.e_52.Orientation = Orientation.Horizontal;
             Grid.SetColumn(this.e_52, 0);
-            // e_53 element
-            this.e_53 = new StackPanel();
-            this.e_52.Children.Add(this.e_53);
-            this.e_53.Name = "e_53";
-            this.e_53.HorizontalAlignment = HorizontalAlignment.Left;
-            this.e_53.Orientation = Orientation.Horizontal;
-            Grid.SetColumn(this.e_53, 1);
             // color element
             this.color = new ListBox();
-            this.e_53.Children.Add(this.color);
+            this.e_52.Children.Add(this.color);
             this.color.Name = "color";
             Func<UIElement, UIElement> color_dtFunc = color_dtMethod;
             this.color.ItemTemplate = new DataTemplate(color_dtFunc);
             this.color.SelectedIndex = -1;
             Binding binding_color_ItemsSource = new Binding("AvailableBrushes");
             this.color.SetBinding(ListBox.ItemsSourceProperty, binding_color_ItemsSource);
+            // e_55 element
+            this.e_55 = new Grid();
+            this.e_51.Children.Add(this.e_55);
+            this.e_55.Name = "e_55";
+            RowDefinition row_e_55_0 = new RowDefinition();
+            row_e_55_0.Height = new GridLength(0.1F, GridUnitType.Star);
+            this.e_55.RowDefinitions.Add(row_e_55_0);
+            RowDefinition row_e_55_1 = new RowDefinition();
+            row_e_55_1.Height = new GridLength(0.8F, GridUnitType.Star);
+            this.e_55.RowDefinitions.Add(row_e_55_1);
+            RowDefinition row_e_55_2 = new RowDefinition();
+            row_e_55_2.Height = new GridLength(0.1F, GridUnitType.Star);
+            this.e_55.RowDefinitions.Add(row_e_55_2);
+            Grid.SetColumn(this.e_55, 1);
             // e_56 element
-            this.e_56 = new Grid();
-            this.e_53.Children.Add(this.e_56);
+            this.e_56 = new Rectangle();
+            this.e_55.Children.Add(this.e_56);
             this.e_56.Name = "e_56";
-            RowDefinition row_e_56_0 = new RowDefinition();
-            row_e_56_0.Height = new GridLength(0.1F, GridUnitType.Star);
-            this.e_56.RowDefinitions.Add(row_e_56_0);
-            RowDefinition row_e_56_1 = new RowDefinition();
-            row_e_56_1.Height = new GridLength(0.8F, GridUnitType.Star);
-            this.e_56.RowDefinitions.Add(row_e_56_1);
-            RowDefinition row_e_56_2 = new RowDefinition();
-            row_e_56_2.Height = new GridLength(0.1F, GridUnitType.Star);
-            this.e_56.RowDefinitions.Add(row_e_56_2);
-            // e_57 element
-            this.e_57 = new Rectangle();
-            this.e_56.Children.Add(this.e_57);
-            this.e_57.Name = "e_57";
-            this.e_57.Width = 110F;
-            Grid.SetRow(this.e_57, 0);
+            Grid.SetRow(this.e_56, 0);
             // preview element
             this.preview = new Rectangle();
-            this.e_56.Children.Add(this.preview);
+            this.e_55.Children.Add(this.preview);
             this.preview.Name = "preview";
             this.preview.Width = 100F;
             this.preview.HorizontalAlignment = HorizontalAlignment.Stretch;
             this.preview.VerticalAlignment = VerticalAlignment.Stretch;
             this.preview.Stretch = Stretch.UniformToFill;
             Grid.SetRow(this.preview, 1);
-            // e_58 element
-            this.e_58 = new Rectangle();
-            this.e_56.Children.Add(this.e_58);
-            this.e_58.Name = "e_58";
-            Grid.SetRow(this.e_58, 2);
+            // e_57 element
+            this.e_57 = new Rectangle();
+            this.e_55.Children.Add(this.e_57);
+            this.e_57.Name = "e_57";
+            Grid.SetRow(this.e_57, 2);
             // add element
             this.add = new Button();
-            this.e_53.Children.Add(this.add);
+            this.e_51.Children.Add(this.add);
             this.add.Name = "add";
-            this.add.Width = 180F;
+            Grid.SetColumn(this.add, 2);
+            // e_58 element
+            this.e_58 = new TextBlock();
+            this.add.Content = this.e_58;
+            this.e_58.Name = "e_58";
+            this.e_58.FontSize = 30F;
+            Binding binding_e_58_Text = new Binding("ButtonAddDisplay");
+            this.e_58.SetBinding(TextBlock.TextProperty, binding_e_58_Text);
             // e_59 element
-            this.e_59 = new TextBlock();
-            this.add.Content = this.e_59;
+            this.e_59 = new WrapPanel();
+            this.e_51.Children.Add(this.e_59);
             this.e_59.Name = "e_59";
-            this.e_59.FontSize = 30F;
-            Binding binding_e_59_Text = new Binding("ButtonAddDisplay");
-            this.e_59.SetBinding(TextBlock.TextProperty, binding_e_59_Text);
+            this.e_59.HorizontalAlignment = HorizontalAlignment.Center;
+            this.e_59.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetColumn(this.e_59, 3);
             // e_60 element
-            this.e_60 = new Rectangle();
-            this.e_53.Children.Add(this.e_60);
+            this.e_60 = new TextBlock();
+            this.e_59.Children.Add(this.e_60);
             this.e_60.Name = "e_60";
-            this.e_60.Width = 10F;
+            this.e_60.VerticalAlignment = VerticalAlignment.Center;
+            this.e_60.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
+            this.e_60.FontSize = 20F;
+            Binding binding_e_60_Text = new Binding("CheckboxEnableCollisionsDisplay");
+            this.e_60.SetBinding(TextBlock.TextProperty, binding_e_60_Text);
             // e_61 element
-            this.e_61 = new TextBlock();
-            this.e_53.Children.Add(this.e_61);
+            this.e_61 = new CheckBox();
+            this.e_59.Children.Add(this.e_61);
             this.e_61.Name = "e_61";
+            this.e_61.Margin = new Thickness(5F, 0F, 0F, 0F);
             this.e_61.VerticalAlignment = VerticalAlignment.Center;
-            this.e_61.Foreground = new SolidColorBrush(new ColorW(0, 0, 0, 255));
-            this.e_61.FontSize = 20F;
-            Binding binding_e_61_Text = new Binding("CheckboxEnableCollisionsDisplay");
-            this.e_61.SetBinding(TextBlock.TextProperty, binding_e_61_Text);
+            Binding binding_e_61_IsChecked = new Binding("EnableCollision");
+            this.e_61.SetBinding(CheckBox.IsCheckedProperty, binding_e_61_IsChecked);
             // e_62 element
-            this.e_62 = new Rectangle();
-            this.e_53.Children.Add(this.e_62);
+            this.e_62 = new Button();
+            this.e_51.Children.Add(this.e_62);
             this.e_62.Name = "e_62";
-            this.e_62.Width = 10F;
+            this.e_62.HorizontalAlignment = HorizontalAlignment.Stretch;
+            this.e_62.CommandParameter = null;
+            Grid.SetColumn(this.e_62, 5);
+            Binding binding_e_62_Command = new Binding("StartSimulation");
+            this.e_62.SetBinding(Button.CommandProperty, binding_e_62_Command);
             // e_63 element
-            this.e_63 = new CheckBox();
-            this.e_53.Children.Add(this.e_63);
+            this.e_63 = new TextBlock();
+            this.e_62.Content = this.e_63;
             this.e_63.Name = "e_63";
-            this.e_63.VerticalAlignment = VerticalAlignment.Center;
-            Binding binding_e_63_IsChecked = new Binding("EnableCollision");
-            this.e_63.SetBinding(CheckBox.IsCheckedProperty, binding_e_63_IsChecked);
-            // e_64 element
-            this.e_64 = new Button();
-            this.e_51.Children.Add(this.e_64);
-            this.e_64.Name = "e_64";
-            this.e_64.HorizontalAlignment = HorizontalAlignment.Stretch;
-            this.e_64.CommandParameter = null;
-            Grid.SetColumn(this.e_64, 1);
-            Binding binding_e_64_Command = new Binding("StartSimulation");
-            this.e_64.SetBinding(Button.CommandProperty, binding_e_64_Command);
-            // e_65 element
-            this.e_65 = new TextBlock();
-            this.e_64.Content = this.e_65;
-            this.e_65.Name = "e_65";
-            this.e_65.Text = "start this shit";
+            this.e_63.Text = "start this shit";
             FontManager.Instance.AddFont("Segoe UI", 30F, FontStyle.Regular, "Segoe_UI_22.5_Regular");
             FontManager.Instance.AddFont("Segoe UI", 50F, FontStyle.Bold, "Segoe_UI_37.5_Bold");
             FontManager.Instance.AddFont("Segoe UI", 20F, FontStyle.Regular, "Segoe_UI_15_Regular");
@@ -1028,23 +1030,23 @@ namespace EmptyKeys.UserInterface.Generated {
         }
         
         private static UIElement color_dtMethod(UIElement parent) {
+            // e_53 element
+            Border e_53 = new Border();
+            e_53.Parent = parent;
+            e_53.Name = "e_53";
+            e_53.BorderBrush = new SolidColorBrush(new ColorW(240, 248, 255, 255));
+            e_53.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
             // e_54 element
-            Border e_54 = new Border();
-            e_54.Parent = parent;
+            Grid e_54 = new Grid();
+            e_53.Child = e_54;
             e_54.Name = "e_54";
-            e_54.BorderBrush = new SolidColorBrush(new ColorW(240, 248, 255, 255));
-            e_54.BorderThickness = new Thickness(2F, 2F, 2F, 2F);
-            // e_55 element
-            Grid e_55 = new Grid();
-            e_54.Child = e_55;
-            e_55.Name = "e_55";
-            e_55.Height = 25F;
-            e_55.Width = 100F;
-            e_55.HorizontalAlignment = HorizontalAlignment.Stretch;
-            e_55.VerticalAlignment = VerticalAlignment.Stretch;
-            Binding binding_e_55_Background = new Binding();
-            e_55.SetBinding(Grid.BackgroundProperty, binding_e_55_Background);
-            return e_54;
+            e_54.Height = 25F;
+            e_54.Width = 100F;
+            e_54.HorizontalAlignment = HorizontalAlignment.Stretch;
+            e_54.VerticalAlignment = VerticalAlignment.Stretch;
+            Binding binding_e_54_Background = new Binding();
+            e_54.SetBinding(Grid.BackgroundProperty, binding_e_54_Background);
+            return e_53;
         }
     }
 }

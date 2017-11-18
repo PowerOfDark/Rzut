@@ -106,6 +106,7 @@ namespace Rzut.Core.UI.DataEntry
             }
 
             Colors = (ListBox)VisualTreeHelper.Instance.FindElementByName(Form, "color");
+            Colors.PreviewTouchDown += Colors_PreviewTouchDown;
 
             Add = (Button)VisualTreeHelper.Instance.FindElementByName(Form, "add");
             Add.Click += Add_Click;
@@ -122,6 +123,14 @@ namespace Rzut.Core.UI.DataEntry
 
             Context.SimulationStarted += Context_SimulationStarted;
 
+        }
+
+        private void Colors_PreviewTouchDown(object sender, RoutedEventArgs e)
+        {
+            if (e.Source is UIElement el && el.DataContext is SolidColorBrush brush)
+            {
+                Colors.SelectedItem = brush;
+            }
         }
 
         private void Remove_Click(object sender, RoutedEventArgs e)

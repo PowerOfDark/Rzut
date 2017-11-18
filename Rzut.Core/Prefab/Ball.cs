@@ -60,7 +60,7 @@ namespace Rzut.Core.Prefab
 
         public static Sprite CreateTexture(float radius, Color color, AssetCreator creator)
         {
-            return new Sprite(creator.CircleTexture(radius, MaterialType.Squares, color, 1f));
+            return new Sprite(creator.CircleTexture(radius, MaterialType.Squares, color, 2f/ConvertUnits.Ratio));
         }
 
         public override void Update(GameTime time)

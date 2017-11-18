@@ -20,7 +20,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
     /// </summary>
     public class ScreenManager : DrawableGameComponent
     {
-        private InputHelper _input;
+        public InputHelper Input { get; }
         private bool _isInitialized;
 
         private List<GameScreen> _screens;
@@ -39,7 +39,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             TouchPanel.EnabledGestures = GestureType.None;
             Content = game.Content;
             Content.RootDirectory = "Content";
-            _input = new InputHelper(this);
+            Input = new InputHelper(this);
 
             _screens = new List<GameScreen>();
             _screensToUpdate = new List<GameScreen>();
@@ -80,7 +80,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             LineBatch = new LineBatch(GraphicsDevice);
             Assets = new AssetCreator(GraphicsDevice);
             Assets.LoadContent(Content);
-            _input.LoadContent();
+            Input.LoadContent();
 
             // Tell each of the screens to load their content.
             foreach (GameScreen screen in _screens)
@@ -107,7 +107,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public override void Update(GameTime gameTime)
         {
             // Read the keyboard and gamepad.
-            _input.Update(gameTime);
+            Input.Update(gameTime);
 
             // Make a copy of the master screen list, to avoid confusion if
             // the process of updating one screen adds or removes others.
@@ -138,9 +138,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                     // give it a chance to handle input.
                     if (!otherScreenHasFocus)
                     {
-                        _input.ShowCursor = screen.HasCursor;
-                        _input.EnableVirtualStick = screen.HasVirtualStick;
-                        screen.HandleInput(_input, gameTime);
+                        Input.ShowCursor = screen.HasCursor;
+                        Input.EnableVirtualStick = screen.HasVirtualStick;
+                        screen.HandleInput(Input, gameTime);
                         otherScreenHasFocus = true;
                     }
 
@@ -195,7 +195,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 else
                     screen.Draw(gameTime);
             }
-            _input.Draw();
+            Input.Draw();
         }
 
         /// <summary>

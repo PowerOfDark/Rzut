@@ -9,6 +9,7 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 {
@@ -23,6 +24,21 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private float _agentForce;
         private float _agentTorque;
         private Body _userAgent;
+
+        public GestureType? CurrentDrag = null;
+        public Direction DragDirection = Direction.None;
+        public PinchMotion Pinch = PinchMotion.None;
+
+        public enum Direction
+        {
+            None, Left, Right, Down, Up
+        }
+
+        public enum PinchMotion
+        {
+            None, Inwards, Outwards
+        }
+
 
         protected PhysicsGameScreen()
         {
@@ -180,19 +196,90 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private void HandleCamera(InputHelper input, GameTime gameTime)
         {
             Vector2 camMove = Vector2.Zero;
-
+            const float Speed = 100f;
+            var time = (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (input.KeyboardState.IsKeyDown(Keys.W))
-                camMove.Y -= 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                camMove.Y -= Speed * time;
             if (input.KeyboardState.IsKeyDown(Keys.S))
-                camMove.Y += 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                camMove.Y += Speed * time;
             if (input.KeyboardState.IsKeyDown(Keys.A))
-                camMove.X -= 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                camMove.X -= Speed * time;
             if (input.KeyboardState.IsKeyDown(Keys.D))
-                camMove.X += 100f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                camMove.X += Speed * time;
             if (input.KeyboardState.IsKeyDown(Keys.PageUp))
-                Camera.Zoom += 50f * (float)gameTime.ElapsedGameTime.TotalSeconds * Camera.Zoom / 20f;
+                Camera.Zoom += (Speed/2) * time * Camera.Zoom / 20f;
             if (input.KeyboardState.IsKeyDown(Keys.PageDown))
-                Camera.Zoom -= 50f * (float)gameTime.ElapsedGameTime.TotalSeconds * Camera.Zoom / 20f;
+                Camera.Zoom -= (Speed/2) * time * Camera.Zoom / 20f;
+
+            foreach (var gesture in ScreenManager.Input.Gestures)
+            {
+                if(gesture.GestureType == GestureType.DragComplete || gesture.GestureType == GestureType.PinchComplete)
+                {
+                    CurrentDrag = null;
+                }
+                else// if(gesture.GestureType == GestureType.HorizontalDrag || gesture.GestureType == GestureType.VerticalDrag)
+                {
+                    CurrentDrag = gesture.GestureType;   
+                }
+
+                if(gesture.GestureType == GestureType.PinchComplete)
+                {
+                    Pinch = PinchMotion.None;
+                }
+
+                if (gesture.GestureType == GestureType.Pinch)
+                {
+                    Vector2 a = gesture.Position;
+                    Vector2 b = gesture.Position2;
+                    float dist = Vector2.Distance(a, b);
+
+                    // prior positions
+                    Vector2 aOld = gesture.Position - gesture.Delta;
+                    Vector2 bOld = gesture.Position2 - gesture.Delta2;
+                    float distOld = Vector2.Distance(aOld, bOld);
+
+                    // work out zoom amount based on pinch distance...
+                    if (dist > distOld)
+                        Pinch = PinchMotion.Outwards;
+                    else if (dist < distOld)
+                        Pinch = PinchMotion.Inwards;
+                    else
+                        Pinch = PinchMotion.None;
+                }
+                else if (gesture.GestureType == GestureType.HorizontalDrag)
+                {
+                    if (gesture.Delta.Y < 0 || gesture.Delta.X < 0)
+                        DragDirection = Direction.Left;
+                    else if (gesture.Delta.Y > 0 || gesture.Delta.X > 0)
+                        DragDirection = Direction.Right;
+                    else
+                        DragDirection = Direction.None;
+                }
+                else if(gesture.GestureType == GestureType.VerticalDrag)
+                {
+                    if (gesture.Delta.Y < 0 || gesture.Delta.X < 0)
+                        DragDirection = Direction.Down;
+                    else if (gesture.Delta.Y > 0 || gesture.Delta.X > 0)
+                        DragDirection = Direction.Up;
+                    else DragDirection = Direction.None;
+                }
+
+
+            }
+
+            if((CurrentDrag == GestureType.HorizontalDrag || CurrentDrag == GestureType.VerticalDrag) && DragDirection != Direction.None)
+            {
+                if (DragDirection == Direction.Left || DragDirection == Direction.Right)
+                    camMove.X += Speed * time * ((DragDirection == Direction.Left) ? -1 : 1);
+                else
+                    camMove.Y += Speed * time * ((DragDirection == Direction.Down) ? -1 : 1);
+            }
+
+            if(CurrentDrag == GestureType.Pinch && Pinch != PinchMotion.None)
+            {
+                    Camera.Zoom += ((Speed / 2) * time * Camera.Zoom / 20f) * ((Pinch == PinchMotion.Inwards) ? -1: 1);
+            }
+
             if (camMove != Vector2.Zero)
                 Camera.MoveCamera(camMove);
             if (input.IsNewKeyPress(Keys.Home))

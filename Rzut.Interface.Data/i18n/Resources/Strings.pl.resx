@@ -201,6 +201,9 @@
   <data name="Header_Title" xml:space="preserve">
     <value>Symulator rzutu piłką</value>
   </data>
+  <data name="Header_World" xml:space="preserve">
+    <value>Świat</value>
+  </data>
   <data name="Overlay_Back" xml:space="preserve">
     <value>Powrót</value>
   </data>

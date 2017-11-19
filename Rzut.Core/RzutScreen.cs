@@ -86,8 +86,6 @@ namespace Rzut.Core
             _ramps.Add(World.CreateEdge(new Vector2(1_000_000, 0), new Vector2(1_000_000, -1_000_000)));
             _ramps[0].SetCollidesWith(Category.All);
 
-
-
             int i = 0;
             foreach(var entity in DataEntryContext.Entities)
             {

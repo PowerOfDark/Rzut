@@ -132,6 +132,13 @@
                                 <TextBox Tag="float" x:Name="AngularDrag" Text="{Binding ActiveEntity.AngularDrag, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
                             </StackPanel>
                         </Border>
+
+                        <Border Style="{StaticResource InputBorder}">
+                            <StackPanel Style="{StaticResource Panel}">
+                                <TextBlock Margin="10" Foreground="Black" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}, Path=FrictionDisplay}"/>
+                                <TextBox Tag="float" x:Name="Friction" Text="{Binding ActiveEntity.Friction, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:0.00}}"/>
+                            </StackPanel>
+                        </Border>
                     </WrapPanel>
                 </GroupBox>
 

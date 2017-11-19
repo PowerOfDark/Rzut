@@ -22,6 +22,8 @@ namespace Rzut.Core.Prefab
         public Trail Trail { get; set; }
         public Marker Marker { get; set; }
 
+        public bool HitGround = false;
+
         public Ball(World world, EntityViewModel data, AssetCreator creator)
         {
             const MaterialType material = MaterialType.Squares;
@@ -31,13 +33,25 @@ namespace Rzut.Core.Prefab
             Trail = new Trail(new Sprite(creator.CircleTexture(data.Radius/2f, MaterialType.Blank, new Color(data.Color, 0.25f), 1f)), data.Radius*2f);
             StartPosition = Body.Position;
             Body.OnCollision += Body_OnCollision;
+            Body.OnSeparation += Body_OnSeparation;
             Marker = new Marker(creator, data.Radius, 1.5f, data.Color, 0.5f);
             Marker.Add(StartPosition);
+        }
+
+        private void Body_OnSeparation(Fixture sender, Fixture other, tainicom.Aether.Physics2D.Dynamics.Contacts.Contact contact)
+        {
+            if (other.CollisionCategories == Category.Cat1)
+                HitGround = false;
         }
 
         private bool Body_OnCollision(Fixture sender, Fixture other, tainicom.Aether.Physics2D.Dynamics.Contacts.Contact contact)
         {
             Marker.Add(Body.Position);
+            if (other.CollisionCategories == Category.Cat1)
+            {
+                Body.ApplyForce(new Vector2(Body.LinearVelocity.Y * Data.Friction * (Body.LinearVelocity.X > 0 ? 1 : -1), 0));
+                HitGround = true;
+            }
             return true;
         }
 
@@ -55,6 +69,7 @@ namespace Rzut.Core.Prefab
             b.LinearVelocity = new Vector2((float)Math.Cos( angle ) * model.Velocity, (float)Math.Sin( angle ) * model.Velocity);
             b.AngularVelocity = model.AngularVelocity;
             b.SetRestitution(model.Restitution);
+            b.SetFriction(model.Friction);
             return b;
         }
 
@@ -76,6 +91,7 @@ namespace Rzut.Core.Prefab
             {
                 Body.ApplyTorque(-Body.Inertia / Body.Mass * area * Body.AngularVelocity * Data.AngularDrag);
             }
+
             Trail.Update(time, Body);
             base.Update(time);
         }

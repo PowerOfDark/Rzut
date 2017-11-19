@@ -25,6 +25,7 @@ namespace Rzut.Core
         public RzutGame(Platform platform)
         {
             Platform = platform;
+
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             TargetElapsedTime = TimeSpan.FromTicks(166666);

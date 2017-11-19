@@ -127,12 +127,12 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 StartX = 0f,
                 Velocity = 120f,
                 StartAngle = 270f,
-                //Friction = 50f,
+                Friction = 0.35f,
                 AirResistance = 0.45f,
                 AngularDrag = 0.10f,
                 GravitationalAcceleration = 10f,
-                AngularVelocity = 50f,
-                Restitution = 0.2f,
+                AngularVelocity = 2f,
+                Restitution = 0.20f,
                 AirDensity = 1f
 
             });
@@ -144,14 +144,14 @@ namespace Rzut.Interface.Data.ViewModels.DataEntry
                 Mass = 30f,
                 StartY = 60f,
                 StartX = 0f,
-                Velocity = 100f,
+                Velocity = 20f,
                 StartAngle = 270f,
-                //Friction = 50f,
+                Friction = 0.15f,
                 AirResistance = 0.45f,
                 AngularDrag = 0.10f,
                 GravitationalAcceleration = 10f,
                 AngularVelocity = 1f,
-                Restitution = 0.3f,
+                Restitution = 0.34f,
                 AirDensity = 1f
 
             });

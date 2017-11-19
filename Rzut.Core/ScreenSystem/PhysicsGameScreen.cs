@@ -10,9 +10,16 @@ using tainicom.Aether.Physics2D.Dynamics.Joints;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
+using Xamarin.Forms;
+using Rzut.Core;
 
 namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 {
+    public interface IAndroidMethods
+    {
+        void CloseApp();
+    }
+
     public class PhysicsGameScreen : GameScreen
     {
         public Camera2D Camera;
@@ -25,6 +32,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private float _agentTorque;
         private Body _userAgent;
 
+        private bool _blockGestures = false;
         public GestureType? CurrentDrag = null;
         public Direction DragDirection = Direction.None;
         public PinchMotion Pinch = PinchMotion.None;
@@ -80,8 +88,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 DebugView = new DebugView(World);
                 DebugView.RemoveFlags(DebugViewFlags.Shape);
                 DebugView.RemoveFlags(DebugViewFlags.Joint);
-                DebugView.DefaultShapeColor = Color.White;
-                DebugView.SleepingShapeColor = Color.LightGray;
+                DebugView.DefaultShapeColor = Microsoft.Xna.Framework.Color.White;
+                DebugView.SleepingShapeColor = Microsoft.Xna.Framework.Color.LightGray;
                 DebugView.LoadContent(ScreenManager.GraphicsDevice, ScreenManager.Content);
             }
 
@@ -151,8 +159,6 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (input.IsNewKeyPress(Keys.F8))
                 EnableOrDisableFlag(DebugViewFlags.AABB);
 
-            if (input.IsNewButtonPress(Buttons.Back) || input.IsNewKeyPress(Keys.Escape))
-                ScreenManager.Game.Exit();
 
             if (HasCursor)
                 HandleCursor(input);
@@ -175,6 +181,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 Fixture savedFixture = World.TestPoint(position);
                 if (savedFixture != null)
                 {
+                    _blockGestures = true;
                     Body body = savedFixture.Body;
                     _fixedMouseJoint = new FixedMouseJoint(body, position);
                     _fixedMouseJoint.MaxForce = 1000.0f * body.Mass;
@@ -186,6 +193,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if ((input.IsNewButtonRelease(Buttons.A) || input.IsNewMouseButtonRelease(MouseButtons.LeftButton) || input.IsNewTouchRelease()) && _fixedMouseJoint != null)
             {
                 World.Remove(_fixedMouseJoint);
+                _blockGestures = false;
                 _fixedMouseJoint = null;
             }
 
@@ -211,6 +219,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (input.KeyboardState.IsKeyDown(Keys.PageDown) || input.KeyboardState.IsKeyDown(Keys.OemMinus))
                 Camera.Zoom -= (Speed/2) * time * Camera.Zoom / 20f;
 
+            
             foreach (var gesture in ScreenManager.Input.Gestures)
             {
                 if(gesture.GestureType == GestureType.DragComplete || gesture.GestureType == GestureType.PinchComplete)
@@ -267,17 +276,21 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             }
 
-            if((CurrentDrag == GestureType.HorizontalDrag || CurrentDrag == GestureType.VerticalDrag) && DragDirection != Direction.None)
+            if (!_blockGestures)
             {
-                if (DragDirection == Direction.Left || DragDirection == Direction.Right)
-                    camMove.X += Speed * time * ((DragDirection == Direction.Left) ? -1 : 1);
-                else
-                    camMove.Y += Speed * time * ((DragDirection == Direction.Down) ? -1 : 1);
-            }
+                if ((CurrentDrag == GestureType.HorizontalDrag || CurrentDrag == GestureType.VerticalDrag) && DragDirection != Direction.None)
+                {
+                    if (DragDirection == Direction.Left || DragDirection == Direction.Right)
+                        camMove.X += Speed * time * ((DragDirection == Direction.Left) ? -1 : 1);
+                    else
+                        camMove.Y += Speed * time * ((DragDirection == Direction.Down) ? -1 : 1);
+                }
 
-            if(CurrentDrag == GestureType.Pinch && Pinch != PinchMotion.None)
-            {
-                    Camera.Zoom += ((Speed / 2) * time * Camera.Zoom / 20f) * ((Pinch == PinchMotion.Inwards) ? -1: 1);
+                if (CurrentDrag == GestureType.Pinch && Pinch != PinchMotion.None)
+                {
+                    Camera.Zoom += ((Speed / 2) * time * Camera.Zoom / 20f) * ((Pinch == PinchMotion.Inwards) ? -1 : 1);
+                }
+
             }
 
             if (camMove != Vector2.Zero)

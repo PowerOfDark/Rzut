@@ -150,7 +150,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             KeyboardState = Keyboard.GetState();
             GamePadState = GamePad.GetState(PlayerIndex.One);
             MouseState = Mouse.GetState();
-            ShowCursor = false;
+            //ShowCursor = false;
             TouchPanel.EnabledGestures = GestureType.HorizontalDrag | GestureType.VerticalDrag | GestureType.Pinch | GestureType.DragComplete;
 
             if (_handleVirtualStick)

@@ -21,11 +21,11 @@ namespace Rzut.Core
 
         public static Platform Platform { get; protected set; }
         public ScreenManager ScreenManager { get; set; }
+        public static bool IsDead = false;
 
         public RzutGame(Platform platform)
         {
             Platform = platform;
-
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             TargetElapsedTime = TimeSpan.FromTicks(166666);
@@ -51,7 +51,7 @@ namespace Rzut.Core
 
             _graphics.PreferredBackBufferWidth = 1280;
             _graphics.PreferredBackBufferHeight = 720;
-            _graphics.IsFullScreen = Platform == Platform.Android;
+            _graphics.IsFullScreen = Platform == Platform.Android || Platform == Platform.Apple;
             if (Platform == Platform.Android)
             {
                 ConvertUnits.SetDisplayUnitToSimUnitRatio(30f);
@@ -79,6 +79,7 @@ namespace Rzut.Core
             menu.AddMenuItem("", EntryType.Separator, null);
             menu.AddMenuItem("Exit", EntryType.ExitItem, null);
             ScreenManager.AddScreen(new BackgroundScreen());
+            //ScreenManager.AddScreen(new DataEntryScreen());
             ScreenManager.AddScreen(new LanguageSelectionScreen());
         }
 

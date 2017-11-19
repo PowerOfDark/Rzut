@@ -2,6 +2,7 @@
 using EmptyKeys.UserInterface.Controls;
 using EmptyKeys.UserInterface.Data;
 using EmptyKeys.UserInterface.Generated;
+using EmptyKeys.UserInterface.Input;
 using EmptyKeys.UserInterface.Media;
 using EmptyKeys.UserInterface.Media.Imaging;
 using EmptyKeys.UserInterface.Shapes;
@@ -9,6 +10,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Rzut.Core.Prefab;
+using Rzut.Core.Screens;
 using Rzut.Interface.Data.i18n;
 using Rzut.Interface.Data.UI;
 using Rzut.Interface.Data.ViewModels.DataEntry;
@@ -20,6 +22,7 @@ using System.Text;
 using System.Threading.Tasks;
 using tainicom.Aether.Physics2D.Samples.DrawingSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
+using Xamarin.Forms.Internals;
 
 namespace Rzut.Core.UI.DataEntry
 {
@@ -34,14 +37,20 @@ namespace Rzut.Core.UI.DataEntry
         EmptyKeys.UserInterface.Shapes.Rectangle Preview;
 
         public readonly Dictionary<Color, Sprite> Previews = new Dictionary<Color, Sprite>();
+        bool FirstTime;
+        public static VirtualKeyboard Keyboard { get; set; }
+
 
         public DataEntryScreen(DataEntryContext ctx = null)
         {
             Context = ctx;
+            FirstTime = Context == null;
         }
 
         public override void Draw(GameTime gameTime)
         {
+            if (IsExiting)
+                return;
             Form.Draw(gameTime.ElapsedGameTime.TotalMilliseconds);
             if(Colors.SelectedIndex != -1 && Colors.Items.Any())
             {
@@ -60,6 +69,7 @@ namespace Rzut.Core.UI.DataEntry
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             //UserInterface.Active.Update(gameTime);
+            if (IsExiting) return;
             if (!coveredByOtherScreen)
             {
                 Form.UpdateInput(gameTime.ElapsedGameTime.TotalMilliseconds);
@@ -126,7 +136,21 @@ namespace Rzut.Core.UI.DataEntry
             }
 
             Context.SimulationStarted += Context_SimulationStarted;
+            if (RzutGame.Platform == Platform.Android || RzutGame.Platform == Platform.Apple)
+            {
+                if(!FirstTime)
+                {
+                    //virtual keyboard hack
+                    var field = typeof(EmptyKeys.UserInterface.Input.Keyboard).GetFields().Where(t => t.IsPrivate && t.FieldType == typeof(VirtualKeyboard)).FirstOrDefault();
+                    field.SetValue(InputManager.Current.KeyboardDevice, null);
+                    InputManager.Current.Focus(VisualTreeHelper.Instance.FindElementByName(Form, "Mass"));
 
+                    InputManager.Current.KeyboardDevice.Update(Form, 100f, 1000f);
+                    InputManager.Current.KeyboardDevice.ShowVirtualKeyboard();
+                }
+
+
+            }
         }
 
         private void Colors_PreviewTouchDown(object sender, RoutedEventArgs e)
@@ -148,7 +172,7 @@ namespace Rzut.Core.UI.DataEntry
             
             var entity = Context.ActiveEntity.Clone();
             var selectedBrush = Colors.SelectedItem as SolidColorBrush;
-            entity.Color = new Color(selectedBrush.Color.PackedValue);
+            entity.Color = new Microsoft.Xna.Framework.Color(selectedBrush.Color.PackedValue);
             var nextColor = Context.AvailableBrushes.FirstOrDefault(t => t != selectedBrush);
             Context.AddTab(entity);
             Context.SetActive(entity);
@@ -192,8 +216,18 @@ namespace Rzut.Core.UI.DataEntry
         public override void HandleInput(InputHelper input, GameTime gameTime)
         {
             if (input.IsNewButtonPress(Buttons.Back) || input.IsNewKeyPress(Keys.Escape))
-                ExitScreen();
+            {
+                if (!IsExiting)
+                {
+                    IsExiting = true;
+                    Form.Visibility = Visibility.Collapsed;
+                    Form = null;
+                    ScreenManager.RemoveScreen(this);
+                    ScreenManager.AddScreen(new LanguageSelectionScreen(this.Context));
+                    
+                }
 
+            }
             base.HandleInput(input, gameTime);
         }
     }

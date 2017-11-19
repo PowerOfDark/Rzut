@@ -17,12 +17,20 @@ using Rzut.Core.UI.DataEntry;
 using Rzut.Interface.Data.i18n;
 using Rzut.Interface.Data;
 using Rzut.Interface.Data.ViewModels.LanguageSelection;
+using Rzut.Interface.Data.ViewModels.DataEntry;
 
 namespace Rzut.Core.Screens
 {
     public class LanguageSelectionScreen : GameScreen
     {
         LanguageSelection Form;
+        DataEntryContext Context;
+
+        public LanguageSelectionScreen(DataEntryContext ctx = null)
+        {
+            Context = ctx;
+        }
+
         public override void Draw(GameTime gameTime)
         {
             Form.Draw(gameTime.ElapsedGameTime.TotalMilliseconds);
@@ -67,13 +75,11 @@ namespace Rzut.Core.Screens
 
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
-            lock(ScreenManager._screens)
-            {
                 if (ScreenManager._screens.Last() is DataEntryScreen) return;
                 
-                ScreenManager.AddScreen(new DataEntryScreen());
+                ScreenManager.AddScreen(new DataEntryScreen(Context));
                 ScreenManager.RemoveScreen(this);
-            }
+            
             
         }
 
@@ -87,7 +93,11 @@ namespace Rzut.Core.Screens
         public override void HandleInput(InputHelper input, GameTime gameTime)
         {
             if (input.IsNewButtonPress(Buttons.Back) || input.IsNewKeyPress(Keys.Escape))
-                ExitScreen();
+            {
+                    ScreenManager.Game.Exit();
+                RzutGame.IsDead = true;
+
+            }
             base.HandleInput(input, gameTime);
         }
     }

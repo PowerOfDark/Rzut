@@ -20,6 +20,7 @@ using Xamarin.Forms.Internals;
 using Microsoft.Xna.Framework.Input.Touch;
 using Rzut.Core.UI.DataEntry;
 using Rzut.Interface.Data.i18n.Resources;
+using Microsoft.Xna.Framework.Input;
 
 namespace Rzut.Core
 {
@@ -102,7 +103,7 @@ namespace Rzut.Core
             Camera.Jump2Target();
             Camera.EnablePositionTracking = true;
             Camera.MinPosition = new Vector2(float.MinValue, float.MinValue);
-            Camera.MaxPosition = new Vector2(float.MaxValue, -(ScreenManager.GraphicsDevice.Viewport.Height/2f -20f));
+            Camera.MaxPosition = new Vector2(float.MaxValue, (ScreenManager.GraphicsDevice.Viewport.Height));
             // Create sprite based on body
 
             ExitCommand = new RelayCommand(ExitButton);
@@ -129,9 +130,11 @@ namespace Rzut.Core
 
         private void ExitButton(object arg)
         {
-            
-            ScreenManager.AddScreen(new DataEntryScreen(DataEntryContext));
-            ScreenManager.RemoveScreen(this);
+            if (!IsExiting)
+            {
+                ScreenManager.AddScreen(new DataEntryScreen(DataEntryContext));
+                ScreenManager.RemoveScreen(this);
+            }
         }
 
         private void List_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -185,7 +188,13 @@ namespace Rzut.Core
 
         public override void HandleInput(InputHelper input, GameTime gameTime)
         {
-            foreach(var ball in Balls)
+            if (input.IsNewButtonPress(Buttons.Back) || input.IsNewKeyPress(Keys.Escape))
+            {
+                ExitButton(null);
+                return;
+            }
+
+            foreach (var ball in Balls)
             {
                 ball.HandleInput(input, gameTime);
             }

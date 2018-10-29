@@ -175,22 +175,22 @@
     <value>Clock rotatin'  [degrees]</value>
   </data>
   <data name="EntityViewModel_StartX" xml:space="preserve">
-    <value>X-coordinate [m]</value>
+    <value>Lyin' cords [m]</value>
   </data>
   <data name="EntityViewModel_StartY" xml:space="preserve">
-    <value>Y-coordinate [m]</value>
+    <value>Standin' cords [m]</value>
   </data>
   <data name="EntityViewModel_Velocity" xml:space="preserve">
     <value>Velocity [m/s]</value>
   </data>
   <data name="Header_ChooseLanguage" xml:space="preserve">
-    <value>Choose language</value>
+    <value>Captain askin'</value>
   </data>
   <data name="Header_Coefficients" xml:space="preserve">
     <value>Coefficients</value>
   </data>
   <data name="Header_Color" xml:space="preserve">
-    <value>Color</value>
+    <value>Colour</value>
   </data>
   <data name="Header_ThrowParameters" xml:space="preserve">
     <value>Throw parameters</value>
@@ -199,13 +199,13 @@
     <value>Ball throw simulator</value>
   </data>
   <data name="Header_World" xml:space="preserve">
-    <value>World</value>
+    <value>WholeSea</value>
   </data>
   <data name="Overlay_AngularVelocity" xml:space="preserve">
     <value>{0:0.00} rad/s</value>
   </data>
   <data name="Overlay_Back" xml:space="preserve">
-    <value>Return</value>
+    <value>Fallback arr</value>
   </data>
   <data name="Overlay_Distance" xml:space="preserve">
     <value />

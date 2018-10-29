@@ -151,13 +151,13 @@
     <value>Wind in ya ungly face</value>
   </data>
   <data name="EntityViewModel_AngularDrag" xml:space="preserve">
-    <value>Angular drag</value>
+    <value>Rotatin' harpin</value>
   </data>
   <data name="EntityViewModel_AngularVelocity" xml:space="preserve">
-    <value>Angular velocity [rad/s]</value>
+    <value>Rotatin' velocity [rad/s]</value>
   </data>
   <data name="EntityViewModel_Friction" xml:space="preserve">
-    <value>Friction</value>
+    <value>Harpin</value>
   </data>
   <data name="EntityViewModel_GravitationalAcceleration" xml:space="preserve">
     <value>Acceleration [m/s^2]</value>

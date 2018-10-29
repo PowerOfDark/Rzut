@@ -161,7 +161,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Angular drag.
+        ///   Looks up a localized string similar to Rotatin&apos; harpin.
         /// </summary>
         internal static string EntityViewModel_AngularDrag {
             get {
@@ -170,7 +170,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Angular velocity [rad/s].
+        ///   Looks up a localized string similar to Rotatin&apos; velocity [rad/s].
         /// </summary>
         internal static string EntityViewModel_AngularVelocity {
             get {
@@ -179,7 +179,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Friction.
+        ///   Looks up a localized string similar to Harpin.
         /// </summary>
         internal static string EntityViewModel_Friction {
             get {

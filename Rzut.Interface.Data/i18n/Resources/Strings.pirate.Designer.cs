@@ -89,7 +89,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Range.
+        ///   Looks up a localized string similar to How fa&apos; the ball can g&apos;.
         /// </summary>
         internal static string Body_Range {
             get {
@@ -98,7 +98,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add.
+        ///   Looks up a localized string similar to New flesh.
         /// </summary>
         internal static string Button_Add {
             get {
@@ -107,7 +107,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Apply.
+        ///   Looks up a localized string similar to ARRR.
         /// </summary>
         internal static string Button_Apply {
             get {
@@ -116,7 +116,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove.
+        ///   Looks up a localized string similar to Abandon ship.
         /// </summary>
         internal static string Button_Remove {
             get {
@@ -125,7 +125,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable collisions.
+        ///   Looks up a localized string similar to Loa&apos; th gunz.
         /// </summary>
         internal static string Checkbox_EnableCollisions {
             get {
@@ -134,7 +134,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unit ratio [px/m].
+        ///   Looks up a localized string similar to Sh*t to sh*t [px/m].
         /// </summary>
         internal static string Config_UnitRatio {
             get {
@@ -143,7 +143,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Air density [kg/m^3].
+        ///   Looks up a localized string similar to Stench density [kg/m^3].
         /// </summary>
         internal static string EntityViewModel_AirDensity {
             get {
@@ -152,7 +152,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Air resistance.
+        ///   Looks up a localized string similar to Wind in ya ungly face.
         /// </summary>
         internal static string EntityViewModel_AirResistance {
             get {

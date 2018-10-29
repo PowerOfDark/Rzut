@@ -127,28 +127,28 @@
     <value>Wher' standin' ya</value>
   </data>
   <data name="Body_Range" xml:space="preserve">
-    <value>Range</value>
+    <value>How fa' the ball can g'</value>
   </data>
   <data name="Button_Add" xml:space="preserve">
-    <value>Add</value>
+    <value>New flesh</value>
   </data>
   <data name="Button_Apply" xml:space="preserve">
-    <value>Apply</value>
+    <value>ARRR</value>
   </data>
   <data name="Button_Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Abandon ship</value>
   </data>
   <data name="Checkbox_EnableCollisions" xml:space="preserve">
-    <value>Enable collisions</value>
+    <value>Loa' th gunz</value>
   </data>
   <data name="Config_UnitRatio" xml:space="preserve">
-    <value>Unit ratio [px/m]</value>
+    <value>Sh*t to sh*t [px/m]</value>
   </data>
   <data name="EntityViewModel_AirDensity" xml:space="preserve">
-    <value>Air density [kg/m^3]</value>
+    <value>Stench density [kg/m^3]</value>
   </data>
   <data name="EntityViewModel_AirResistance" xml:space="preserve">
-    <value>Air resistance</value>
+    <value>Wind in ya ungly face</value>
   </data>
   <data name="EntityViewModel_AngularDrag" xml:space="preserve">
     <value>Angular drag</value>

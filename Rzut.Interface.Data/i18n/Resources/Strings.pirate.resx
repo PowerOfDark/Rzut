@@ -160,19 +160,19 @@
     <value>Harpin</value>
   </data>
   <data name="EntityViewModel_GravitationalAcceleration" xml:space="preserve">
-    <value>Acceleration [m/s^2]</value>
+    <value>Rum droppin' acc [m/s^2]</value>
   </data>
   <data name="EntityViewModel_Mass" xml:space="preserve">
-    <value>Mass [kg]</value>
+    <value>Belly measure [kg]</value>
   </data>
   <data name="EntityViewModel_Radius" xml:space="preserve">
-    <value>Radius [m]</value>
+    <value>Rock' radius [m]</value>
   </data>
   <data name="EntityViewModel_Restitution" xml:space="preserve">
-    <value>Restitution</value>
+    <value>Some sh*t</value>
   </data>
   <data name="EntityViewModel_StartAngle" xml:space="preserve">
-    <value>Clockwise angle [degrees]</value>
+    <value>Clock rotatin'  [degrees]</value>
   </data>
   <data name="EntityViewModel_StartX" xml:space="preserve">
     <value>X-coordinate [m]</value>

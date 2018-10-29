@@ -188,7 +188,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Acceleration [m/s^2].
+        ///   Looks up a localized string similar to Rum droppin&apos; acc [m/s^2].
         /// </summary>
         internal static string EntityViewModel_GravitationalAcceleration {
             get {
@@ -197,7 +197,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mass [kg].
+        ///   Looks up a localized string similar to Belly measure [kg].
         /// </summary>
         internal static string EntityViewModel_Mass {
             get {
@@ -206,7 +206,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Radius [m].
+        ///   Looks up a localized string similar to Rock&apos; radius [m].
         /// </summary>
         internal static string EntityViewModel_Radius {
             get {
@@ -215,7 +215,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restitution.
+        ///   Looks up a localized string similar to Some sh*t.
         /// </summary>
         internal static string EntityViewModel_Restitution {
             get {
@@ -224,7 +224,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clockwise angle [degrees].
+        ///   Looks up a localized string similar to Clock rotatin&apos;  [degrees].
         /// </summary>
         internal static string EntityViewModel_StartAngle {
             get {

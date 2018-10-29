@@ -233,7 +233,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to X-coordinate [m].
+        ///   Looks up a localized string similar to Lyin&apos; cords [m].
         /// </summary>
         internal static string EntityViewModel_StartX {
             get {
@@ -242,7 +242,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Y-coordinate [m].
+        ///   Looks up a localized string similar to Standin&apos; cords [m].
         /// </summary>
         internal static string EntityViewModel_StartY {
             get {
@@ -260,7 +260,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose language.
+        ///   Looks up a localized string similar to Captain askin&apos;.
         /// </summary>
         internal static string Header_ChooseLanguage {
             get {
@@ -278,7 +278,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color.
+        ///   Looks up a localized string similar to Colour.
         /// </summary>
         internal static string Header_Color {
             get {
@@ -305,7 +305,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to World.
+        ///   Looks up a localized string similar to WholeSea.
         /// </summary>
         internal static string Header_World {
             get {
@@ -323,7 +323,7 @@ namespace Rzut.Interface.Data.i18n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Return.
+        ///   Looks up a localized string similar to Fallback arr.
         /// </summary>
         internal static string Overlay_Back {
             get {
